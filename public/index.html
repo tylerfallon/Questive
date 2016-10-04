@@ -8,15 +8,58 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
 </head>
 
 <body>
+
+ <div id="app"></div>
 
 <center><h1>Questive</h1></center>
 <br>
 <center><button type="button" id='grad' class="btn btn-default">Sign In</button></center>
 <br>
 <center><button type="button" id='grad' class="btn btn-default">Register</button></center>
+
+
+
+
+
+<script type='text/babel'>
+
+var MessageComponent = React.createClass({
+  render: function() {
+    return (
+      <div>{this.props.message}</div>
+    );
+  }
+});
+
+
+ReactDOM.render(
+  <MessageComponent message="Hello!" />,
+  document.getElementById('app')
+);
+
+</script>
+
+
+
+
+
+<script type="text/babel">
+  React.render(
+    <h1 id="my-heading">
+     Hello world!
+    </h1>,
+    document.getElementById('app')
+  );
+</script>
+
+
+
+
 
 
 
@@ -55,6 +98,9 @@
 /* Use Sass for CSS3 to React /*
 
 </style>
+
+
+
 </body>
 
 </html>
