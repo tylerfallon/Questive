@@ -11,10 +11,10 @@ var IndexRoute	= router.IndexRoute;
 var hashHistory	= router.hashHistory;
 
 // Reference the high-level components
-var Main = require('../components/Main');
-var Search = require('../components/Children/Search');
-var Saved = require('../components/Children/Saved');
-var Results = require('../components/Children/Grandchildren/Results');
+var Main = require('../Components/Main');
+var Search = require('../Components/Children/Search');
+var Saved = require('../Components/Children/Saved');
+var Results = require('../Components/Children/Grandchildren/Results');
 
 //Instructions
 //Create and export a route component with all of our routing logic
