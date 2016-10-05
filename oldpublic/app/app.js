@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './sass/base.scss';
 
-var Main = require('./Components/Main.js');
+var Main = require('./components/Main.js');
 var Routes = require('./config/routes.js');
 var exampleJSX = (
 	<div>
-		<Main />
+	<Main />
 	</div>
 );
 
