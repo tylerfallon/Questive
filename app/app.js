@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './sass/base.scss';
 
 
-var Main = require("Components/Main.js");
+var Main = require("./Components/Main.js");
 var Routes = require('./config/routes.js');
 var exampleJSX = (
 	<div>
