@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "webpack-sass",
   "version": "1.0.0",
   "description": "",
@@ -27,6 +28,29 @@
     "node-sass": "^3.10.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+=======
+  "name": "questive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylerfallon/Questive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerfallon/Questive/issues"
+  },
+  "homepage": "https://github.com/tylerfallon/Questive#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.6.2",
+>>>>>>> d0ac55bfe09b076631669dd0357b967e9ec420a8
     "webpack": "^1.13.2"
   }
 }
