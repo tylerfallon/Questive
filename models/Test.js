@@ -13,7 +13,7 @@ var TestSchema = new Schema({
   location: {
     type:String
   },
-  difficuly:{
+  difficulty:{
     type:String
   }.
    endDate:{
