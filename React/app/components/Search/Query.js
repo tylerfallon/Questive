@@ -1,5 +1,6 @@
 // Include React and React-Router dependencies
 var React = require('react');
+import { PageHeader } from 'react-bootstrap';
 
 // Query Component Declaration
 var Query = React.createClass({ 
@@ -7,9 +8,7 @@ var Query = React.createClass({
 	// Here we set initial variables for the component to be blanks
 	getInitialState: function(){
 		return {
-			search: "",
-			start: "",
-			end: "",
+			search: ""
 		}
 	},
 
@@ -28,7 +27,7 @@ var Query = React.createClass({
 	/*This code handles the sending of the search terms to the parent Search component*/
 	handleSubmit: function(){
 		console.log("CLICKED");
-		this.props.updateSearch(this.state.search, this.state.start, this.state.end);
+		this.props.updateSearch(this.state.search);
 		return false;
 	},
 
@@ -41,9 +40,9 @@ var Query = React.createClass({
 					<div className="row">
 						<div className="col-lg-12">
 
-							<div className="panel panel-primary">
+							<div className="navbar navbar-light bg-default">
 								<div className="panel-heading">
-									<h1 className="panel-title"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i>  Query</strong></h1>
+									<h1 className="panel-title"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i>  Search for a Contest</strong></h1>
 								</div>
 								<div className="panel-body">
 
@@ -53,17 +52,39 @@ var Query = React.createClass({
 											<h4 className=""><strong>Topic</strong></h4>
 											<input type="text" value={this.state.value} className="form-control " id="search" onChange= {this.handleChange} required/>
 
-											<h4 className=""><strong>Start Year</strong></h4>
-											<input type="number" value={this.state.value} className="form-control " id="start" onChange= {this.handleChange} required/>
-
-											<h4 className=""><strong>End Year</strong></h4>
-											<input type="number" value={this.state.value} className="form-control " id="end" onChange= {this.handleChange} required/>
-
+								
 										</div>
 
-										{/*Here we create the onClick event that triggers the HandleSubmit*/}
-										<div className="pull-right">
+										
+										<div className="pull-left">
 											<button type="button" className="btn btn-danger" onClick={this.handleSubmit}><h4>Submit</h4></button>
+										</div>
+									</form>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+<center><PageHeader>OR</PageHeader></center>
+					<div className="row">
+						<div className="col-lg-12">
+
+							<div className="navbar navbar-light bg-default">
+								<div className="panel-heading">
+									<h1 className="panel-title"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i>  See All Current Contests</strong></h1>
+								</div>
+								<div className="panel-body">
+
+									{/*Note how we associate the text-box inputs with the state values*/}
+									<form>
+										<div className="form-group">
+	
+										</div>
+
+										
+										<div className="pull-left">
+											<button type="button" className="btn btn-danger" onClick={this.handleSubmit}><h4>Populate List</h4></button>
 										</div>
 									</form>
 
@@ -75,8 +96,17 @@ var Query = React.createClass({
 
 			</div>
 
+
+
+
+
+
+
+
+
 		)
 	}
+
 
 });
 

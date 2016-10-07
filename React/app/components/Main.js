@@ -2,7 +2,15 @@
 var React = require('react');
 var Router = require('react-router')
 
-// Create the Main component
+
+var bgColors = { "Default": "#e3f2fd",
+                    "Blue": "#00B1E1",
+                    "Cyan": "#37BC9B",
+                    "Green": "#8CC152",
+                    "Red": "#E9573F",
+                    "Yellow": "#F6BB42",
+};
+
 var Main = React.createClass({
 
 	render: function(){
@@ -14,7 +22,7 @@ var Main = React.createClass({
 
 				<div className="container">
 					{/*Navbar*/}
-					<nav className="navbar navbar-default" role="navigation">
+					<nav className="navbar navbar-dark bg-info">
 						<div className="container-fluid">
 							<div className="navbar-header">
 								<button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
