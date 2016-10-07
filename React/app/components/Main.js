@@ -23,33 +23,57 @@ var Main = React.createClass({
 									<span className="icon-bar"></span>
 									<span className="icon-bar"></span>
 								</button>
-								<a className="navbar-brand" href="#">NYT-React</a>
 							</div>
 					
 							<div className="collapse navbar-collapse navbar-ex1-collapse">
-								<ul className="nav navbar-nav navbar-right">
-									<li><a href="#/search">Search</a></li>
-									<li><a href="#/saved">Saved Articles</a></li>
+											
+									<ul className="nav navbar-nav navbar-left">
+									<li><img src={'https://s-media-cache-ak0.pinimg.com/originals/e2/5c/43/e25c43c6a65bdca84c72f0c58524fcd6.png'} height='50' width='50'/></li>
+									<li><a href="#">Home</a></li>
+									</ul>
+					
+
+
+
+						
+									
+
+							
+
+									<ul className="nav navbar-nav navbar-right">
+									<li><img src={'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png'} height='50' width='50'/></li>
+									<li><a href="#/Create">Create Contest</a></li>
+									</ul>
+
+	<ul className="nav navbar-nav navbar-right">
+									<li><img src={'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png'} height='50' width='50'/></li>
+									<li><a href="#/join">Join Contest</a></li>
+									</ul>
+
+							<ul className="nav navbar-nav navbar-right">
+									<li><img src={'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png'} height='50' width='50'/></li>
+									<li><a href="#/leaderboards">Leaderboards</a></li>
 								</ul>
+
+			<ul className="nav navbar-nav navbar-right">
+									<li><img src={'https://openclipart.org/download/247319/abstract-user-flat-3.svg'} height='50' width='50'/></li>
+									<li><a href="#/profile">Profile</a></li>
+									</ul>
 							</div>
 						</div>
 					</nav>
 
-					{/*Jumbotron*/}
-					<div className="jumbotron">
-						<h2 className="text-center"><strong>(ReactJS) New York Times Article Scrubber</strong></h2>
-						<h3 className="text-center">Search for and save articles of interest.</h3>
-					</div>
+
+
+
+
 
 
 					{/*Here we will load the sub components (Search or Saved */}
 					{/*These sub-components are getting passed as this.props.children*/}
 					{this.props.children}
 
-					<footer>
-						<hr />
-						<p className="pull-right"><i className="fa fa-github" aria-hidden="true"></i> Proudly built using React.js</p>
-					</footer>
+		
 				</div>
 
 

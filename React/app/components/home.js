@@ -23,18 +23,30 @@ var Home = React.createClass({
 									<span className="icon-bar"></span>
 									<span className="icon-bar"></span>
 								</button>
-								<a className="navbar-brand" href="#">NYT-React</a>
 							</div>
 					
 							<div className="collapse navbar-collapse navbar-ex1-collapse">
-								<ul className="nav navbar-nav navbar-right">
-									<li><a href="#/search">Search</a></li>
-									<li><a href="#/saved">Saved Articles</a></li>
+
+								<ul className="nav navbar-nav navbar-left">
+
+									<li><img src={'https://openclipart.org/download/247319/abstract-user-flat-3.svg'} height='50' width='50'/></li>
+									<li><a href="#/search">Profile</a></li>
+									</ul>
+
+										<ul className="nav navbar-nav navbar-right">
+								<li><img src={'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png'} height='50' width='50'/></li>
+									<li><a href="#/saved">Leaderboards</a></li>
 									<li><a href="#/home">Home</a></li>
-								</ul>
+									</ul>
+									
 							</div>
 						</div>
+
 					</nav>
+
+
+
+
 
 					{/*Jumbotron*/}
 					<div className="jumbotron">
@@ -47,10 +59,6 @@ var Home = React.createClass({
 					{/*These sub-components are getting passed as this.props.children*/}
 					{this.props.children}
 
-					<footer>
-						<hr />
-						<p className="pull-right"><i className="fa fa-github" aria-hidden="true"></i> Proudly built using React.js</p>
-					</footer>
 				</div>
 
 

@@ -13,6 +13,10 @@ var Main = require('../components/Main');
 var Search = require('../components/Search'); 
 var Saved = require('../components/Saved'); 
 var Home = require('../components/Home')
+var Profile = require('../components/Profile')
+var Leaderboards = require('../components/Leaderboards')
+var Join = require('../components/Join')
+var Create = require('../components/Create')
 
 
 // Export the Routes
@@ -24,10 +28,14 @@ module.exports = (
 		{/* If user selects Search or Saved show the appropriate component*/}
 		<Route path='Search' component={Search} />
 		<Route path='Saved' component={Saved} />
+		<Route path='Leaderboards' component={Leaderboards} />
+		<Route path='Profile' component={Profile} />
 		<Route path='Home' component={Home} />
+		<Route path='Join' component={Join} />
+		<Route path='Create' component={Create} />
 
 		{/*If user selects any other path... we get the Home Route*/}
-		<IndexRoute component={Search} />
+		<IndexRoute component={Profile} />
 
 		
 
