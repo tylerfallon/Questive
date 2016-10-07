@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
-
+import App from '../imports/ui/App';
 Meteor.startup(() => {
-	ReactDOM.render(<div>HelloWorld! </div>,document.getElementById("app"));
+	ReactDOM.render(<App />,document.getElementById("app"));
 });
