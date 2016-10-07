@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // create the article schema
-var TastSchema = new Schema({
+var TestSchema = new Schema({
   // just a string
   task: {
     type:String
@@ -13,7 +13,7 @@ var TastSchema = new Schema({
   location: {
     type:String
   },
-  difficuly:{
+  difficulty:{
     type:String
   }.
    endDate:{
