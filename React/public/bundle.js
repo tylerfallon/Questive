@@ -29657,28 +29657,232 @@
 	var ReactDOM = __webpack_require__(34);
 
 
-	var Create = React.createClass({
-		displayName: 'Create',
+	var _counter = 0;
 
-		render: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'main-container' },
-				React.createElement('div', { id: 'buttonMount' }),
-				React.createElement(
-					'div',
-					{ className: 'well' },
-					React.createElement(
-						_reactBootstrap.Button,
-						{ bsSize: 'large', block: true },
-						'Submit Contest'
-					)
-				)
-			);
-		}
+	var Create = React.createClass({
+	  displayName: 'Create',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'main-container' },
+	      React.createElement(
+	        'center',
+	        null,
+	        React.createElement(
+	          _reactBootstrap.PageHeader,
+	          null,
+	          'Create a contest'
+	        )
+	      ),
+	      React.createElement('div', null),
+	      React.createElement(
+	        'form',
+	        null,
+	        React.createElement(
+	          _reactBootstrap.ControlLabel,
+	          null,
+	          'Contest Name'
+	        ),
+	        React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Give your contest a title' }),
+	        React.createElement('br', null),
+	        React.createElement(
+	          _reactBootstrap.FormGroup,
+	          { controlId: 'formControlsTextarea' },
+	          React.createElement(
+	            _reactBootstrap.ControlLabel,
+	            null,
+	            'Contest Description'
+	          ),
+	          React.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Enter a description for your contest' })
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          _reactBootstrap.FormGroup,
+	          null,
+	          React.createElement(
+	            _reactBootstrap.ControlLabel,
+	            null,
+	            'Add the instructions for your contest below! Click to Expand.'
+	          )
+	        ),
+	        React.createElement(
+	          _reactBootstrap.Panel,
+	          { collapsible: true, defaultExpanded: false, header: 'Item 1' },
+	          React.createElement(
+	            _reactBootstrap.ListGroup,
+	            { fill: true },
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Action:  ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	            ),
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Location: ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' }),
+	              ' '
+	            ),
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Additional Info: ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          _reactBootstrap.Panel,
+	          { collapsible: true, defaultExpanded: false, header: 'Item 2' },
+	          React.createElement(
+	            _reactBootstrap.ListGroup,
+	            { fill: true },
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Action:  ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	            ),
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Location: ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' }),
+	              ' '
+	            ),
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Additional Info: ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          _reactBootstrap.Panel,
+	          { collapsible: true, defaultExpanded: false, header: 'Item 3' },
+	          React.createElement(
+	            _reactBootstrap.ListGroup,
+	            { fill: true },
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Action:  ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	            ),
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Location: ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' }),
+	              ' '
+	            ),
+	            React.createElement(
+	              _reactBootstrap.ListGroupItem,
+	              null,
+	              'Additional Info: ',
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'placeholder' },
+	          React.createElement(
+	            'div',
+	            { id: 'template' },
+	            React.createElement(
+	              _reactBootstrap.Panel,
+	              { collapsible: true, defaultExpanded: true, header: 'Additional Item' },
+	              React.createElement(
+	                _reactBootstrap.ListGroup,
+	                { fill: true },
+	                React.createElement(
+	                  _reactBootstrap.ListGroupItem,
+	                  null,
+	                  'Action:  ',
+	                  React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	                ),
+	                React.createElement(
+	                  _reactBootstrap.ListGroupItem,
+	                  null,
+	                  'Location: ',
+	                  React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' }),
+	                  ' '
+	                ),
+	                React.createElement(
+	                  _reactBootstrap.ListGroupItem,
+	                  null,
+	                  'Additional Info: ',
+	                  React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          _reactBootstrap.Pager,
+	          null,
+	          React.createElement(
+	            _reactBootstrap.Pager.Item,
+	            { onClick: this.Add, previous: true, href: '#' },
+	            'Add Additional Items \u2192'
+	          )
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'div',
+	          { className: 'well' },
+	          React.createElement(
+	            _reactBootstrap.Button,
+	            { bsSize: 'large', block: true },
+	            'Submit Contest'
+	          )
+	        )
+	      )
+	    );
+	  },
+
+	  createField: function createField() {
+	    $('#newField').append(React.createElement(
+	      _reactBootstrap.Panel,
+	      { collapsible: true, defaultExpanded: false, header: 'Additional Item' },
+	      React.createElement(
+	        _reactBootstrap.ListGroup,
+	        { fill: true },
+	        React.createElement(
+	          _reactBootstrap.ListGroupItem,
+	          null,
+	          'Action:  ',
+	          React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	        ),
+	        React.createElement(
+	          _reactBootstrap.ListGroupItem,
+	          null,
+	          'Location: ',
+	          React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' }),
+	          ' '
+	        ),
+	        React.createElement(
+	          _reactBootstrap.ListGroupItem,
+	          null,
+	          'Additional Info: ',
+	          React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	        )
+	      )
+	    ));
+	  },
+
+	  Add: function Add() {
+	    _counter++;
+	    var oClone = document.getElementById("template").cloneNode(true);
+	    oClone.id += _counter + "";
+	    document.getElementById("placeholder").appendChild(oClone);
+	  }
 
 	});
-
 	module.exports = Create;
 
 /***/ },
