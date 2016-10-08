@@ -54,9 +54,9 @@ var Main = React.createClass({
 
 					<div className="jumbotron">
 						<center><h1>Questive</h1></center>
-						<br>
+						<br/>
 						<center><button type="button" id='grad' class="btn btn-default">Sign In</button></center>
-						<br>
+						<br/>
 						<center><button type="button" id='grad' class="btn btn-default">Register</button></center>
 						<p>
 							<a href="#/Search"><button className="btn btn-primary btn-lg">Search</button></a>
