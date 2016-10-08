@@ -24,3 +24,6 @@ accounts-ui
 accounts-password
 accounts-facebook
 meteortoys:allthings
+kadira:flow-router
+kadira:react-layout
+ultimatejs:tracker-react
