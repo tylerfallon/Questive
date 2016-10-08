@@ -50,12 +50,12 @@ var Main = React.createClass({
 
 									<ul className="nav navbar-nav navbar-right">
 									<li><img src={'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png'} height='50' width='50'/></li>
-									<li><a href="#/Create">Create Contest</a></li>
+									<li><a href="#/Create">Create</a></li>
 									</ul>
 
 	<ul className="nav navbar-nav navbar-right">
 									<li><img src={'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png'} height='50' width='50'/></li>
-									<li><a href="#/join">Join Contest</a></li>
+									<li><a href="#/join">Join</a></li>
 									</ul>
 
 							<ul className="nav navbar-nav navbar-right">
@@ -63,7 +63,7 @@ var Main = React.createClass({
 									<li><a href="#/leaderboards">Leaderboards</a></li>
 								</ul>
 
-			<ul className="nav navbar-nav navbar-right">
+			<ul className="nav navbar-nav navbar-right navbar-for-responsiveness">
 									<li><img src={'https://openclipart.org/download/247319/abstract-user-flat-3.svg'} height='50' width='50'/></li>
 									<li><a href="#/profile">Profile</a></li>
 									</ul>

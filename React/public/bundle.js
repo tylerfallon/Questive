@@ -27516,7 +27516,7 @@
 										React.createElement(
 											'a',
 											{ href: '#/Create' },
-											'Create Contest'
+											'Create'
 										)
 									)
 								),
@@ -27534,7 +27534,7 @@
 										React.createElement(
 											'a',
 											{ href: '#/join' },
-											'Join Contest'
+											'Join'
 										)
 									)
 								),
@@ -27558,7 +27558,7 @@
 								),
 								React.createElement(
 									'ul',
-									{ className: 'nav navbar-nav navbar-right' },
+									{ className: 'nav navbar-nav navbar-right navbar-for-responsiveness' },
 									React.createElement(
 										'li',
 										null,
