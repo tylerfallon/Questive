@@ -19,7 +19,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/main', {
   action() {
     mount(MainLayout, {
-      content : (<Profile />)
+      content : (<Test />)
     })
   }
 });
