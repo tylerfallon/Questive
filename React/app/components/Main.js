@@ -37,7 +37,7 @@ var Main = React.createClass({
 											
 									<ul className="nav navbar-nav navbar-left">
 									<li><img src={'https://s-media-cache-ak0.pinimg.com/originals/e2/5c/43/e25c43c6a65bdca84c72f0c58524fcd6.png'} height='50' width='50'/></li>
-									<li><a href="#">Home</a></li>
+									<li><a href="#/index">Home</a></li>
 									</ul>
 					
 
