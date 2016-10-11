@@ -17,6 +17,7 @@ var Profile = require('../components/Profile')
 var Leaderboards = require('../components/Leaderboards')
 var Join = require('../components/Join')
 var Create = require('../components/Create')
+var Index = require('../components/Index')
 
 
 // Export the Routes
@@ -33,9 +34,10 @@ module.exports = (
 		<Route path='Home' component={Home} />
 		<Route path='Join' component={Join} />
 		<Route path='Create' component={Create} />
+		<Route path='Index' component={Index} />
 
 		{/*If user selects any other path... we get the Home Route*/}
-		<IndexRoute component={Profile} />
+		<IndexRoute component={Index} />
 
 		
 

@@ -27414,6 +27414,7 @@
 	var Leaderboards = __webpack_require__(516);
 	var Join = __webpack_require__(517);
 	var Create = __webpack_require__(518);
+	var Index = __webpack_require__(519);
 
 	// Export the Routes
 	module.exports = React.createElement(
@@ -27426,7 +27427,8 @@
 		React.createElement(Route, { path: 'Home', component: Home }),
 		React.createElement(Route, { path: 'Join', component: Join }),
 		React.createElement(Route, { path: 'Create', component: Create }),
-		React.createElement(IndexRoute, { component: Profile })
+		React.createElement(Route, { path: 'Index', component: Index }),
+		React.createElement(IndexRoute, { component: Index })
 	);
 
 /***/ },
@@ -27497,7 +27499,7 @@
 										null,
 										React.createElement(
 											'a',
-											{ href: '#' },
+											{ href: '#/index' },
 											'Home'
 										)
 									)
@@ -48404,11 +48406,14 @@
 
 	'use strict';
 
+	var _reactBootstrap = __webpack_require__(239);
+
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 	var Query = __webpack_require__(238);
 	var Results = __webpack_require__(492);
 	var helpers = __webpack_require__(493);
+
 
 	var Profile = React.createClass({
 		displayName: 'Profile',
@@ -48417,11 +48422,7 @@
 			return React.createElement(
 				'div',
 				{ className: 'main-container' },
-				React.createElement(
-					'div',
-					null,
-					'Profile Goes Here'
-				)
+				'Profile goes here'
 			);
 		}
 	});
@@ -48934,6 +48935,172 @@
 
 	});
 	module.exports = Create;
+
+/***/ },
+/* 519 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _reactBootstrap = __webpack_require__(239);
+
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(172);
+	var Query = __webpack_require__(238);
+	var Results = __webpack_require__(492);
+	var helpers = __webpack_require__(493);
+
+
+	var Index = React.createClass({
+	  displayName: 'Index',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'main-container' },
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'div',
+	          { className: 'parallax' },
+	          React.createElement(
+	            'div',
+	            { id: 'group2', className: 'parallax__group' },
+	            React.createElement(
+	              'div',
+	              { className: 'parallax__layer parallax__layer--base' },
+	              React.createElement(
+	                'center',
+	                null,
+	                React.createElement(
+	                  'h3',
+	                  { className: 'tagline' },
+	                  'Discover. Connect. Adventure. ',
+	                  React.createElement('br', null),
+	                  ' ',
+	                  React.createElement('br', null),
+	                  React.createElement(
+	                    'center',
+	                    null,
+	                    React.createElement(
+	                      'button',
+	                      { type: 'button', className: 'btn btn-danger center', onClick: this.handleSubmit },
+	                      React.createElement(
+	                        'h4',
+	                        null,
+	                        'Get Started'
+	                      )
+	                    )
+	                  ),
+	                  React.createElement('br', null)
+	                )
+	              ),
+	              React.createElement('br', null),
+	              React.createElement('br', null),
+	              ' ',
+	              React.createElement('br', null),
+	              React.createElement(
+	                'center',
+	                null,
+	                React.createElement(
+	                  'h1',
+	                  { className: 'center' },
+	                  'Welcome to Questive.'
+	                )
+	              )
+	            ),
+	            React.createElement('a', { name: 'about' }),
+	            React.createElement('div', { className: 'parallax__layer parallax__layer--back black' })
+	          ),
+	          React.createElement(
+	            'div',
+	            { id: 'group5', className: 'parallax__group' },
+	            React.createElement(
+	              'div',
+	              { className: 'parallax__layer parallax__layer--fore' },
+	              React.createElement('div', { className: 'title' })
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'parallax__layer parallax__layer--base' },
+	              React.createElement(
+	                'div',
+	                { className: 'title' },
+	                '  ',
+	                React.createElement(
+	                  'div',
+	                  { className: 'card-panel col s12', id: 'about' },
+	                  React.createElement(
+	                    'h3',
+	                    { className: 'center' },
+	                    React.createElement(
+	                      'p',
+	                      { className: 'left whatIs' },
+	                      'What is Questive?'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    'p',
+	                    { className: 'center whatIs' },
+	                    'Questive is a social web and mobile application that allows you to explore the world around you.'
+	                  ),
+	                  React.createElement(
+	                    'p',
+	                    { className: 'center whatIs' },
+	                    'Join contests created by other users or create one yourself!'
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            { id: 'group7', className: 'parallax__group' },
+	            React.createElement(
+	              'div',
+	              { className: 'parallax__layer parallax__layer--fore' },
+	              React.createElement('div', { className: 'title' })
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'parallax__layer parallax__layer--base' },
+	              React.createElement(
+	                'div',
+	                { className: 'title' },
+	                '  ',
+	                React.createElement(
+	                  'div',
+	                  { className: 'card-panel col s12', id: 'about' },
+	                  React.createElement(
+	                    'h3',
+	                    { className: 'center' },
+	                    React.createElement(
+	                      'p',
+	                      { className: 'left' },
+	                      'Learn more about us.'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    'p',
+	                    { className: 'center' },
+	                    'Please learn more.'
+	                  ),
+	                  React.createElement(
+	                    'p',
+	                    { className: 'center' },
+	                    'Pls.'
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	module.exports = Index;
 
 /***/ }
 /******/ ]);
