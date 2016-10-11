@@ -24,11 +24,13 @@ class App extends Component {
     event.preventDefault();
 
     // Find the text field via the React ref
-    const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-    const location = ReactDOM.findDOMNode(this.refs.location_text).value.trim();
+    const object_task = {
+      text : ReactDOM.findDOMNode(this.refs.textInput).value.trim(),
+      location: ReactDOM.findDOMNode(this.refs.location_text).value.trim()
+    };
+    console.log(object_task);
 
-
-   Meteor.call('tasks.insert', text);
+   Meteor.call('tasks.insert', object_task);
 
 
     // Clear form
@@ -86,12 +88,17 @@ class App extends Component {
                 ref="textInput"
                 placeholder="Type to add new tasks"
               />
-              <input
-                type="text"
-                ref="location_text"
-                placeholder="Enter a location"
-              />            
-            </form>: ''
+               <input
+                  type="text"
+                  ref="location_text"
+                  placeholder="Enter a location"
+                />  
+                <input 
+                  type="submit"
+                  value = "submit"
+                  />          
+              </form>
+            : ''
           }
         </header>
 
