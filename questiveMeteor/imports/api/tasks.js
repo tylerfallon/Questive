@@ -18,9 +18,12 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
+  // add information to our task db
   'tasks.insert'(object) {
-    check(object.text, String);
-    check(object.location, String);
+    let task = object.text;
+    let location = object.location;
+    check(task, String);
+    check(location, String);
 
     // Make sure the user is logged in before inserting a task
     if (! this.userId) {
@@ -28,8 +31,8 @@ Meteor.methods({
     }
 
     Tasks.insert({
-      // object.text ,
-      // object.location,
+      task,
+      location,
       createdAt: new Date(),
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username,
