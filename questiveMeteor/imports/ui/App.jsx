@@ -25,6 +25,8 @@ class App extends Component {
 
     // Find the text field via the React ref
     const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
+    const location = ReactDOM.findDOMNode(this.refs.location_text).value.trim();
+
 
    Meteor.call('tasks.insert', text);
 
@@ -74,6 +76,7 @@ class App extends Component {
             Hide Completed Tasks
           </label>
 
+
           <AccountsUIWrapper />
 
           { this.props.currentUser ?
@@ -83,7 +86,12 @@ class App extends Component {
                 ref="textInput"
                 placeholder="Type to add new tasks"
               />
-            </form> : ''
+              <input
+                type="text"
+                ref="location_text"
+                placeholder="Enter a location"
+              />            
+            </form>: ''
           }
         </header>
 
