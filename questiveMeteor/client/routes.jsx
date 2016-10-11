@@ -1,7 +1,17 @@
 import React from 'react';
 import {mount} from 'react-mounter'
-
 import {main} from './main.jsx';
+
+var Main = require('../React/app/components/Main');
+var Search = require('../React/app/components/Search'); 
+var Saved = require('../React/app/components/Saved'); 
+var Home = require('../React/app/components/Home')
+var Profile = require('../React/app/components/Profile')
+var Leaderboards = require('../React/app/components/Leaderboards')
+var Join = require('../React/app/components/Join')
+var Create = require('../React/app/components/Create')
+var Index = require('../React/app/components/Index')
+
 //by having default in App.jsx, whatever imports this file, you don't need to use curly brackets when importing it
 // import ResolutionsWrapper from './resolutions/ResolutionsWrapper.jsx';
 // import About from './About.jsx';
@@ -16,26 +26,10 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/main', {
+FlowRouter.route('/leaderboards', {
   action() {
     mount(MainLayout, {
-      content : (<Test />)
-    })
-  }
-});
-
-FlowRouter.route('/login', {
-  action() {
-    mount(MainLayout, {
-      content : (<Login />)
-    })
-  }
-});
-
-FlowRouter.route('/signUp', {
-  action() {
-    mount(MainLayout, {
-      content : (<SignUp />)
+      content : (<Leaderboards />)
     })
   }
 });
@@ -47,6 +41,22 @@ FlowRouter.route('/profile', {
     })
   }
 });
+
+// FlowRouter.route('/signUp', {
+//   action() {
+//     mount(MainLayout, {
+//       content : (<SignUp />)
+//     })
+//   }
+// });
+
+// FlowRouter.route('/profile', {
+//   action() {
+//     mount(MainLayout, {
+//       content : (<Profile />)
+//     })
+//   }
+// });
 
 // FlowRouter.route('/resolutions/:id', {
 //   action(params) {
