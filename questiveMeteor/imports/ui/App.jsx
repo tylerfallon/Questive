@@ -27,7 +27,7 @@ class App extends Component {
           <a href ="#"> Leaderboards</a>
           <a href = "#"> New Hunt</a>
           <a href = "#"> Available hunts</a>
-          <
+          
         </div>
       {/* Display leaderboard component */}
         <LeaderBoard />
