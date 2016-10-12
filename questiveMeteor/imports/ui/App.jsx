@@ -7,7 +7,9 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 // import tasks ux.  just like react components 
 import Task from './Task.jsx';
-import Main from './Main.jsx';
+  import Main from './Main.jsx';
+
+import LeaderBoard from'./Children/Leaderboard.jsx';
 // get the Blaze account informaiton 
 import AccountsUIWrapper from './UIWrapper.jsx';
 
@@ -15,14 +17,21 @@ import AccountsUIWrapper from './UIWrapper.jsx';
 class App extends Component {
   
   render() {
-    return (
+    return(
       <div className="container">
+        <h1> Hello World</h1>
+        <AccountsUIWrapper />
+        <div>
+          <a href ="#"> Home</a>
+          <a href ="#"> Leaderboards</a>
+          <a href = "#"> New Hunt</a>
+          <a href = "#"> Available hunts</a>
 
-          <AccountsUIWrapper />
-          <Main />
-        
+        </div>
+
+        <LeaderBoard />
       </div>
-    );
+   )
   }
 }
 

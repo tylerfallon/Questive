@@ -1,6 +1,10 @@
+
 import React from 'react';
 import {mount} from 'react-mounter'
-import {main} from './main.jsx';
+import {Main} from '../ui/Main.jsx';
+import {leaderboard} from '../ui/children/Leaderboard.jsx';
+
+
 
 // var Main = require('../React/app/components/Main');
 // var Search = require('../React/app/components/Search'); 
@@ -20,27 +24,27 @@ import {main} from './main.jsx';
 
 FlowRouter.route('/', {
   action() {
-    mount(MainLayout, {
+    mount(Main, {
       content : (<Main />)
     })
   }
 });
 
-FlowRouter.route('/leaderboards', {
+FlowRouter.route('/leaderboard', {
   action() {
-    mount(MainLayout, {
-      content : (<Leaderboards />)
+    mount(Main, {
+      content : (<Leaderboard />)
     })
   }
 });
 
-FlowRouter.route('/profile', {
-  action() {
-    mount(MainLayout, {
-      content : (<Profile />)
-    })
-  }
-});
+// FlowRouter.route('/profile', {
+//   action() {
+//     mount(MainLayout, {
+//       content : (<Profile />)
+//     })
+//   }
+// });
 
 // FlowRouter.route('/signUp', {
 //   action() {
