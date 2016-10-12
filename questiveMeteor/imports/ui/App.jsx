@@ -8,8 +8,9 @@ import { Tasks } from '../api/tasks.js';
 // import tasks ux.  just like react components 
 import Task from './Task.jsx';
   import Main from './Main.jsx';
-
+// Load Components to display on the portal 
 import LeaderBoard from'./Children/Leaderboard.jsx';
+import Create from './Childre/create_hunt.jsx';
 // get the Blaze account informaiton 
 import AccountsUIWrapper from './UIWrapper.jsx';
 
@@ -26,10 +27,13 @@ class App extends Component {
           <a href ="#"> Leaderboards</a>
           <a href = "#"> New Hunt</a>
           <a href = "#"> Available hunts</a>
-
+          <
         </div>
-
+      {/* Display leaderboard component */}
         <LeaderBoard />
+      {/* Display Create Contest component */}
+
+
       </div>
    )
   }
