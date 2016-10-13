@@ -6,11 +6,9 @@ import { createContainer } from 'meteor/react-meteor-data';
 // inport the database information fro tasks api
 import { Tasks } from '../api/tasks.js';
 // import tasks ux.  just like react components 
-import Task from './Task.jsx';
-  import Main from './Main.jsx';
 // Load Components to display on the portal 
 import LeaderBoard from'./Children/Leaderboard.jsx';
-import Create from './Childre/create_hunt.jsx';
+import Create from './Children/create_hunt.jsx';
 // get the Blaze account informaiton 
 import AccountsUIWrapper from './UIWrapper.jsx';
 
@@ -20,18 +18,21 @@ class App extends Component {
   render() {
     return(
       <div className="container">
-        <h1> Hello World</h1>
+        <h1> QUESTIVE: LIVE OUTSIDE YOUR SCREENS</h1>
         <AccountsUIWrapper />
         <div>
           <a href ="#"> Home</a>
           <a href ="#"> Leaderboards</a>
           <a href = "#"> New Hunt</a>
           <a href = "#"> Available hunts</a>
-          
+
         </div>
       {/* Display leaderboard component */}
+      <div></div>
         <LeaderBoard />
-      {/* Display Create Contest component */}
+      {/* Display Create Contest component Current displayes */}
+
+        <Create />
 
 
       </div>

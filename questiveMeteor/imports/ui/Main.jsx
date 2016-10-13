@@ -6,7 +6,6 @@ import { createContainer } from 'meteor/react-meteor-data';
 // inport the database information fro tasks api
 import { Tasks } from '../api/tasks.js';
 // import tasks ux.  just like react components 
-import Task from './Task.jsx';
 // import LeaderBoard from './Children/Leaderboard.jsx';
 // get the Blaze account informaiton 
 import AccountsUIWrapper from './UIWrapper.jsx';

@@ -20,8 +20,11 @@ if (Meteor.isServer) {
 Meteor.methods({
   // add information to our task db
   'tasks.insert'(object) {
+    let user = object.user;
+    let title = object.title;
     let task = object.text;
     let location = object.location;
+    check(title, String)
     check(task, String);
     check(location, String);
 
@@ -31,6 +34,8 @@ Meteor.methods({
     }
 
     Tasks.insert({
+      user,
+      title,
       task,
       location,
       createdAt: new Date(),
