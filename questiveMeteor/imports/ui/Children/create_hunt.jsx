@@ -4,20 +4,30 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 // inport the database information fro tasks api
-import { Tasks } from '../api/tasks.js';
+import { Tasks } from '../../api/tasks.js';
 // import tasks ux.  just like react components 
 import Task from './Task.jsx';
 // get the Blaze account informaiton 
-import AccountsUIWrapper from './UIWrapper.jsx';
 
 // App component - represents the whole app
-class App extends Component {
+class Create extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      hideCompleted: false,
+      hideForm: false,
+      title: "Franks Title",
     };
+  }
+  handleTitleSubmit(event){
+    event.preventDefault();
+    // let title = ReactDOM.findDOMNode(this.refs.title).trim();
+    // console.log(title);
+    this.setState({
+      hideForm: !this.state.hide,
+      title:this._title.value
+    });
+    this._title.value = "";
   }
 
   handleSubmit(event) {
@@ -25,6 +35,8 @@ class App extends Component {
 
     // Find the text field via the React ref
     const object_task = {
+      user: Meteor.user(),
+      title: this.state.title,
       text : ReactDOM.findDOMNode(this.refs.textInput).value.trim(),
       location: ReactDOM.findDOMNode(this.refs.location_text).value.trim()
     };
@@ -35,6 +47,7 @@ class App extends Component {
 
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
+    ReactDOM.findDOMNode(this.refs.location_text).value = '';
   }
 
   toggleHideCompleted() {
@@ -61,28 +74,32 @@ class App extends Component {
       );
     });
   }
-
-  render() {
-    return (
-      <div className="container">
-        <header>
-          <h1>Todo List ({this.props.incompleteCount})</h1>
-
-          <label className="hide-completed">
-            <input
-              type="checkbox"
-              readOnly
-              checked={this.state.hideCompleted}
-              onClick={this.toggleHideCompleted.bind(this)}
-            />
-            Hide Completed Tasks
-          </label>
-
-
-          <AccountsUIWrapper />
-
-          { this.props.currentUser ?
-            <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+  renderTitle(){
+    if(this.props.currentUser){
+      return(
+      <form className='new-title' onSubmit ={this.handleTitleSubmit.bind(this)} >
+                <input
+                  type='text'
+                  ref ={(title) => {
+                    this._title = title;
+                  }}
+                  placeholder={this.state.title}
+                  checked={this.state.hideCompleted}
+                />
+                <input
+                  type='submit'
+                  value ='submit'
+                />
+        </form> 
+        )
+    }else{
+      return null
+    } 
+  }
+  renderInputBox(){
+    if(this.props.currentUser){ 
+    return(     
+      <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
               <input
                 type="text"
                 ref="textInput"
@@ -97,20 +114,46 @@ class App extends Component {
                   type="submit"
                   value = "submit"
                   />          
-              </form>
-            : ''
-          }
-        </header>
+      </form>
+      )}else {
+      return null
+    }
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <header>
+          <h1>Create a New Game</h1>
+{/*
+          <label className="hide-completed">
+            <input
+              type="checkbox"
+              readOnly
+              checked={this.state.hideCompleted}
+              onClick={this.toggleHideCompleted.bind(this)}
+            />
+            Hide Completed Tasks
+          </label>
+          */}
+
+          {this.renderTitle()}
+        {/* We can conditionaly display this but right now I dont know how */}
+          {this.renderInputBox()} 
+            
+          </header>
 
         <ul>
           {this.renderTasks()}
+         
         </ul>
       </div>
     );
   }
 }
 
-App.propTypes = {
+console.log(Tasks.find().fetch());
+Create.propTypes = {
   tasks: PropTypes.array.isRequired,
   incompleteCount: PropTypes.number.isRequired,
   currentUser: PropTypes.object,
@@ -125,4 +168,4 @@ export default createContainer(() => {
     incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
     currentUser: Meteor.user(),
   };
-}, App);
+}, Create);
