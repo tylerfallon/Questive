@@ -6,7 +6,10 @@ a:hover {
 	color: blue;
 }
 
+.navbar {
 
+    padding: 10px;
+}
  .navbar-toggle, .icon-bar {
     border: 2px solid white;
 }
@@ -205,4 +208,21 @@ a:hover {
 
         .whatIs {
             color: rgb(52,152,219);
+        }
+
+        /* Media Queries */
+
+        @media screen and (max-width: 600px) {
+
+            .navbar {
+
+                text-align: left;
+
+            }
+
+            .logoArea {
+                margin-top: 10px;
+                
+            }
+
         }
