@@ -11,7 +11,7 @@ import Task from './Task.jsx';
 // get the Blaze account informaiton 
 
 // App component - represents the whole app
-class Create extends Component {
+class createBoard extends Component {
   constructor(props) {
     super(props);
 
@@ -172,7 +172,7 @@ class Create extends Component {
 }
 
 console.log(Tasks.find().fetch());
-Create.propTypes = {
+createBoard.propTypes = {
   tasks: PropTypes.array.isRequired,
   scavenger_hunts: PropTypes.array.isRequired,
   incompleteCount: PropTypes.number.isRequired,
@@ -190,4 +190,4 @@ export default createContainer(() => {
     incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
     currentUser: Meteor.user(),
   };
-}, Create);
+}, createBoard);

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
+
 import ReactDOM from 'react-dom';
 
 //start startup files
 import '../imports/startup/accounts-config.js';
 
-import App from '../imports/ui/App';
+import Main from '../imports/ui/Main.js';
+import routes from '../imports/startup/client/routes';
+
+
 Meteor.startup(() => {
-	ReactDOM.render(<App />,document.getElementById("app"));
+	ReactDOM.render(routes ,document.getElementById("app"));
 });
-
-
-import './main.html';
-import '/imports/startup/client';
