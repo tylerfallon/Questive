@@ -18,6 +18,7 @@ class Create extends Component {
     this.state = {
       hideForm: false,
       title: "Franks Title",
+      title_id: "",
 
     };
   }
@@ -25,17 +26,26 @@ class Create extends Component {
     event.preventDefault();
     // let title = ReactDOM.findDOMNode(this.refs.title).trim();
     // console.log(title);
-    this.setState({
-      title:this._title.value
-    });
+    
     const title_obj = {
       title:this._title.value,
       user:Meteor.user()
     };
-    console.log(title_obj);
-
-    Meteor.call('scavenger_hunts.insert',title_obj);
-
+    // console.log(title_obj);
+    let temp_id ="temp"
+    Meteor.call('scavenger_hunts.insert',title_obj)
+    // calling our db to find the most recent value entered 
+    let object = Meteor.call("scavenger_hunts.findOne",function(error,data){
+      console.log("id Check");
+      console.log(data[0]._id);
+      temp_id = data[0]._id;
+    });
+    this.setState({
+      title:this._title.value,
+      title_id:temp_idds
+    });
+   
+    
     this._title.value = "";
   }
 
@@ -45,7 +55,7 @@ class Create extends Component {
     // Find the text field via the React ref
     const object_task = {
       user: Meteor.user(),
-      title: this.state.title,
+      title_id: this.state.title_id,
       text : ReactDOM.findDOMNode(this.refs.textInput).value.trim(),
       location: ReactDOM.findDOMNode(this.refs.location_text).value.trim()
     };

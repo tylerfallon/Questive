@@ -24,7 +24,7 @@ Meteor.methods({
     let title = object.title;
     let task = object.text;
     let location = object.location;
-    check(title, String)
+    
     check(task, String);
     check(location, String);
 

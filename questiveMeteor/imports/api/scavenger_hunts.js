@@ -28,6 +28,7 @@ Meteor.methods({
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username,
     });
+
   },
 
   'scavenger_hunts.remove'(scavengerId) {
@@ -39,6 +40,11 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
     Scavenger_Hunts.remove(scavengerId);
+  },
+  // this function searches our db to get the most recent value entered 
+  "scavenger_hunts.findOne"(){
+
+    return Scavenger_Hunts.find({},{sort:{ createdAt:-1 }, limit:1 }).fetch();
   },
 
 } ) ;
