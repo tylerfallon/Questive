@@ -5,6 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 // inport the database information fro tasks api
 import { Tasks } from '../../api/tasks.js';
+import { Scavenger_Hunts } from '../../api/scavenger_hunts.js';
 // import tasks ux.  just like react components 
 import Task from './Task.jsx';
 // get the Blaze account informaiton 
@@ -17,6 +18,7 @@ class Create extends Component {
     this.state = {
       hideForm: false,
       title: "Franks Title",
+
     };
   }
   handleTitleSubmit(event){
@@ -24,9 +26,16 @@ class Create extends Component {
     // let title = ReactDOM.findDOMNode(this.refs.title).trim();
     // console.log(title);
     this.setState({
-      hideForm: !this.state.hide,
       title:this._title.value
     });
+    const title_obj = {
+      title:this._title.value,
+      user:Meteor.user()
+    };
+    console.log(title_obj);
+
+    Meteor.call('scavenger_hunts.insert',title_obj);
+
     this._title.value = "";
   }
 
@@ -155,6 +164,7 @@ class Create extends Component {
 console.log(Tasks.find().fetch());
 Create.propTypes = {
   tasks: PropTypes.array.isRequired,
+  scavenger_hunts: PropTypes.array.isRequired,
   incompleteCount: PropTypes.number.isRequired,
   currentUser: PropTypes.object,
 };
@@ -162,8 +172,10 @@ Create.propTypes = {
 export default createContainer(() => {
   //Subscribe to tasks 
   Meteor.subscribe('tasks');
+  Meteor.subscribe('scavenger_hunts');
 
   return {
+    scavenger_hunts:Scavenger_Hunts.find({}).fetch(),
     tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
     incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
     currentUser: Meteor.user(),
