@@ -17,6 +17,7 @@
 //   });
 // }
 
+
 // Meteor.methods({
 //   // add information to our task db
 //   'tasks.insert'(object) {
