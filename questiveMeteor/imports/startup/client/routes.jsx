@@ -1,12 +1,10 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import { App } from '../../ui/layouts/app.jsx';
-import { Index } from '../../ui/index.jsx';
+import Create from '../../ui/create.js';
+import Leaderboards from '../../ui/leaderboards.js';
+import Main from '../../ui/Main.js';
 
-import { Create } from '../../ui/Children/create_hunt.jsx';
-import { Leaderboard } from '../../ui/Children/Leaderboard.jsx';
-import { Task } from '../../ui/Children/Task.jsx';
 
 // import { One } from '../../ui/pages/one.jsx';
 // import { Two } from '../../ui/pages/two.jsx';
@@ -15,20 +13,11 @@ import { Task } from '../../ui/Children/Task.jsx';
 
 const routes = (
     <Router history={ browserHistory }>
-      <Route path="/" component={ App }>
-       <IndexRoute component={ Index } />
-
-        <Route path="/create" component={ Create } />
-        <Route path="/leaderboard" component={ Leaderboard } />
-        <Route path="/task" component={ Task } />
-
-
-      </Route>
-   
+      	<Route path="/" component={Main}>
+      		<Route path="Leaderboards" component={Leaderboards}/>
+      		<Route path="Create" component={Create}/>
+      	</Route>
     </Router>
-
-
-
     );
 
 export default routes;

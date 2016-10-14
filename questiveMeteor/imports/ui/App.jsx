@@ -24,10 +24,10 @@ class App extends Component {
         <h1> QUESTIVE: LIVE OUTSIDE YOUR SCREENS</h1>
         <AccountsUIWrapper />
         <div>
-          <a href ="#"> Home</a>
-          <a href ="#"> Leaderboards</a>
-          <a href = "#"> New Hunt</a>
-          <a href = "#"> Available hunts</a>
+          <a href ="#/create"> Home</a>
+          <a href ="#/leaderboard"> Leaderboards</a>
+          <a href = "#/task"> New Hunt</a>
+          <a href = "#/task"> Available hunts</a>
 
         </div>
       {/* Display leaderboard component */}

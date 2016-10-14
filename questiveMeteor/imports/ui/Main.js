@@ -50,35 +50,27 @@ var Main = React.createClass({
 
 									<ul className="nav navbar-nav navbar-right">
 									<li><img src={'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png'} height='50' width='50'/></li>
-									<li><a href="#/Create">Create</a></li>
+									<li><a href="/Create">Create</a></li>
 									</ul>
 
 	<ul className="nav navbar-nav navbar-right">
 									<li><img src={'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png'} height='50' width='50'/></li>
-									<li><a href="#/join">Join</a></li>
+									<li><a href="/join">Join</a></li>
 									</ul>
 
 							<ul className="nav navbar-nav navbar-right">
 									<li><img src={'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png'} height='50' width='50'/></li>
-									<li><a href="#/leaderboards">Leaderboards</a></li>
+									<li><a href="/Leaderboards">Leaderboards</a></li>
 								</ul>
 
 			<ul className="nav navbar-nav navbar-right navbar-for-responsiveness">
 									<li><img src={'https://openclipart.org/download/247319/abstract-user-flat-3.svg'} height='50' width='50'/></li>
-									<li><a href="#/profile">Profile</a></li>
+									<li><a href="/profile">Profile</a></li>
 									</ul>
 							</div>
 						</div>
 					</nav>
 
-
-
-
-
-
-
-					{/*Here we will load the sub components (Search or Saved */}
-					{/*These sub-components are getting passed as this.props.children*/}
 					{this.props.children}
 
 		
@@ -92,4 +84,4 @@ var Main = React.createClass({
 });
 
 // Export the module back to the route
-module.exports = Main;
+export default Main;

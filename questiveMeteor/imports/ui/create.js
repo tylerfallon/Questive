@@ -2,7 +2,6 @@ var React = require('react');
 var Router = require('react-router');
 var Query = require('./Search/Query');
 var Results = require('./Search/Results');
-var helpers = require('../utils/helpers');
 var ReactDOM = require('react-dom');
 import { Button } from 'react-bootstrap';
 import { Checkbox } from 'react-bootstrap';
@@ -117,4 +116,4 @@ var Create = React.createClass({
 }
 
 });
-module.exports = Create;
+export default Create;

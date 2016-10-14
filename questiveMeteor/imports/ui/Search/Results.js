@@ -3,7 +3,6 @@ var React = require('react');
 var Router = require('react-router');
 
 // Include the Helper (for the query)
-var helpers = require('../../utils/helpers');
 
 // Query Component Declaration
 var Results = React.createClass({ 

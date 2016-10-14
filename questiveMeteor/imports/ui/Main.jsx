@@ -14,7 +14,7 @@ import AccountsUIWrapper from './UIWrapper.jsx';
 
 
 // export const MainLayout = ({content}) => (
-class Main extends Component {
+class MainFrank extends Component {
 
 	render(){
 
