@@ -13,14 +13,6 @@ import AccountsUIWrapper from './UIWrapper.jsx';
 
 
 
-// var bgColors = { "Default": "#e3f2fd",
-//                     "Blue": "#00B1E1",
-//                     "Cyan": "#37BC9B",
-//                     "Green": "#8CC152",
-//                     "Red": "#E9573F",
-//                     "Yellow": "#F6BB42",
-// };
-
 // export const MainLayout = ({content}) => (
 class Main extends Component {
 

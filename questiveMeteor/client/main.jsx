@@ -8,3 +8,7 @@ import App from '../imports/ui/App';
 Meteor.startup(() => {
 	ReactDOM.render(<App />,document.getElementById("app"));
 });
+
+
+import './main.html';
+import '/imports/startup/client';
