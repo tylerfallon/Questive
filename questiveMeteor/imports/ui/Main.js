@@ -103,6 +103,7 @@ var Main = React.createClass({
               <div className="title">  <div className="card-panel col s12" id="about">
                     <h3 className="center"><p className='left'>Learn more about us.</p></h3>
                     <p className="center">Please learn more.</p>
+
                     <p className="center">
                       Pls.
                     </p>

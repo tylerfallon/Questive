@@ -6,16 +6,18 @@ a {
 
 a:hover {
 	color: blue;
+ 
 }
-
 
 .navbar {
 
-    padding: 10px;
-    margin-bottom: 0px;
-    border-radius: 0px;
-    
-}
+            padding: 10px;
+            margin-bottom: 0px;
+            border-radius: 0px;
+            background-color: yellow;
+            
+        }
+
  .navbar-toggle, .icon-bar {
     border: 2px solid white;
 }
@@ -30,6 +32,7 @@ a:hover {
             perspective: 300px;
             -webkit-perspective-origin-x: 100%;
             perspective-origin-x: 100%;
+            margin-bottom: 0px;
         }
 
         .parallax__group {
@@ -243,7 +246,33 @@ a:hover {
             text-align: center;
         }
 
+
         /* Media Queries */
+
+        @media screen and (max-width: 400px) {
+            p {
+                font-size: 12px;
+            }
+
+            h3{
+                font-size: 12px;
+            }
+        }
+
+         @media screen and (max-width: 600px) {
+            p {
+                font-size: 16px;
+
+            }
+
+            h3 {
+                font-size: 16px;
+
+            }
+            
+        }
+
+    
 
         @media screen and (max-width: 600px) {
 
