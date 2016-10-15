@@ -29,7 +29,7 @@ var Main = React.createClass({
 									<span className="icon-bar"></span>
 									<span className="icon-bar"></span>
 								</button>
-								<img src={'https://s10.postimg.org/dfh868909/Questive_Logo.png'} height='50' width='150' className="logoArea"/>
+								<a href='/profile'><img src={'https://s10.postimg.org/dfh868909/Questive_Logo.png'} height='50' width='150' className="logoArea"/></a>
 							</div>
 
 
@@ -68,11 +68,6 @@ var Main = React.createClass({
 			<ul className="nav navbar-nav navbar-right navbar-for-responsiveness">
 									<li><img src={'https://openclipart.org/download/247319/abstract-user-flat-3.svg'} height='48' width='48'/></li>
 									<li><a href="/profile">Profile</a></li>
-									</ul>
-
-									<ul className="nav navbar-nav navbar-right">
-										<li><img src={'https://s-media-cache-ak0.pinimg.com/originals/e2/5c/43/e25c43c6a65bdca84c72f0c58524fcd6.png'} height='48' width='48'/></li>
-										<li><a href="#/index">Home</a></li>
 									</ul>
 							</div>
 						</div>
