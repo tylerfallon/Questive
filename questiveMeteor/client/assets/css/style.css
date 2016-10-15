@@ -209,10 +209,15 @@ a:hover {
         }
 
         .whatIs {
-            color: rgba(52,152,219);
+            /*color: rgba(52,152,219);*/
+            color: black;
         }
 
+        .bg-info {
 
+            margin-bottom: 0px;
+            border-radius: 0px;
+        }
         .imageScale {
                 margin-bottom: 10px;
                 text-align: center;
