@@ -5,20 +5,19 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 //Require Schemas
-var Article = require('./server/model.js');
 
 // Create Instance of Express
 var app = express();
 var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
 
-// Run Morgan for Logging
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({type:'application/vnd.api+json'}));
+// // Run Morgan for Logging
+// app.use(logger('dev'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.text());
+// app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-app.use(express.static('./public'));
+app.use(express.static(process.cwd() + "/public"));
 
 // -------------------------------------------------
 
@@ -39,58 +38,60 @@ db.once('open', function () {
 // -------------------------------------------------
 
 // Main Route
-app.get('/', function(req, res){
-	res.sendFile('./public/index.html');
-})
-
-// Route to get all saved articles
-app.get('/api/saved', function(req, res) {
-
-	Article.find({})
-		.exec(function(err, doc){
-
-			if(err){
-				console.log(err);
-			}
-			else {
-				res.send(doc);
-			}
-		})
+app.get("*", function(req, res) {
+	console.log(0);
+  res.sendFile(__dirname + "/public/index.html");
 });
 
-// Route to add an article to saved list
-app.post('/api/saved', function(req, res){
-	var newArticle = new Article(req.body);
 
-	console.log(req.body)
+// // Route to get all saved articles
+// app.get('/api/saved', function(req, res) {
 
-	var title = req.body.title;
-	var date = req.body.date;
-	var url = req.body.url;
+// 	Article.find({})
+// 		.exec(function(err, doc){
 
-	newArticle.save(function(err, doc){
-		if(err){
-			console.log(err);
-		} else {
-			res.send(doc._id);
-		}
-	});
-});
+// 			if(err){
+// 				console.log(err);
+// 			}
+// 			else {
+// 				res.send(doc);
+// 			}
+// 		})
+// });
 
-// Route to delete an article from saved list
-app.delete('/api/saved/', function(req, res){
+// // Route to add an article to saved list
+// app.post('/api/saved', function(req, res){
+// 	var newArticle = new Article(req.body);
 
-	var url = req.param('url');
+// 	console.log(req.body)
 
-	Article.find({"url": url}).remove().exec(function(err, data){
-		if(err){
-			console.log(err);
-		}
-		else {
-			res.send("Deleted");
-		}
-	});
-});
+// 	var title = req.body.title;
+// 	var date = req.body.date;
+// 	var url = req.body.url;
+
+// 	newArticle.save(function(err, doc){
+// 		if(err){
+// 			console.log(err);
+// 		} else {
+// 			res.send(doc._id);
+// 		}
+// 	});
+// });
+
+// // Route to delete an article from saved list
+// app.delete('/api/saved/', function(req, res){
+
+// 	var url = req.param('url');
+
+// 	Article.find({"url": url}).remove().exec(function(err, data){
+// 		if(err){
+// 			console.log(err);
+// 		}
+// 		else {
+// 			res.send("Deleted");
+// 		}
+// 	});
+// });
 
 
 // -------------------------------------------------
