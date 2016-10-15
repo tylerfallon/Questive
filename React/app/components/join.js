@@ -1,84 +1,113 @@
+// Include React and React-Router dependencies
 var React = require('react');
-var Router = require('react-router');
-var Query = require('./Search/Query');
-var Results = require('./Search/Results');
-var helpers = require('../utils/helpers');
+import { PageHeader } from 'react-bootstrap';
 
-var Join = React.createClass({
+// Query Component Declaration
+var Join = React.createClass({ 
 
-	/*Here we set the initial state variables (this allows us to propagate the variables for maniuplation by the children components*/
-	/*Also note the "resuls" state. This will be where we hold the data from our results*/
+	// Here we set initial variables for the component to be blanks
 	getInitialState: function(){
-		return { 
-			queryTerm: "",
-			startYear: "",
-			endYear: "",
-			results: {}
+		return {
+			search: ""
 		}
 	},
 
+	// Whenever we detect ANY change in the textbox, we register it. 
+    handleChange: function(event) {
+    	console.log("TEXT CHANGED");
 
-	/*This function gets called if the user searches for a completely new set of parameters (i.e. if any of the search terms changes)*/
-	/*If the user searches for the exact same thing, then React will ignore it.*/
-	componentDidUpdate: function(prevProps, prevState){
-		console.log("COMPONENT UPDATED");
-		console.log(this.state.queryTerm);
-		console.log(this.state.startYear);
-		console.log(this.state.endYear);
+    	// Here we create syntax to capture any change in text to the query terms (pre-search).
+    	// See this Stack Overflow answer for more details: 
+    	// http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
+    	var newState = {};
+    	newState[event.target.id] = event.target.value;
+    	this.setState(newState);
+    },
 
-		console.log("Previous State", prevState);
-
-		
-		if (this.state.queryTerm != "" && (prevState.queryTerm != this.state.queryTerm || prevState.startYear != this.state.startYear || prevState.endYear != this.state.endYear))
-		{
-			helpers.runQuery(this.state.queryTerm, this.state.startYear, this.state.endYear)
-				.then(function(data){
-					if (data != this.state.results)
-					{
-						this.setState({
-							results: data
-						})		
-					}
-
-				// console.log("RESULTS", results)
-				// console.log("DATA", data)
-
-				// This code is necessary to bind the keyword "this" when we say this.setState 
-				// to actually mean the component itself and not the runQuery function.
-				}.bind(this))			
-		}
+	/*This code handles the sending of the search terms to the parent Search component*/
+	handleSubmit: function(){
+		console.log("CLICKED");
+		this.props.updateSearch(this.state.search);
+		return false;
 	},
 
-	// This function will be passed down into children components so they can change the "parent"
-	// i.e we will pass this method to the query component that way it can change the main component 
-	// to perform a new search
-	setQuery: function(newQuery, newStart, newEnd){
-		console.log("TEST");
-		this.setState({
-			queryTerm: newQuery,
-			startYear: newStart,
-			endYear: newEnd
-		})
-	},
-
-	/*Render the function. Note how we deploy both the Query and the Results*/
+	// Here we render the Query component
 	render: function(){
-		console.log("Render Results", this.state.results)
 
 		return(
+			<div className ="main-container">
 
-			<div className="main-container"> 
+					<div className="row">
+						<div className="col-lg-12">
 
-				{/*Note how we pass the setQuery function to enable Query to perform searches*/}
-				<Query updateSearch={this.setQuery} />
+							<div className="navbar navbar-light bg-default">
+								<div className="panel-heading">
+									<h1 className="panel-title"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i>  Search for a Contest</strong></h1>
+								</div>
+								<div className="panel-body">
 
-				{/*Note how we pass in the results into this component*/}
-				<Results results={this.state.results}/>
+									{/*Note how we associate the text-box inputs with the state values*/}
+									<form>
+										<div className="form-group">
+											<h4 className=""><strong>Topic</strong></h4>
+											<input type="text" value={this.state.value} className="form-control " id="search" onChange= {this.handleChange} required/>
+
+								
+										</div>
+
+										
+										<div className="pull-left">
+											<button type="button" className="btn btn-danger" onClick={this.handleSubmit}><h4>Submit</h4></button>
+										</div>
+									</form>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+<center><PageHeader>OR</PageHeader></center>
+					<div className="row">
+						<div className="col-lg-12">
+
+							<div className="navbar navbar-light bg-default">
+								<div className="panel-heading">
+									<h1 className="panel-title"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i>  See All Current Contests</strong></h1>
+								</div>
+								<div className="panel-body">
+
+									{/*Note how we associate the text-box inputs with the state values*/}
+									<form>
+										<div className="form-group">
+	
+										</div>
+
+										
+										<div className="pull-left">
+											<button type="button" className="btn btn-danger" onClick={this.handleSubmit}><h4>Populate List</h4></button>
+										</div>
+									</form>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
 
 			</div>
 
+
+
+
+
+
+
+
+
 		)
 	}
+
+
 });
 
 // Export the module back to the route

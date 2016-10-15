@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-//Require Schemas
+
 
 // Create Instance of Express
 var app = express();

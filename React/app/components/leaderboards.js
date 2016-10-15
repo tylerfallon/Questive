@@ -1,8 +1,5 @@
 var React = require('react');
 var Router = require('react-router');
-var Query = require('./Search/Query');
-var Results = require('./Search/Results');
-var helpers = require('../utils/helpers');
 import { Button } from 'react-bootstrap';
 
 

@@ -1,16 +1,42 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
 a {
-	color: white;
+    color: white;
 }
 
 a:hover {
-	color: blue;
+    color: white;
 }
 
+a:link {
+    text-decoration: none;
+    color: white;
+}
 
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a:active {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+.navbar {
+
+            padding: 0px;
+            margin-bottom: -10px;
+            border-radius: 0px;
+        }
  .navbar-toggle, .icon-bar {
     border: 2px solid white;
 }
-
  .parallax {
             height: 200px;
             /* fallback for older browsers */
@@ -21,6 +47,7 @@ a:hover {
             perspective: 300px;
             -webkit-perspective-origin-x: 100%;
             perspective-origin-x: 100%;
+            margin-bottom: 0px;
         }
 
         .parallax__group {
@@ -68,20 +95,6 @@ a:hover {
         /* demo styles
   --------------------------------------------- */
 
-        body,
-        html {
-            
-        }
-
-        body {
-            font: 100% / 1.5 Arial;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
         .parallax {
             font-size: 200%;
         }
@@ -115,11 +128,11 @@ a:hover {
         /*landing*/
         #group2 {
             z-index: 3;
-            background: rgb(52,152,219);
+            background: rgb(93,188,210);
         }
 
         #group2 .parallax__layer--back {
-            background: rgb(52,152,219);
+            background: rgb(93,188,210);
         }
         /*about*/
         #group3 {
@@ -128,7 +141,7 @@ a:hover {
         }
 
         #group3 .parallax__layer--base {
-            background: rgb(153, 216, 101);
+            background: rgb(93,188,210);
             background-color: #fff;
             background-image: url('../img/weirdblue.png')
 
@@ -140,7 +153,7 @@ a:hover {
         }
 
         #group4 .parallax__layer--deep {
-            background: rgb(52,152,219);
+            background: rgb(93,188,210);
         }
         /*contact us*/
         #group5 {
@@ -150,7 +163,7 @@ a:hover {
 
         #group5 .parallax__layer--base {
          background: white;
-         color: rgb(52,152,219);
+         color: rgb(93,188,210);
         }
 
         #group6 {
@@ -159,7 +172,7 @@ a:hover {
         }
 
         #group6 .parallax__layer--back {
-           background: rgb(52,152,219);
+           background: rgb(93,188,210);
         }
 
         #group7 {
@@ -168,7 +181,7 @@ a:hover {
         }
 
         #group7 .parallax__layer--base {
-         background: rgb(52,152,219);
+         background: rgb(93,188,210);
         }
         /* misc
   --------------------------------------------- */
@@ -204,5 +217,199 @@ a:hover {
         }
 
         .whatIs {
-            color: rgb(52,152,219);
+            /*color: rgba(52,152,219);*/
+            color: black;
         }
+
+        .imageScale {
+                margin-bottom: 10px;
+                text-align: center;
+
+            }
+
+        .strong {
+
+            font-weight: 800;
+        }
+
+        .tags {
+
+            padding-right: 10px;
+        }
+
+        .justify {
+
+            text-align: justify;
+        }
+
+        .col-sm-5 {
+
+            text-align: center;
+        }
+
+
+        /* Media Queries */
+
+        @media screen and (max-width: 400px) {
+            p {
+                font-size: 12px;
+            }
+
+            h3{
+                font-size: 12px;
+            }
+        }
+
+         @media screen and (max-width: 600px) {
+            p {
+                font-size: 16px;
+
+            }
+
+            h3 {
+                font-size: 16px;
+
+            }
+            
+        }
+
+    
+
+        @media screen and (max-width: 600px) {
+
+            .navbar {
+
+                text-align: left;
+
+            }
+
+            .logoArea {
+                margin-top: 5px;
+                
+            }
+
+            .imageScale {
+                width: 30%;
+                margin-left: 10px;
+                text-align: center;
+
+            }
+
+            .headMain {
+                text-align: center;
+                display: inline;
+                font-size: 24px;
+                font-weight: 800;
+             
+            }
+
+            .emphasis {
+
+                padding-top: 10px;
+
+            }
+
+            p {
+                display: inline-block;
+
+            }
+
+
+            span.tags {
+
+                margin-left: 5px;
+            
+            }
+            
+           
+
+        }
+body
+{
+    font-family: 'Lato', 'sans-serif';
+    }
+.profile 
+{
+    min-height: 355px;
+    display: inline-block;
+    }
+figcaption.ratings
+{
+    margin-top:20px;
+    }
+figcaption.ratings a
+{
+    color:#f1c40f;
+    font-size:11px;
+    }
+figcaption.ratings a:hover
+{
+    color:#f39c12;
+    text-decoration:none;
+    }
+.divider 
+{
+    border-top:1px solid rgba(0,0,0,0.1);
+    }
+.emphasis 
+{
+    border-top: 4px solid transparent;
+    }
+.emphasis:hover 
+{
+    border-top: 4px solid #1abc9c;
+    }
+.emphasis h2
+{
+    margin-bottom:0px;
+    }
+span.tags 
+{
+    background: #1abc9c;
+    border-radius: 2px;
+    color: #f5f5f5;
+    font-weight: bold;
+    padding: 2px 4px;
+    }
+.dropdown-menu 
+{
+    background-color: #34495e;    
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    width: 250px;
+    margin-left: -125px;
+    left: 50%;
+    }
+.dropdown-menu .divider 
+{
+    background:none;    
+    }
+.dropdown-menu>li>a
+{
+    color:#f5f5f5;
+    }
+.dropup .dropdown-menu 
+{
+    margin-bottom:10px;
+    }
+.dropup .dropdown-menu:before 
+{
+    content: "";
+    border-top: 10px solid #34495e;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+    z-index: 10;
+    }
+
+.theNavBar {
+    background-color: rgb(93,188,210);
+}
+
+span {
+    padding: 5px;
+    margin: 5px;
+}
