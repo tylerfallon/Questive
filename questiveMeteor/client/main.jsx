@@ -11,5 +11,5 @@ import routes from '../imports/startup/client/routes';
 
 
 Meteor.startup(() => {
-	ReactDOM.render(Main, document.getElementById("app"));
+	ReactDOM.render(routes ,document.getElementById("app"));
 });
