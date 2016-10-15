@@ -27439,7 +27439,7 @@
 					{ className: 'container' },
 					React.createElement(
 						'nav',
-						{ className: 'bg-warning navbar-dark theNavBar' },
+						{ className: 'bg-info navbar-dark theNavBar' },
 						React.createElement(
 							'div',
 							{ className: 'container-fluid' },
@@ -27448,7 +27448,7 @@
 								{ className: 'navbar-header' },
 								React.createElement(
 									'a',
-									{ href: '/' },
+									{ href: '#/' },
 									React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
 								)
 							),
@@ -27456,74 +27456,58 @@
 								'div',
 								{ className: 'collapse navbar-collapse navbar-ex1-collapse' },
 								React.createElement(
-									'ul',
+									'span',
 									{ className: 'nav navbar-nav navbar-right' },
 									React.createElement(
-										'li',
-										null,
-										React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' })
-									),
-									React.createElement(
-										'li',
-										null,
+										'span',
+										{ 'class': 'navWords' },
 										React.createElement(
 											'a',
 											{ href: '#/Create', 'class': 'navWords' },
-											'Create'
+											React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' }),
+											' Create'
 										)
 									)
 								),
 								React.createElement(
-									'ul',
+									'span',
 									{ className: 'nav navbar-nav navbar-right' },
 									React.createElement(
-										'li',
-										null,
-										React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' })
-									),
-									React.createElement(
-										'li',
-										null,
+										'span',
+										{ 'class': 'navWords' },
 										React.createElement(
 											'a',
 											{ href: '#/join', 'class': 'navWords' },
-											'Join'
+											React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' }),
+											' Join'
 										)
 									)
 								),
 								React.createElement(
-									'ul',
+									'span',
 									{ className: 'nav navbar-nav navbar-right' },
 									React.createElement(
-										'li',
-										null,
-										React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' })
-									),
-									React.createElement(
-										'li',
-										null,
+										'span',
+										{ 'class': 'navWords' },
 										React.createElement(
 											'a',
 											{ href: '#/Leaderboards', 'class': 'navWords' },
-											'Leaderboards'
+											React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' }),
+											' Leaderboards'
 										)
 									)
 								),
 								React.createElement(
-									'ul',
+									'span',
 									{ className: 'nav navbar-nav navbar-right navbar-for-responsiveness' },
 									React.createElement(
-										'li',
-										null,
-										React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' })
-									),
-									React.createElement(
-										'li',
-										null,
+										'span',
+										{ 'class': 'navWords' },
 										React.createElement(
 											'a',
 											{ href: '#/profile', 'class': 'navWords' },
-											'Profile'
+											React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' }),
+											' Profile'
 										)
 									)
 								)
