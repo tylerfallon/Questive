@@ -8,9 +8,13 @@ a:hover {
 	color: blue;
 }
 
+
 .navbar {
 
     padding: 10px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    
 }
  .navbar-toggle, .icon-bar {
     border: 2px solid white;
@@ -213,11 +217,6 @@ a:hover {
             color: black;
         }
 
-        .bg-info {
-
-            margin-bottom: 0px;
-            border-radius: 0px;
-        }
         .imageScale {
                 margin-bottom: 10px;
                 text-align: center;
@@ -291,7 +290,9 @@ a:hover {
                 margin-left: 5px;
             
             }
-        
+            
+           
+
         }
 body
 {
@@ -330,7 +331,7 @@ figcaption.ratings a:hover
     }
 .emphasis h2
 {
-    margin-bottom:0;
+    margin-bottom:0px;
     }
 span.tags 
 {
