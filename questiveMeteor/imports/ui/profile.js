@@ -23,7 +23,7 @@ var Profile = React.createClass({
                 </div>             
                 <div className="col-xs-12 col-sm-4 text-center">
                   <figure>
-                    <img src="https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg" alt className="img-circle img-responsive" />
+                    <img src="https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg" alt className="img-circle img-responsive img-prof" />
                   </figure>
                 </div>
               </div>            
