@@ -22,8 +22,10 @@ var _counter = 0;
 var Create = React.createClass({
 	render: function(){
 		return(
+      <div class="add">
 			<div className="main-container"> 
-<center><PageHeader>Create a contest</PageHeader></center>
+      <div className="container">
+<center><PageHeader>Create A Contest</PageHeader></center>
 <div></div>
 <form>
       <ControlLabel>Contest Name</ControlLabel>
@@ -38,7 +40,7 @@ var Create = React.createClass({
       <ControlLabel>Add the instructions for your contest below! Click to Expand.</ControlLabel>
     </FormGroup>
 
-   <Panel collapsible defaultExpanded={false} header="Item 1">
+   <Panel collapsible defaultExpanded={false} header="Task 1">
     <ListGroup fill>
       <ListGroupItem>Action: 	<FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
       <ListGroupItem>Location:	<FormControl type="text" placeholder="Enter text"></FormControl> </ListGroupItem>
@@ -47,7 +49,7 @@ var Create = React.createClass({
   </Panel>
 
   
-   <Panel collapsible defaultExpanded={false} header="Item 2">
+   <Panel collapsible defaultExpanded={false} header="Task 2">
     <ListGroup fill>
       <ListGroupItem>Action: 	<FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
       <ListGroupItem>Location:	<FormControl type="text" placeholder="Enter text"></FormControl> </ListGroupItem>
@@ -55,7 +57,7 @@ var Create = React.createClass({
     </ListGroup>
   </Panel>
 
-     <Panel collapsible defaultExpanded={false} header="Item 3">
+     <Panel collapsible defaultExpanded={false} header="Task 3">
     <ListGroup fill>
       <ListGroupItem>Action: 	<FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
       <ListGroupItem>Location:	<FormControl type="text" placeholder="Enter text"></FormControl> </ListGroupItem>
@@ -67,7 +69,7 @@ var Create = React.createClass({
 
 <div id="placeholder">
 	<div id="template">
-   <Panel collapsible defaultExpanded={true} header='Additional Item'>
+   <Panel collapsible defaultExpanded={true} header='Additional Tasks'>
     	<ListGroup fill>
       <ListGroupItem>Action: 	<FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
       <ListGroupItem>Location:	<FormControl type="text" placeholder="Enter text"></FormControl> </ListGroupItem>
@@ -84,8 +86,9 @@ var Create = React.createClass({
 
 
 <Pager>
-    <Pager.Item onClick={this.Add} previous href="#">Add Additional Items &rarr;</Pager.Item>
+    <Pager.Item onClick={this.Add} previous href="#">Add Additional Tasks &rarr;</Pager.Item>
   </Pager>
+
 
   <br />
 
@@ -93,8 +96,9 @@ var Create = React.createClass({
     		<Button bsSize="large" block>Submit Contest</Button>
   			</div>
 </form>
-
+        </div>
 			</div>
+    </div>
 		);
 },
 

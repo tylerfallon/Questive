@@ -207,7 +207,34 @@ a:hover {
         }
 
         .whatIs {
-            color: rgb(52,152,219);
+            color: rgba(52,152,219);
+        }
+
+
+        .imageScale {
+                margin-bottom: 10px;
+                text-align: center;
+
+            }
+
+        .strong {
+
+            font-weight: 800;
+        }
+
+        .tags {
+
+            padding-right: 10px;
+        }
+
+        .justify {
+
+            text-align: justify;
+        }
+
+        .col-sm-5 {
+
+            text-align: center;
         }
 
         /* Media Queries */
@@ -225,6 +252,39 @@ a:hover {
                 
             }
 
+            .imageScale {
+                width: 30%;
+                margin-left: 10px;
+                text-align: center;
+
+            }
+
+            .headMain {
+                text-align: center;
+                display: inline;
+                font-size: 24px;
+                font-weight: 800;
+             
+            }
+
+            .emphasis {
+
+                padding-top: 10px;
+
+            }
+
+            p {
+                display: inline-block;
+
+            }
+
+
+            span.tags {
+
+                margin-left: 5px;
+            
+            }
+        
         }
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 body
