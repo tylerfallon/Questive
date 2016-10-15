@@ -2,68 +2,67 @@
 var React = require('react');
 var Router = require('react-router')
 
-// Create the Main component
 var Home = React.createClass({
 
 	render: function(){
 
 		return(
 			/*We can only render a single div. So we need to group everything inside of this main-container one*/
-			<div className="main-container">
+		<div className="mainDiv">
+			<div className="main-container"> 
+        <div className="parallax">
+          <div id="group2" className="parallax__group">
+            <div className="parallax__layer parallax__layer--base">
+              <center><h3 className="tagline">Discover. Connect. Adventure. <br /> <br />
+              <center><button type="button" className="btn btn-danger center" onClick={this.handleSubmit}><h4>Get Started</h4></button></center><br /></h3></center>                
 
+               <br /><br /> <br />
+             <center><h1 className='center'>Welcome to Questive.</h1></center>
+            </div>
+            <a name="about" />
+            <div className="parallax__layer parallax__layer--back black">
+            </div>
+          </div>
+          
+          <div id="group5" className="parallax__group">
+            <div className="parallax__layer parallax__layer--fore">
+              <div className="title"></div>
+            </div>
+            <div className="parallax__layer parallax__layer--base">
+              <div className="title">  <div className="card-panel" id="about">
+                    <h3 className="center"><p className='left whatIs'>What is Questive?</p></h3>
+                    <p className="center whatIs">Questive is a social web and mobile application that allows you to explore the world around you.</p>
+                    <p className="center whatIs">
+                      Join contests created by other users or create one yourself!
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+			
 
-				<div className="container">
-					{/*Navbar*/}
-					<nav className="navbar navbar-default" role="navigation">
-						<div className="container-fluid">
-							<div className="navbar-header">
-								<button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-									<span className="sr-only">Toggle navigation</span>
-									<span className="icon-bar"></span>
-									<span className="icon-bar"></span>
-									<span className="icon-bar"></span>
-								</button>
-							</div>
-					
-							<div className="collapse navbar-collapse navbar-ex1-collapse">
+          <div id="group7" className="parallax__group">
+            <div className="parallax__layer parallax__layer--fore">
+              <div className="title"></div>
+            </div>
+            <div className="parallax__layer parallax__layer--base">
+              <div className="title">  <div className="card-panel col s12" id="about">
+                    <h3 className="center"><p className='left'>Learn more about us.</p></h3>
+                    <p className="center">Please learn more.</p>
+                    <p className="center">
+                      Pls.
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
 
-								<ul className="nav navbar-nav navbar-left">
-
-									<li><img src={'https://openclipart.org/download/247319/abstract-user-flat-3.svg'} height='50' width='50'/></li>
-									<li><a href="#/search">Profile</a></li>
-									</ul>
-
-										<ul className="nav navbar-nav navbar-right">
-								<li><img src={'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png'} height='50' width='50'/></li>
-									<li><a href="#/saved">Leaderboards</a></li>
-									<li><a href="#/home">Home</a></li>
-									</ul>
-									
-							</div>
-						</div>
-
-					</nav>
-
-
-
-
-
-					{/*Jumbotron*/}
-					<div className="jumbotron">
-						<h2 className="text-center"><strong>(ReactJS) New York Times Article Scrubber</strong></h2>
-						<h3 className="text-center">Search for and save articles of interest.</h3>
-					</div>
-
-
-					{/*Here we will load the sub components (Search or Saved */}
-					{/*These sub-components are getting passed as this.props.children*/}
-					{this.props.children}
-
-				</div>
+			</div>
 
 
 
 			</div>
+		</div>
 		)
 	}
 });
