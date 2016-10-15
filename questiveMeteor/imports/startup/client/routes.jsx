@@ -4,6 +4,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Create from '../../ui/create.js';
 import Leaderboards from '../../ui/leaderboards.js';
 import Main from '../../ui/Main.js';
+import Profile from '../../ui/profile.js';
+import Join from '../../ui/join.js';
 
 
 // import { One } from '../../ui/pages/one.jsx';
@@ -16,6 +18,8 @@ const routes = (
       	<Route path="/" component={Main}>
       		<Route path="Leaderboards" component={Leaderboards}/>
       		<Route path="Create" component={Create}/>
+      		<Route path="Profile" component={Profile}/>
+      		<Route path="Join" component={Join}/>
       	</Route>
     </Router>
     );

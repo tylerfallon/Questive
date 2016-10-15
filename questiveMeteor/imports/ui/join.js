@@ -2,7 +2,6 @@ var React = require('react');
 var Router = require('react-router');
 var Query = require('./Search/Query');
 var Results = require('./Search/Results');
-var helpers = require('../utils/helpers');
 
 var Join = React.createClass({
 
@@ -82,4 +81,4 @@ var Join = React.createClass({
 });
 
 // Export the module back to the route
-module.exports = Join;
+export default Join;

@@ -2,7 +2,6 @@ var React = require('react');
 var Router = require('react-router');
 var Query = require('./Search/Query');
 var Results = require('./Search/Results');
-var helpers = require('../utils/helpers');
 import { Button } from 'react-bootstrap';
 
 var Profile = React.createClass({
@@ -14,4 +13,4 @@ var Profile = React.createClass({
 		)
 	}
 });
-module.exports = Profile;
+export default Profile;
