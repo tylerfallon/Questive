@@ -16,27 +16,18 @@ var Profile = React.createClass({
                 <div className="col-xs-12 col-sm-5">
 
                  <span className="headMain"><p className="strong text-center">Tyler Fallon</p>
-                  <img src="https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg" className="text-center img-circle imageScale" /></span>
+                  <img src="https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg" className="text-center img-circle imageScale" /></span>                  
+                  </div>
 
-                </div>             
-<<<<<<< HEAD
-                <div className="col-xs-12 col-sm-7 text-center">
+                  <div className="col-xs-12 col-sm-7 text-center">
                   <figure className="justify">
                      <p><strong>About: </strong> Full Stack Developer / UI Designer / General Boss </p>
                       <p><strong>Hobbies: </strong> Blackjack UI/UX </p>
                       <p><strong>Contests Completed:</strong></p>
                         <span className="tags">AC Hunt</span>
-                       
-                
-            
-                    </figure>
-                  
-=======
-                <div className="col-xs-12 col-sm-4 text-center">
-                  <figure>
-                    <img src="https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg" alt className="img-circle img-responsive img-prof" />
+                           
                   </figure>
->>>>>>> c2a06401d7362566a97877fbbaaf5c3ba205e76b
+
                 </div>
               </div>            
               <div className="col-xs-12 divider text-center">
@@ -57,7 +48,7 @@ var Profile = React.createClass({
           </div>
         </div>
       </div>
-</div>
+      </div>
 		)
 	}
 });
