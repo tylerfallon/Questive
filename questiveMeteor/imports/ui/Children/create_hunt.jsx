@@ -171,7 +171,6 @@ class createBoard extends Component {
   }
 }
 
-console.log(Tasks.find().fetch());
 createBoard.propTypes = {
   tasks: PropTypes.array.isRequired,
   scavenger_hunts: PropTypes.array.isRequired,
