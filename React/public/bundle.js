@@ -27398,11 +27398,11 @@
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 	var Main = __webpack_require__(236);
-	var Home = __webpack_require__(521);
-	var Profile = __webpack_require__(522);
-	var Leaderboards = __webpack_require__(523);
-	var Join = __webpack_require__(524);
-	var Create = __webpack_require__(525);
+	var Home = __webpack_require__(237);
+	var Profile = __webpack_require__(238);
+	var Leaderboards = __webpack_require__(490);
+	var Join = __webpack_require__(491);
+	var Create = __webpack_require__(492);
 	var Route = Router.Route;
 	var IndexRoute = Router.IndexRoute;
 
@@ -27524,8 +27524,338 @@
 	module.exports = Main;
 
 /***/ },
-/* 237 */,
-/* 238 */,
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// Include React and React-Router dependencies
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(172);
+
+	var Home = React.createClass({
+	  displayName: 'Home',
+
+
+	  render: function render() {
+
+	    return (
+	      /*We can only render a single div. So we need to group everything inside of this main-container one*/
+	      React.createElement(
+	        'div',
+	        { className: 'mainDiv' },
+	        React.createElement(
+	          'div',
+	          { className: 'main-container' },
+	          React.createElement(
+	            'div',
+	            { className: 'parallax' },
+	            React.createElement(
+	              'div',
+	              { id: 'group2', className: 'parallax__group' },
+	              React.createElement(
+	                'div',
+	                { className: 'parallax__layer parallax__layer--base' },
+	                React.createElement(
+	                  'center',
+	                  null,
+	                  React.createElement(
+	                    'h3',
+	                    { className: 'tagline' },
+	                    'Discover. Connect. Adventure. ',
+	                    React.createElement('br', null),
+	                    ' ',
+	                    React.createElement('br', null),
+	                    React.createElement(
+	                      'center',
+	                      null,
+	                      React.createElement(
+	                        'button',
+	                        { type: 'button', className: 'btn btn-danger center', onClick: this.handleSubmit },
+	                        React.createElement(
+	                          'h4',
+	                          null,
+	                          'Get Started'
+	                        )
+	                      )
+	                    ),
+	                    React.createElement('br', null)
+	                  )
+	                ),
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                ' ',
+	                React.createElement('br', null),
+	                React.createElement(
+	                  'center',
+	                  null,
+	                  React.createElement(
+	                    'h1',
+	                    { className: 'center' },
+	                    'Welcome to Questive.'
+	                  )
+	                )
+	              ),
+	              React.createElement('a', { name: 'about' }),
+	              React.createElement('div', { className: 'parallax__layer parallax__layer--back black' })
+	            ),
+	            React.createElement(
+	              'div',
+	              { id: 'group5', className: 'parallax__group' },
+	              React.createElement(
+	                'div',
+	                { className: 'parallax__layer parallax__layer--fore' },
+	                React.createElement('div', { className: 'title' })
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'parallax__layer parallax__layer--base' },
+	                React.createElement(
+	                  'div',
+	                  { className: 'title' },
+	                  '  ',
+	                  React.createElement(
+	                    'div',
+	                    { className: 'card-panel', id: 'about' },
+	                    React.createElement(
+	                      'h3',
+	                      { className: 'center' },
+	                      React.createElement(
+	                        'p',
+	                        { className: 'left whatIs' },
+	                        'What is Questive?'
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      { className: 'center whatIs' },
+	                      'Questive is a social web and mobile application that allows you to explore the world around you.'
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      { className: 'center whatIs' },
+	                      'Join contests created by other users or create one yourself!'
+	                    )
+	                  )
+	                )
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { id: 'group7', className: 'parallax__group' },
+	              React.createElement(
+	                'div',
+	                { className: 'parallax__layer parallax__layer--fore' },
+	                React.createElement('div', { className: 'title' })
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'parallax__layer parallax__layer--base' },
+	                React.createElement(
+	                  'div',
+	                  { className: 'title' },
+	                  '  ',
+	                  React.createElement(
+	                    'div',
+	                    { className: 'card-panel col s12', id: 'about' },
+	                    React.createElement(
+	                      'h3',
+	                      { className: 'center' },
+	                      React.createElement(
+	                        'p',
+	                        { className: 'left' },
+	                        'Learn more about us.'
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      { className: 'center' },
+	                      'Please learn more.'
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      { className: 'center' },
+	                      'Pls.'
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	// Export the module back to the route
+	module.exports = Home;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _reactBootstrap = __webpack_require__(239);
+
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(172);
+
+
+	var Profile = React.createClass({
+	  displayName: 'Profile',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'main-container' },
+	      React.createElement(
+	        'div',
+	        { className: 'container' },
+	        React.createElement(
+	          'div',
+	          { className: 'row' },
+	          React.createElement(
+	            'div',
+	            { className: 'col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6' },
+	            React.createElement(
+	              'div',
+	              { className: 'well profile' },
+	              React.createElement(
+	                'div',
+	                { className: 'col-sm-12' },
+	                React.createElement(
+	                  'div',
+	                  { className: 'col-xs-12 col-sm-5' },
+	                  React.createElement(
+	                    'span',
+	                    { className: 'headMain' },
+	                    React.createElement(
+	                      'p',
+	                      { className: 'strong text-center' },
+	                      'Tyler Fallon'
+	                    ),
+	                    React.createElement('img', { src: 'https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg', className: 'text-center img-circle imageScale' })
+	                  )
+	                ),
+	                React.createElement(
+	                  'div',
+	                  { className: 'col-xs-12 col-sm-7 text-center' },
+	                  React.createElement(
+	                    'figure',
+	                    { className: 'justify' },
+	                    React.createElement(
+	                      'p',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        'About: '
+	                      ),
+	                      ' Full Stack Developer / UI Designer / General Boss '
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        'Hobbies: '
+	                      ),
+	                      ' Blackjack UI/UX '
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        'Contests Completed:'
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'span',
+	                      { className: 'tags' },
+	                      'AC Hunt'
+	                    )
+	                  )
+	                )
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'col-xs-12 divider text-center' },
+	                React.createElement(
+	                  'div',
+	                  { className: 'col-xs-12 col-sm-6' },
+	                  React.createElement(
+	                    'h2',
+	                    null,
+	                    React.createElement(
+	                      'strong',
+	                      null,
+	                      ' 4 '
+	                    )
+	                  ),
+	                  React.createElement(
+	                    'p',
+	                    null,
+	                    React.createElement(
+	                      'small',
+	                      null,
+	                      'Followers'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    'button',
+	                    { className: 'btn btn-success btn-block' },
+	                    React.createElement('span', { className: 'fa fa-plus-circle' }),
+	                    ' Follow '
+	                  )
+	                ),
+	                React.createElement(
+	                  'div',
+	                  { className: 'col-xs-12 col-sm-6' },
+	                  React.createElement(
+	                    'h2',
+	                    null,
+	                    React.createElement(
+	                      'strong',
+	                      null,
+	                      '1'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    'p',
+	                    null,
+	                    React.createElement(
+	                      'small',
+	                      null,
+	                      'Contests Completed'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    'div',
+	                    { className: 'btn-group dropup btn-block' },
+	                    React.createElement(
+	                      'button',
+	                      { type: 'button', className: 'btn btn-primary btn-block' },
+	                      React.createElement('span', { className: 'fa fa-gear' }),
+	                      ' Contact User '
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	module.exports = Profile;
+
+/***/ },
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -46282,370 +46612,7 @@
 	exports.ValidComponentChildren = _ValidComponentChildren3['default'];
 
 /***/ },
-/* 490 */,
-/* 491 */,
-/* 492 */,
-/* 493 */,
-/* 494 */,
-/* 495 */,
-/* 496 */,
-/* 497 */,
-/* 498 */,
-/* 499 */,
-/* 500 */,
-/* 501 */,
-/* 502 */,
-/* 503 */,
-/* 504 */,
-/* 505 */,
-/* 506 */,
-/* 507 */,
-/* 508 */,
-/* 509 */,
-/* 510 */,
-/* 511 */,
-/* 512 */,
-/* 513 */,
-/* 514 */,
-/* 515 */,
-/* 516 */,
-/* 517 */,
-/* 518 */,
-/* 519 */,
-/* 520 */,
-/* 521 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	// Include React and React-Router dependencies
-	var React = __webpack_require__(1);
-	var Router = __webpack_require__(172);
-
-	var Home = React.createClass({
-	  displayName: 'Home',
-
-
-	  render: function render() {
-
-	    return (
-	      /*We can only render a single div. So we need to group everything inside of this main-container one*/
-	      React.createElement(
-	        'div',
-	        { className: 'mainDiv' },
-	        React.createElement(
-	          'div',
-	          { className: 'main-container' },
-	          React.createElement(
-	            'div',
-	            { className: 'parallax' },
-	            React.createElement(
-	              'div',
-	              { id: 'group2', className: 'parallax__group' },
-	              React.createElement(
-	                'div',
-	                { className: 'parallax__layer parallax__layer--base' },
-	                React.createElement(
-	                  'center',
-	                  null,
-	                  React.createElement(
-	                    'h3',
-	                    { className: 'tagline' },
-	                    'Discover. Connect. Adventure. ',
-	                    React.createElement('br', null),
-	                    ' ',
-	                    React.createElement('br', null),
-	                    React.createElement(
-	                      'center',
-	                      null,
-	                      React.createElement(
-	                        'button',
-	                        { type: 'button', className: 'btn btn-danger center', onClick: this.handleSubmit },
-	                        React.createElement(
-	                          'h4',
-	                          null,
-	                          'Get Started'
-	                        )
-	                      )
-	                    ),
-	                    React.createElement('br', null)
-	                  )
-	                ),
-	                React.createElement('br', null),
-	                React.createElement('br', null),
-	                ' ',
-	                React.createElement('br', null),
-	                React.createElement(
-	                  'center',
-	                  null,
-	                  React.createElement(
-	                    'h1',
-	                    { className: 'center' },
-	                    'Welcome to Questive.'
-	                  )
-	                )
-	              ),
-	              React.createElement('a', { name: 'about' }),
-	              React.createElement('div', { className: 'parallax__layer parallax__layer--back black' })
-	            ),
-	            React.createElement(
-	              'div',
-	              { id: 'group5', className: 'parallax__group' },
-	              React.createElement(
-	                'div',
-	                { className: 'parallax__layer parallax__layer--fore' },
-	                React.createElement('div', { className: 'title' })
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'parallax__layer parallax__layer--base' },
-	                React.createElement(
-	                  'div',
-	                  { className: 'title' },
-	                  '  ',
-	                  React.createElement(
-	                    'div',
-	                    { className: 'card-panel', id: 'about' },
-	                    React.createElement(
-	                      'h3',
-	                      { className: 'center' },
-	                      React.createElement(
-	                        'p',
-	                        { className: 'left whatIs' },
-	                        'What is Questive?'
-	                      )
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      { className: 'center whatIs' },
-	                      'Questive is a social web and mobile application that allows you to explore the world around you.'
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      { className: 'center whatIs' },
-	                      'Join contests created by other users or create one yourself!'
-	                    )
-	                  )
-	                )
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { id: 'group7', className: 'parallax__group' },
-	              React.createElement(
-	                'div',
-	                { className: 'parallax__layer parallax__layer--fore' },
-	                React.createElement('div', { className: 'title' })
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'parallax__layer parallax__layer--base' },
-	                React.createElement(
-	                  'div',
-	                  { className: 'title' },
-	                  '  ',
-	                  React.createElement(
-	                    'div',
-	                    { className: 'card-panel col s12', id: 'about' },
-	                    React.createElement(
-	                      'h3',
-	                      { className: 'center' },
-	                      React.createElement(
-	                        'p',
-	                        { className: 'left' },
-	                        'Learn more about us.'
-	                      )
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      { className: 'center' },
-	                      'Please learn more.'
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      { className: 'center' },
-	                      'Pls.'
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-	// Export the module back to the route
-	module.exports = Home;
-
-/***/ },
-/* 522 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _reactBootstrap = __webpack_require__(239);
-
-	var React = __webpack_require__(1);
-	var Router = __webpack_require__(172);
-
-
-	var Profile = React.createClass({
-	  displayName: 'Profile',
-
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'main-container' },
-	      React.createElement(
-	        'div',
-	        { className: 'container' },
-	        React.createElement(
-	          'div',
-	          { className: 'row' },
-	          React.createElement(
-	            'div',
-	            { className: 'col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6' },
-	            React.createElement(
-	              'div',
-	              { className: 'well profile' },
-	              React.createElement(
-	                'div',
-	                { className: 'col-sm-12' },
-	                React.createElement(
-	                  'div',
-	                  { className: 'col-xs-12 col-sm-5' },
-	                  React.createElement(
-	                    'span',
-	                    { className: 'headMain' },
-	                    React.createElement(
-	                      'p',
-	                      { className: 'strong text-center' },
-	                      'Tyler Fallon'
-	                    ),
-	                    React.createElement('img', { src: 'https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg', className: 'text-center img-circle imageScale' })
-	                  )
-	                ),
-	                React.createElement(
-	                  'div',
-	                  { className: 'col-xs-12 col-sm-7 text-center' },
-	                  React.createElement(
-	                    'figure',
-	                    { className: 'justify' },
-	                    React.createElement(
-	                      'p',
-	                      null,
-	                      React.createElement(
-	                        'strong',
-	                        null,
-	                        'About: '
-	                      ),
-	                      ' Full Stack Developer / UI Designer / General Boss '
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      null,
-	                      React.createElement(
-	                        'strong',
-	                        null,
-	                        'Hobbies: '
-	                      ),
-	                      ' Blackjack UI/UX '
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      null,
-	                      React.createElement(
-	                        'strong',
-	                        null,
-	                        'Contests Completed:'
-	                      )
-	                    ),
-	                    React.createElement(
-	                      'span',
-	                      { className: 'tags' },
-	                      'AC Hunt'
-	                    )
-	                  )
-	                )
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'col-xs-12 divider text-center' },
-	                React.createElement(
-	                  'div',
-	                  { className: 'col-xs-12 col-sm-6' },
-	                  React.createElement(
-	                    'h2',
-	                    null,
-	                    React.createElement(
-	                      'strong',
-	                      null,
-	                      ' 4 '
-	                    )
-	                  ),
-	                  React.createElement(
-	                    'p',
-	                    null,
-	                    React.createElement(
-	                      'small',
-	                      null,
-	                      'Followers'
-	                    )
-	                  ),
-	                  React.createElement(
-	                    'button',
-	                    { className: 'btn btn-success btn-block' },
-	                    React.createElement('span', { className: 'fa fa-plus-circle' }),
-	                    ' Follow '
-	                  )
-	                ),
-	                React.createElement(
-	                  'div',
-	                  { className: 'col-xs-12 col-sm-6' },
-	                  React.createElement(
-	                    'h2',
-	                    null,
-	                    React.createElement(
-	                      'strong',
-	                      null,
-	                      '1'
-	                    )
-	                  ),
-	                  React.createElement(
-	                    'p',
-	                    null,
-	                    React.createElement(
-	                      'small',
-	                      null,
-	                      'Contests Completed'
-	                    )
-	                  ),
-	                  React.createElement(
-	                    'div',
-	                    { className: 'btn-group dropup btn-block' },
-	                    React.createElement(
-	                      'button',
-	                      { type: 'button', className: 'btn btn-primary btn-block' },
-	                      React.createElement('span', { className: 'fa fa-gear' }),
-	                      ' Contact User '
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-	module.exports = Profile;
-
-/***/ },
-/* 523 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46825,7 +46792,7 @@
 	module.exports = Leaderboards;
 
 /***/ },
-/* 524 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47000,7 +46967,7 @@
 	module.exports = Join;
 
 /***/ },
-/* 525 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47011,7 +46978,7 @@
 	var Router = __webpack_require__(172);
 	var ReactDOM = __webpack_require__(34);
 
-	var subTasks = __webpack_require__(526);
+	var subTasks = __webpack_require__(493);
 
 	// import dbs 
 
@@ -47220,7 +47187,7 @@
 	module.exports = Create;
 
 /***/ },
-/* 526 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
