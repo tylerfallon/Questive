@@ -10,7 +10,7 @@ var helpers = {
 			location:location,
 			additionalInfo:additionalInfo
 		};
-		return axios.post('/api/post',newTasks)
+		return axios.post('/create/post',newTasks)
 			.then(function(results){
 				console.log('axios results',results._id);
 				return results._id

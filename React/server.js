@@ -4,6 +4,14 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
+// require Schemas
+// users schema
+var Users = require('./models/users.js');
+//require tasks schema
+var Tasks = require('./models/Tasks.js');
+//require scavenger hunt schema
+var ScavengerHunt = require('./models/ScavengerHunt.js');
+
 
 
 // Create Instance of Express
@@ -54,6 +62,14 @@ app.get("*", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.post('/create/saved',function(req, res){
+	// var newTasks = new Tasks(req.body);
+
+	console.log(req.body);
+
+	
+
+});
 
 // // Route to get all saved articles
 // app.get('/api/saved', function(req, res) {

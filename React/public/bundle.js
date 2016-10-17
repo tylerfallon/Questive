@@ -47119,7 +47119,7 @@
 	                      React.createElement(
 	                        _reactBootstrap.ListGroupItem,
 	                        null,
-	                        React.createElement('input', {
+	                        React.createElement(_reactBootstrap.FormControl, {
 	                          type: 'text',
 	                          ref: 'taskText',
 	                          placeholder: 'Default Action'
@@ -47128,7 +47128,7 @@
 	                      React.createElement(
 	                        _reactBootstrap.ListGroupItem,
 	                        null,
-	                        React.createElement('input', {
+	                        React.createElement(_reactBootstrap.FormControl, {
 	                          type: 'text',
 	                          ref: 'addressText',
 	                          placeholder: 'Default Address'
@@ -47137,7 +47137,7 @@
 	                      React.createElement(
 	                        _reactBootstrap.ListGroupItem,
 	                        null,
-	                        React.createElement('input', {
+	                        React.createElement(_reactBootstrap.FormControl, {
 	                          type: 'text',
 	                          ref: 'descriptionText',
 	                          placeholder: 'Default Description'
@@ -47146,7 +47146,7 @@
 	                      React.createElement(
 	                        _reactBootstrap.ListGroupItem,
 	                        null,
-	                        React.createElement('input', {
+	                        React.createElement(_reactBootstrap.FormControl, {
 	                          type: 'submit',
 	                          value: 'Submit'
 	                        })

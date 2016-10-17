@@ -116,28 +116,28 @@ var Create = React.createClass({
                   <form className = "new task" onSubmit={this.handleRequest} >
                     <ListGroup fill>
                       <ListGroupItem>
-                        <input
+                        <FormControl
                           type = "text"
                           ref = "taskText"
                           placeholder="Default Action"
                         />
                       </ListGroupItem>
                       <ListGroupItem>
-                        <input
+                        <FormControl
                           type = "text"
                           ref = "addressText"
                           placeholder="Default Address"
                         />
                       </ListGroupItem>
                       <ListGroupItem>
-                        <input
+                        <FormControl
                           type = 'text'
                           ref ="descriptionText"
                           placeholder = "Default Description"
                         />
                       </ListGroupItem>
                       <ListGroupItem>
-                        <input
+                        <FormControl
                         type = "submit"
                         value = 'Submit'
                         />
