@@ -27460,10 +27460,10 @@
 									{ className: 'nav navbar-nav navbar-right' },
 									React.createElement(
 										'span',
-										{ 'class': 'navWords' },
+										{ className: 'navWords' },
 										React.createElement(
 											'a',
-											{ href: '#/Create', 'class': 'navWords' },
+											{ href: '#/Create', className: 'navWords' },
 											React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' }),
 											' Create'
 										)
@@ -27474,10 +27474,10 @@
 									{ className: 'nav navbar-nav navbar-right' },
 									React.createElement(
 										'span',
-										{ 'class': 'navWords' },
+										{ className: 'navWords' },
 										React.createElement(
 											'a',
-											{ href: '#/join', 'class': 'navWords' },
+											{ href: '#/join', className: 'navWords' },
 											React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' }),
 											' Join'
 										)
@@ -27488,10 +27488,10 @@
 									{ className: 'nav navbar-nav navbar-right' },
 									React.createElement(
 										'span',
-										{ 'class': 'navWords' },
+										{ className: 'navWords' },
 										React.createElement(
 											'a',
-											{ href: '#/Leaderboards', 'class': 'navWords' },
+											{ href: '#/Leaderboards', className: 'navWords' },
 											React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' }),
 											' Leaderboards'
 										)
@@ -27502,10 +27502,10 @@
 									{ className: 'nav navbar-nav navbar-right navbar-for-responsiveness' },
 									React.createElement(
 										'span',
-										{ 'class': 'navWords' },
+										{ className: 'navWords' },
 										React.createElement(
 											'a',
-											{ href: '#/profile', 'class': 'navWords' },
+											{ href: '#/profile', className: 'navWords' },
 											React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' }),
 											' Profile'
 										)
