@@ -16,8 +16,9 @@ import { Pager } from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 var subTasks = require('./create_Subfolder/subTasks');
 
-// import dbs 
-
+// add helper
+var helpers = require('./utils/helpers.js');
+//Create class 
 var Create = React.createClass({
   getInitialState:function(){
     return{
@@ -82,7 +83,12 @@ var Create = React.createClass({
   },
   // submit the click to 
   handleSubmitClick:function(){
-
+    console.log(this.state.tasksArray);
+    // helpers.postSavedTasks
+    helpers.postSavedTasks(this.state.tasksArray)
+      .then(function(data){
+        console.log(data);
+      }.bind(this))
   },
 
 
@@ -174,7 +180,7 @@ var Create = React.createClass({
             <br />
 
             <div className="well">
-              <Button bsSize="large" block >Submit Contest</Button>
+              <Button bsSize="large" block onClick={this.handleSubmitClick}>Submit Contest</Button>
               </div>
             </form>
           </div>
