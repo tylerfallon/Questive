@@ -47011,52 +47011,75 @@
 	var Router = __webpack_require__(172);
 	var ReactDOM = __webpack_require__(34);
 
+	var subTasks = __webpack_require__(526);
 
-	var _counter = 0;
+	// import dbs 
 
 	var Create = React.createClass({
 	  displayName: 'Create',
 
-	  // getInitialState:function(){
-	  //   item:1
-	  // },
-
-	  createField: function createField() {
-	    $('#newField').append(React.createElement(
-	      _reactBootstrap.Panel,
-	      { collapsible: true, defaultExpanded: false, header: 'Additional Item' },
-	      React.createElement(
-	        _reactBootstrap.ListGroup,
-	        { fill: true },
-	        React.createElement(
-	          _reactBootstrap.ListGroupItem,
-	          null,
-	          'Action:  ',
-	          React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
-	        ),
-	        React.createElement(
-	          _reactBootstrap.ListGroupItem,
-	          null,
-	          'Location:  ',
-	          React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' }),
-	          ' '
-	        ),
-	        React.createElement(
-	          _reactBootstrap.ListGroupItem,
-	          null,
-	          'Additional Info: ',
-	          React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
-	        )
-	      )
-	    ));
+	  getInitialState: function getInitialState() {
+	    return {
+	      item: 1,
+	      title: "Default Title",
+	      titleDescription: "Enter a description for your contest",
+	      tasksArray: []
+	    };
 	  },
+	  handleRequest: function handleRequest() {
+
+	    var item = {
+	      title: this.state.title,
+	      tasks: ReactDOM.findDOMNode(this.refs.taskText).value.trim(),
+	      location: ReactDOM.findDOMNode(this.refs.addressText).value.trim(),
+	      additionalInfo: ReactDOM.findDOMNode(this.refs.descriptionText).value.trim()
+	    };
+	    console.log("Checking Item");
+	    console.log(item);
+	    var holder = this.state.tasksArray;
+	    holder.push(item);
+	    console.log("_______________");
+	    console.log('Checking after push');
+	    console.log(holder);
+	    // update state 
+	    this.setState({
+	      tasksArray: holder
+	    });
+	    // reset input fiilds to nothing
+	    ReactDOM.findDOMNode(this.refs.taskText).value = "";
+	    ReactDOM.findDOMNode(this.refs.addressText).value = "";
+	    ReactDOM.findDOMNode(this.refs.descriptionText).value = "";
+	  },
+
 	  //Add new 
 	  Add: function Add() {
-	    _counter++;
+	    //
+	    this.setState({
+	      item: this.state.item + 1
+	    });
+	    console.log(this.state.item);
 	    var oClone = document.getElementById("template").cloneNode(true);
-	    oClone.id += _counter + "";
+	    oClone.id = this.state.item;
 	    document.getElementById("placeholder").appendChild(oClone);
 	  },
+	  handleTitleChange: function handleTitleChange() {
+	    var tempTitle = ReactDOM.findDOMNode(this.refs.titleText).value.trim();
+	    var tempDescription = ReactDOM.findDOMNode(this.refs.titleDescriptionText).value.trim();
+
+	    this.setState({
+	      title: tempTitle,
+	      titleDescription: tempDescription
+	    });
+	  },
+	  renderTasks: function renderTasks() {
+	    console.log(true);
+	    console.log(this.state.tasksArray.length);
+	    var array = this.state.tasksArray;
+	    var place;
+	    // Ask how to display the information 
+	  },
+	  // submit the click to 
+	  handleSubmitClick: function handleSubmitClick() {},
 
 	  render: function render() {
 	    return React.createElement(
@@ -47080,13 +47103,13 @@
 	          React.createElement('div', null),
 	          React.createElement(
 	            'form',
-	            null,
+	            { onChange: this.handleTitleChange },
 	            React.createElement(
 	              _reactBootstrap.ControlLabel,
 	              null,
 	              'Contest Name'
 	            ),
-	            React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Give your contest a title' }),
+	            React.createElement(_reactBootstrap.FormControl, { type: 'text', ref: 'titleText', placeholder: this.state.title }),
 	            React.createElement('br', null),
 	            React.createElement(
 	              _reactBootstrap.FormGroup,
@@ -47096,9 +47119,11 @@
 	                null,
 	                'Contest Description'
 	              ),
-	              React.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Enter a description for your contest' })
+	              React.createElement(_reactBootstrap.FormControl, {
+	                componentClass: 'textarea',
+	                ref: 'titleDescriptionText',
+	                placeholder: this.state.titleDescription })
 	            ),
-	            'gvh ',
 	            React.createElement('br', null),
 	            React.createElement(
 	              _reactBootstrap.FormGroup,
@@ -47110,33 +47135,6 @@
 	              )
 	            ),
 	            React.createElement(
-	              _reactBootstrap.Panel,
-	              { collapsible: true, defaultExpanded: false, header: 'Task 1' },
-	              React.createElement(
-	                _reactBootstrap.ListGroup,
-	                { fill: true },
-	                React.createElement(
-	                  _reactBootstrap.ListGroupItem,
-	                  null,
-	                  'Action:  ',
-	                  React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
-	                ),
-	                React.createElement(
-	                  _reactBootstrap.ListGroupItem,
-	                  null,
-	                  'Location:  ',
-	                  React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' }),
-	                  ' '
-	                ),
-	                React.createElement(
-	                  _reactBootstrap.ListGroupItem,
-	                  null,
-	                  'Additional Info: ',
-	                  React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
-	                )
-	              )
-	            ),
-	            React.createElement(
 	              'div',
 	              { id: 'placeholder' },
 	              React.createElement(
@@ -47144,32 +47142,55 @@
 	                { id: 'template' },
 	                React.createElement(
 	                  _reactBootstrap.Panel,
-	                  { collapsible: true, defaultExpanded: true, header: 'Additional Tasks {this.state.item}' },
+	                  { collapsible: true, defaultExpanded: true, header: 'Task' },
 	                  React.createElement(
-	                    _reactBootstrap.ListGroup,
-	                    { fill: true },
+	                    'form',
+	                    { className: 'new task', onSubmit: this.handleRequest },
 	                    React.createElement(
-	                      _reactBootstrap.ListGroupItem,
-	                      null,
-	                      'Action:  ',
-	                      React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
-	                    ),
-	                    React.createElement(
-	                      _reactBootstrap.ListGroupItem,
-	                      null,
-	                      'Location:  ',
-	                      React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
-	                    ),
-	                    React.createElement(
-	                      _reactBootstrap.ListGroupItem,
-	                      null,
-	                      'Additional Info: ',
-	                      React.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter text' })
+	                      _reactBootstrap.ListGroup,
+	                      { fill: true },
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement('input', {
+	                          type: 'text',
+	                          ref: 'taskText',
+	                          placeholder: 'Default Action'
+	                        })
+	                      ),
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement('input', {
+	                          type: 'text',
+	                          ref: 'addressText',
+	                          placeholder: 'Default Address'
+	                        })
+	                      ),
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement('input', {
+	                          type: 'text',
+	                          ref: 'descriptionText',
+	                          placeholder: 'Default Description'
+	                        })
+	                      ),
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement('input', {
+	                          type: 'submit',
+	                          value: 'Submit'
+	                        })
+	                      )
 	                    )
 	                  )
 	                )
 	              )
 	            ),
+	            this.renderTasks(),
+	            React.createElement('subTasks', null),
 	            React.createElement(
 	              _reactBootstrap.Pager,
 	              null,
@@ -47197,6 +47218,33 @@
 
 	});
 	module.exports = Create;
+
+/***/ },
+/* 526 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _reactBootstrap = __webpack_require__(239);
+
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(172);
+	var ReactDOM = __webpack_require__(34);
+
+
+	var subTasks = React.createClass({
+		displayName: 'subTasks',
+
+		render: function render() {
+			return React.createElement(
+				'h1',
+				null,
+				'"text"'
+			);
+		}
+	});
+
+	module.exports = subTasks;
 
 /***/ }
 /******/ ]);
