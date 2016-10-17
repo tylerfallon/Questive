@@ -14,31 +14,77 @@ import { ListGroup} from 'react-bootstrap';
 import { ListGroupItem } from 'react-bootstrap';
 import { Pager } from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
+var subTasks = require('./create_Subfolder/subTasks');
 
-var _counter = 0;
+// import dbs 
 
 var Create = React.createClass({
-  // getInitialState:function(){
-  //   item:1
-  // },
+  getInitialState:function(){
+    return{
+      item: 1,
+      title: "Default Title",
+      titleDescription:"Enter a description for your contest",
+      tasksArray:[] 
+    }
+  },
+  handleRequest:function(){
 
-   createField: function() {
-  $('#newField').append(
-    <Panel collapsible defaultExpanded={false} header="Additional Item">
-      <ListGroup fill>
-        <ListGroupItem>Action:  <FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
-        <ListGroupItem>Location:  <FormControl type="text" placeholder="Enter text"></FormControl> </ListGroupItem>
-        <ListGroupItem>Additional Info: <FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
-      </ListGroup>
-    </Panel>) 
- }, 
+    var item = {
+      title: this.state.title,
+      tasks: ReactDOM.findDOMNode(this.refs.taskText).value.trim(),
+      location: ReactDOM.findDOMNode(this.refs.addressText).value.trim(),
+      additionalInfo: ReactDOM.findDOMNode(this.refs.descriptionText).value.trim()
+    };
+    console.log("Checking Item");
+    console.log(item);
+    var holder = this.state.tasksArray;
+    holder.push(item);
+    console.log("_______________");
+    console.log('Checking after push');
+    console.log(holder);
+    // update state 
+    this.setState({
+      tasksArray: holder
+    });
+    // reset input fiilds to nothing
+    ReactDOM.findDOMNode(this.refs.taskText).value = "";
+    ReactDOM.findDOMNode(this.refs.addressText).value = "";
+    ReactDOM.findDOMNode(this.refs.descriptionText).value = "";
+
+  },
+
  //Add new 
   Add: function() {
-    _counter++;
+    //
+    this.setState({
+      item: this.state.item + 1
+    }) 
+    console.log(this.state.item);
     var oClone = document.getElementById("template").cloneNode(true);
-    oClone.id += (_counter + "");
+    oClone.id = this.state.item;
     document.getElementById("placeholder").appendChild(oClone);
-  }, 
+  },
+  handleTitleChange: function () {
+    var tempTitle = ReactDOM.findDOMNode(this.refs.titleText).value.trim();
+    var tempDescription = ReactDOM.findDOMNode(this.refs.titleDescriptionText).value.trim();
+   
+    this.setState({
+      title: tempTitle,
+      titleDescription: tempDescription
+    })
+  },
+  renderTasks:function(){
+   console.log(true);
+   console.log(this.state.tasksArray.length);
+   var array = this.state.tasksArray;
+   var place;
+   // Ask how to display the information 
+  },
+  // submit the click to 
+  handleSubmitClick:function(){
+
+  },
+
 
   render: function(){
     return(
@@ -47,47 +93,79 @@ var Create = React.createClass({
           <div className="container">
             <center><PageHeader>Create A Contest</PageHeader></center>
             <div></div>
-            <form>
+            <form onChange = {this.handleTitleChange}>
               <ControlLabel>Contest Name</ControlLabel>
-              <FormControl type="text" placeholder="Give your contest a title"></FormControl>
+              <FormControl type="text" ref = "titleText" placeholder={this.state.title}></FormControl>
               <br />
               <FormGroup controlId="formControlsTextarea">
                 <ControlLabel>Contest Description</ControlLabel>
-                <FormControl componentClass="textarea" placeholder="Enter a description for your contest" />
+                <FormControl 
+                  componentClass="textarea" 
+                  ref = "titleDescriptionText"
+                  placeholder={this.state.titleDescription}/>
               </FormGroup>
-           gvh <br />
+              <br />
             <FormGroup>
               <ControlLabel>Add the instructions for your contest below! Click to Expand.</ControlLabel>
             </FormGroup>
 
-            <Panel collapsible defaultExpanded={false} header="Task 1">
-              <ListGroup fill>
-                <ListGroupItem>Action:  <FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
-               <ListGroupItem>Location:  <FormControl type="text" placeholder="Enter text"></FormControl> </ListGroupItem>
-               <ListGroupItem>Additional Info: <FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
-             </ListGroup>
-            </Panel>
 
             <div id="placeholder">
-              <div id="template">
-                <Panel collapsible defaultExpanded={true} header='Additional Tasks {this.state.item}'>
+              <div id = 'template'>
+                <Panel collapsible defaultExpanded={true} header='Task' >
+                  <form className = "new task" onSubmit={this.handleRequest} >
+                    <ListGroup fill>
+                      <ListGroupItem>
+                        <input
+                          type = "text"
+                          ref = "taskText"
+                          placeholder="Default Action"
+                        />
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        <input
+                          type = "text"
+                          ref = "addressText"
+                          placeholder="Default Address"
+                        />
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        <input
+                          type = 'text'
+                          ref ="descriptionText"
+                          placeholder = "Default Description"
+                        />
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        <input
+                        type = "submit"
+                        value = 'Submit'
+                        />
+                      </ListGroupItem>
+                    </ListGroup>
+                  </form>
+                </Panel>
+               </div>
+
+{/*
                  <ListGroup fill>
                   <ListGroupItem>Action:  <FormControl type="text" placeholder="Enter text"></FormControl>
                    </ListGroupItem>
                   <ListGroupItem>Location:  <FormControl type="text" placeholder="Enter text"></FormControl> 
                 </ListGroupItem>
                 <ListGroupItem>Additional Info: <FormControl type="text" placeholder="Enter text"></FormControl></ListGroupItem>
-                </ListGroup>
-                </Panel>
-              </div>
-            </div>
+                </ListGroup> 
+              */}
+          
+            </div>{/* placeholder */}
 
 
+            {this.renderTasks()}
+
+            <subTasks />
 
 
-
-
-
+          {/**/}
             <Pager>
             <Pager.Item onClick={this.Add} previous href="#">Add Additional Tasks &rarr;</Pager.Item>
             </Pager>
@@ -96,7 +174,7 @@ var Create = React.createClass({
             <br />
 
             <div className="well">
-              <Button bsSize="large" block>Submit Contest</Button>
+              <Button bsSize="large" block >Submit Contest</Button>
               </div>
             </form>
           </div>
