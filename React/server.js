@@ -32,6 +32,17 @@ db.on('error', function (err) {
 db.once('open', function () {
 	console.log('Mongoose connection successful.');
 });
+// use morgan and bodyparser with our app
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+// bring in our db files 
+var ScavengerHunt = require('./models/ScavengerHunt.js');
+var Tasks = require('./models/Tasks.js');
+
+
 
 
 
