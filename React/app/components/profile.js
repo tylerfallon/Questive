@@ -9,7 +9,7 @@ var Profile = React.createClass({
       <div className="container">
         <div className="row">
           <div className="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-            <div className="well profile">
+            <div className="profile-box well profile">
               <div className="col-sm-12">
                 <div className="col-xs-12 col-sm-5">
                  <span className="headMain"><p className="strong text-center">Tyler Fallon</p>

@@ -33,7 +33,7 @@ var Leaderboards = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div className="container">
         <SearchBox search = {this.search}/>
         <Results searchResults = {this.state.searchResults}/>
       </div>
@@ -54,13 +54,14 @@ var SearchBox = React.createClass({
   render: function () {
     return (
       <div>
+        <div className='leaderboard'>
         <label>Sort By:</label>
         <select ref="category">
           <option value="alltime">All</option>
           <option value="recent">Recent</option>
         </select>
          <Button bsSize="xsmall" input type="submit" onClick = {this.createAjax}>Sort</Button>
-
+        </div>
       </div>
     );
   }
@@ -74,13 +75,12 @@ var Results = React.createClass({
       );
     })
     return (
-      <table className="table table-striped">
+      <table className="leaderboard table table-striped">
         <thead>
           <tr>
-            <th>#</th>
+            <th>Ranking</th>
             <th>Username</th>
             <th>Points</th>
-            <th>Something else</th>
           </tr>
         </thead>
         <tbody>

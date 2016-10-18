@@ -12,8 +12,6 @@ var Tasks = require('./models/Tasks.js');
 //require scavenger hunt schema
 var ScavengerHunt = require('./models/ScavengerHunt.js');
 
-
-
 // Create Instance of Express
 var app = express();
 var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
@@ -51,10 +49,6 @@ app.use(bodyParser.urlencoded({
 var ScavengerHunt = require('./models/ScavengerHunt.js');
 var Tasks = require('./models/Tasks.js');
 
-
-
-
-
 // -------------------------------------------------
 
 // Main Route
@@ -73,6 +67,7 @@ app.post('/api/tasks',function(req, res){
 				res.send(doc._id);
 			}
 	});
+});
 
 app.get('/api/grab', function(req, res){
 	console.log("made it to api grab route");
@@ -86,10 +81,8 @@ app.get('/api/grab', function(req, res){
 		})
 });
 
-app.get("*", function(req, res) {
-	console.log(0);
-  res.sendFile(__dirname + "/public/index.html");
-});
+
+
 	// var promises = [];
 	// // var newTasks = new Tasks(req.body);
 	// console.log('Made it to saved post');
@@ -114,7 +107,55 @@ app.get("*", function(req, res) {
 		// return newTasks.save();
 	// res.send(false);
 	
+//New Game Route
 
+app.post('/create/saved',function(req, res){
+	// var newTasks = new Tasks(req.body);
+	console.log(req.body);
+});
+
+//Sign Up Route
+app.post('/signup',function(req, res){
+  // var newTasks = new Tasks(req.body);
+  console.log(req.body);
+});
+
+
+//Leaderboard Route
+app.get("/leaderboard", function(req, res) {
+  User.find({}).sort(-'score'), function (err, users) { 
+    res.send(users);
+  }
+});
+
+//Tasks Route - Update Task DB*
+app.post('/tasks',function(req, res){
+  // var newTasks = new Tasks(req.body);
+  console.log(req.body);
+});
+
+//Join Routes
+app.get("/join", function(req, res) {
+  console.log(Users);
+});
+
+app.post('/join/:id',function(req, res){
+  Users.findOne({'_id': req.params.id})
+  .populate('users')
+  .exec(function(err, data){
+    if (err){
+      console.log(err);
+    } else {
+      res.json(data);
+    }
+  });
+  console.log(req.body);
+});
+  
+
+app.get("*", function(req, res) {
+	console.log(0);
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 // // Route to get all saved articles

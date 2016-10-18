@@ -27118,104 +27118,98 @@
 
 	'use strict';
 
-	// Include React and React-Router dependencies
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 
 	var Main = React.createClass({
-		displayName: 'Main',
+	  displayName: 'Main',
 
-		render: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'container' },
-					React.createElement(
-						'nav',
-						{ className: 'bg-info navbar-dark theNavBar' },
-						React.createElement(
-							'div',
-							{ className: 'container-fluid' },
-							React.createElement(
-								'div',
-								{ className: 'navbar-header' },
-								React.createElement(
-									'a',
-									{ href: '#/' },
-									React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'collapse navbar-collapse navbar-ex1-collapse' },
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right' },
-									React.createElement(
-										'span',
-										{ 'class': 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/Create', 'class': 'navWords' },
-											React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' }),
-											' Create'
-										)
-									)
-								),
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right' },
-									React.createElement(
-										'span',
-										{ 'class': 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/join', 'class': 'navWords' },
-											React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' }),
-											' Join'
-										)
-									)
-								),
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right' },
-									React.createElement(
-										'span',
-										{ 'class': 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/Leaderboards', 'class': 'navWords' },
-											React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' }),
-											' Leaderboards'
-										)
-									)
-								),
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right navbar-for-responsiveness' },
-									React.createElement(
-										'span',
-										{ 'class': 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/profile', 'class': 'navWords' },
-											React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' }),
-											' Profile'
-										)
-									)
-								)
-							)
-						)
-					),
-					this.props.children
-				)
-			);
-		}
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'row' },
+	      React.createElement(
+	        'nav',
+	        { className: 'bg-info navbar-dark theNavBar' },
+	        React.createElement(
+	          'div',
+	          { className: 'container-fluid' },
+	          React.createElement(
+	            'div',
+	            { className: 'navbar-header' },
+	            React.createElement(
+	              'button',
+	              { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
+	              React.createElement(
+	                'span',
+	                { className: 'sr-only' },
+	                'Toggle navigation'
+	              ),
+	              React.createElement('span', { className: 'icon-bar' }),
+	              React.createElement('span', { className: 'icon-bar' }),
+	              React.createElement('span', { className: 'icon-bar' })
+	            ),
+	            React.createElement(
+	              'a',
+	              { className: 'navbar-brand', href: '#' },
+	              React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+	            React.createElement(
+	              'ul',
+	              { className: 'nav navbar-nav navbar-right' },
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { href: '#/Create' },
+	                  React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' }),
+	                  ' '
+	                )
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { href: '#/join' },
+	                  React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' }),
+	                  ' '
+	                )
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { href: '#/Leaderboards' },
+	                  React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' }),
+	                  ' '
+	                )
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { href: '#/profile' },
+	                  React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' }),
+	                  ' '
+	                )
+	              )
+	            )
+	          )
+	        )
+	      ),
+	      this.props.children
+	    );
+	  }
 	});
 
-	// Export the module back to the route
 	module.exports = Main;
 
 /***/ },
@@ -27416,7 +27410,7 @@
 	            { className: 'col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6' },
 	            React.createElement(
 	              'div',
-	              { className: 'well profile' },
+	              { className: 'profile-box well profile' },
 	              React.createElement(
 	                'div',
 	                { className: 'col-sm-12' },
@@ -46247,7 +46241,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'container' },
 	      React.createElement(SearchBox, { search: this.search }),
 	      React.createElement(Results, { searchResults: this.state.searchResults })
 	    );
@@ -46271,28 +46265,32 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'label',
-	        null,
-	        'Sort By:'
-	      ),
-	      React.createElement(
-	        'select',
-	        { ref: 'category' },
+	        'div',
+	        { className: 'leaderboard' },
 	        React.createElement(
-	          'option',
-	          { value: 'alltime' },
-	          'All'
+	          'label',
+	          null,
+	          'Sort By:'
 	        ),
 	        React.createElement(
-	          'option',
-	          { value: 'recent' },
-	          'Recent'
+	          'select',
+	          { ref: 'category' },
+	          React.createElement(
+	            'option',
+	            { value: 'alltime' },
+	            'All'
+	          ),
+	          React.createElement(
+	            'option',
+	            { value: 'recent' },
+	            'Recent'
+	          )
+	        ),
+	        React.createElement(
+	          _reactBootstrap.Button,
+	          { bsSize: 'xsmall', input: true, type: 'submit', onClick: this.createAjax },
+	          'Sort'
 	        )
-	      ),
-	      React.createElement(
-	        _reactBootstrap.Button,
-	        { bsSize: 'xsmall', input: true, type: 'submit', onClick: this.createAjax },
-	        'Sort'
 	      )
 	    );
 	  }
@@ -46307,7 +46305,7 @@
 	    });
 	    return React.createElement(
 	      'table',
-	      { className: 'table table-striped' },
+	      { className: 'leaderboard table table-striped' },
 	      React.createElement(
 	        'thead',
 	        null,
@@ -46317,7 +46315,7 @@
 	          React.createElement(
 	            'th',
 	            null,
-	            '#'
+	            'Ranking'
 	          ),
 	          React.createElement(
 	            'th',
@@ -46328,11 +46326,6 @@
 	            'th',
 	            null,
 	            'Points'
-	          ),
-	          React.createElement(
-	            'th',
-	            null,
-	            'Something else'
 	          )
 	        )
 	      ),
@@ -46432,117 +46425,121 @@
 
 			return React.createElement(
 				'div',
-				{ className: 'main-container' },
+				{ className: 'container' },
 				React.createElement(
 					'div',
-					{ className: 'row' },
+					{ className: 'main-container' },
 					React.createElement(
 						'div',
-						{ className: 'col-lg-12' },
+						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'navbar navbar-light bg-default' },
+							{ className: 'col-lg-12' },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading' },
+								{ className: 'navbar navbar-light bg-default' },
 								React.createElement(
-									'h1',
-									{ className: 'panel-title' },
+									'div',
+									{ className: 'panel-heading' },
 									React.createElement(
-										'strong',
-										null,
-										React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
-										'  Search for a Contest'
+										'h1',
+										{ className: 'panel-title' },
+										React.createElement(
+											'strong',
+											null,
+											React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
+											'  Search for a Contest'
+										)
 									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'panel-body' },
+								),
 								React.createElement(
-									'form',
-									null,
+									'div',
+									{ className: 'panel-body' },
 									React.createElement(
-										'div',
-										{ className: 'form-group' },
+										'form',
+										null,
 										React.createElement(
-											'h4',
-											{ className: '' },
-											React.createElement(
-												'strong',
-												null,
-												'Topic'
-											)
-										),
-										React.createElement('input', { type: 'text', value: this.state.value, className: 'form-control ', id: 'search', onChange: this.handleChange, required: true })
-									),
-									React.createElement(
-										'div',
-										{ className: 'pull-left' },
-										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+											'div',
+											{ className: 'form-group' },
 											React.createElement(
 												'h4',
-												null,
-												'Submit'
+												{ className: '' },
+												React.createElement(
+													'strong',
+													null,
+													'Topic'
+												)
+											),
+											React.createElement('input', { type: 'text', value: this.state.value, className: 'form-control ', id: 'search', onChange: this.handleChange, required: true })
+										),
+										React.createElement(
+											'div',
+											{ className: 'pull-left' },
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+												React.createElement(
+													'h4',
+													null,
+													'Submit'
+												)
 											)
 										)
 									)
 								)
 							)
 						)
-					)
-				),
-				React.createElement(
-					'center',
-					null,
+					),
 					React.createElement(
-						_reactBootstrap.PageHeader,
+						'center',
 						null,
-						'OR'
-					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'row' },
+						React.createElement(
+							_reactBootstrap.PageHeader,
+							null,
+							'OR'
+						)
+					),
 					React.createElement(
 						'div',
-						{ className: 'col-lg-12' },
+						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'navbar navbar-light bg-default' },
+							{ className: 'col-lg-12' },
 							React.createElement(
 								'div',
-								{ className: 'panel-heading' },
+								{ className: 'navbar navbar-light bg-default' },
 								React.createElement(
-									'h1',
-									{ className: 'panel-title' },
+									'div',
+									{ className: 'panel-heading' },
 									React.createElement(
-										'strong',
-										null,
-										React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
-										'  See All Current Contests'
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'panel-body' },
-								React.createElement(
-									'form',
-									null,
-									React.createElement('div', { className: 'form-group' }),
-									React.createElement(
-										'div',
-										{ className: 'pull-left' },
+										'h1',
+										{ className: 'panel-title' },
 										React.createElement(
-											'button',
-											{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+											'strong',
+											null,
+											React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
+											'  See All Current Contests'
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									React.createElement(
+										'form',
+										null,
+										React.createElement('div', { className: 'form-group' }),
+										React.createElement(
+											'div',
+											{ className: 'pull-left' },
 											React.createElement(
-												'h4',
-												null,
-												'Populate List'
+												'button',
+												{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+												React.createElement(
+													'h4',
+													null,
+													'Populate List'
+												)
 											)
 										)
 									)
