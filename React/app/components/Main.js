@@ -5,7 +5,6 @@ var Main = React.createClass({
 	render: function(){
 		return(
 <div className="row">
-	<div className="container">
       <nav className="bg-info navbar-dark theNavBar">
         <div className="container-fluid">
           {/* Brand and toggle get grouped for better mobile display */}
@@ -30,7 +29,7 @@ var Main = React.createClass({
         </div>{/* /.container-fluid */}
       </nav>
 					{this.props.children}
-				</div>
+			
 		</div>
 		)
 	}

@@ -16,8 +16,9 @@ import { Pager } from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 var subTasks = require('./create_Subfolder/subTasks');
 
-// import dbs 
-
+// add helper
+var helpers = require('./utils/helpers.js');
+//Create class 
 var Create = React.createClass({
   getInitialState:function(){
     return{
@@ -31,21 +32,25 @@ var Create = React.createClass({
 
     var item = {
       title: this.state.title,
-      tasks: ReactDOM.findDOMNode(this.refs.taskText).value.trim(),
+      task: ReactDOM.findDOMNode(this.refs.taskText).value.trim(),
       location: ReactDOM.findDOMNode(this.refs.addressText).value.trim(),
       additionalInfo: ReactDOM.findDOMNode(this.refs.descriptionText).value.trim()
     };
-    console.log("Checking Item");
-    console.log(item);
+     helpers.postSavedTasks(item)
+        .then(function(data){
+         console.log(data);
+       }.bind(this));
+
+   // update state 
     var holder = this.state.tasksArray;
     holder.push(item);
-    console.log("_______________");
-    console.log('Checking after push');
-    console.log(holder);
+  
     // update state 
     this.setState({
       tasksArray: holder
     });
+    console.log("updated holder")
+    console.log(this.state.tasksArray);
     // reset input fiilds to nothing
     ReactDOM.findDOMNode(this.refs.taskText).value = "";
     ReactDOM.findDOMNode(this.refs.addressText).value = "";
@@ -82,7 +87,12 @@ var Create = React.createClass({
   },
   // submit the click to 
   handleSubmitClick:function(){
-
+    console.log(this.state.tasksArray);
+    // helpers.postSavedTasks
+    helpers.postSavedTasks(this.state.tasksArray)
+      .then(function(data){
+        console.log(data);
+      }.bind(this))
   },
 
 
@@ -174,7 +184,7 @@ var Create = React.createClass({
             <br />
 
             <div className="well">
-              <Button bsSize="large" block >Submit Contest</Button>
+              <Button bsSize="large" block onClick={this.handleSubmitClick}>Submit Contest</Button>
               </div>
             </form>
           </div>
