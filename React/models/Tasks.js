@@ -9,10 +9,10 @@ var TasksSchema = new Schema({
 		type:String,
 		required: true
 	},
-	createAt : {
-		type: Date,
-		default: Date.now
-	},
+	// createAt : {
+	// 	type: Date,
+	// 	default: Date.now
+	// },
 	task:{
 		type:String,
 		required:true
@@ -23,7 +23,7 @@ var TasksSchema = new Schema({
 	},
 	additionalInfo:{
 		type:String,
-		required:true
+		
 	}
 	// scavengerhuntID:{
 	// 	type: Schema.type.ObjectId,

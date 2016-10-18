@@ -33,7 +33,7 @@ var Leaderboards = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div className="container">
         <SearchBox search = {this.search}/>
         <Results searchResults = {this.state.searchResults}/>
       </div>

@@ -35,6 +35,7 @@ var Join = React.createClass({
 	render: function(){
 
 		return(
+			<div className="container">
 			<div className ="main-container">
 
 					<div className="row">
@@ -95,9 +96,7 @@ var Join = React.createClass({
 					</div>
 
 			</div>
-
-
-
+		</div>
 
 
 

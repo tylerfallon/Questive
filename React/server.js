@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-
+var Promise = require('bluebird');
 // require Schemas
 // users schema
 var Users = require('./models/users.js');
@@ -28,7 +28,8 @@ app.use(express.static(process.cwd() + "/public"));
 // -------------------------------------------------
 
 // MongoDB Configuration configuration
-mongoose.connect('mongodb://admin:reactrocks@ds023593.mlab.com:23593/heroku_pg676kmk');
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/final');
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -51,10 +52,62 @@ var Tasks = require('./models/Tasks.js');
 // -------------------------------------------------
 
 // Main Route
-app.get("*", function(req, res) {
-	console.log(0);
-  res.sendFile(__dirname + "/public/index.html");
+
+
+app.post('/api/tasks',function(req, res){
+
+	 var newTasks = new Tasks(req.body);
+
+	 newTasks.save(function(err, doc){
+			if(err){
+				console.log(err);
+			} else {
+				console.log("Doc successful");
+				console.log(doc);
+				res.send(doc._id);
+			}
+	});
 });
+
+app.get('/api/grab', function(req, res){
+	console.log("made it to api grab route");
+	Tasks.find({})
+		.exec(function(err,doc){
+			if(err){
+				console.log(err);
+			}else{
+				res.json(doc);
+			}
+		})
+});
+
+
+
+	// var promises = [];
+	// // var newTasks = new Tasks(req.body);
+	// console.log('Made it to saved post');
+	// console.log(req.body[0]);
+	// // update information to Mongoose 
+	// var newTasks;
+	// var promises = req.body.map(function(task, i) {
+	// 	newTasks = new Tasks(req.body[i]);
+	// 		return newTasks.save().catch(function(err) {
+	// 			return err;
+	// 		})
+		
+	// });
+
+	// Promise.all(promises).then(function() {
+	// 	res.status(200).end();
+	// }).catch(function(err) {
+	// 	res.status(500).end();
+	// })
+	// for(var i = 0; i < req.body.length; i ++){
+		
+		// return newTasks.save();
+	// res.send(false);
+	
+//New Game Route
 
 app.post('/create/saved',function(req, res){
 	// var newTasks = new Tasks(req.body);
@@ -100,12 +153,10 @@ app.post('/join/:id',function(req, res){
 });
   
 
-//New Game Route
-
-app.post('/create',function(req, res){
-  console.log(req.body);
+app.get("*", function(req, res) {
+	console.log(0);
+  res.sendFile(__dirname + "/public/index.html");
 });
-  
 
 // // Route to get all saved articles
 // app.get('/api/saved', function(req, res) {
