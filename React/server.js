@@ -65,8 +65,18 @@ app.get("*", function(req, res) {
 app.post('/api/tasks',function(req, res){
 	// var newTasks = new Tasks(req.body);
 	console.log('Made it to saved post');
-	console.log(req.body);
-	res.send(false);
+	console.log(req.body[0]);
+	// update information to Mongoose 
+	for(var i = 0; i < req.body.length; i ++){
+		var newTasks = new Tasks(req.body[i]);
+		newTasks.save(function(err,doc){
+			if (err) {
+        return res.json({status: 500, error: err});
+      }
+      res.json({ status: 500, doc: doc });
+		})
+	}
+	// res.send(false);
 	
 
 });

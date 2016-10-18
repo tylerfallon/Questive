@@ -32,7 +32,7 @@ var Create = React.createClass({
 
     var item = {
       title: this.state.title,
-      tasks: ReactDOM.findDOMNode(this.refs.taskText).value.trim(),
+      task: ReactDOM.findDOMNode(this.refs.taskText).value.trim(),
       location: ReactDOM.findDOMNode(this.refs.addressText).value.trim(),
       additionalInfo: ReactDOM.findDOMNode(this.refs.descriptionText).value.trim()
     };
@@ -42,11 +42,12 @@ var Create = React.createClass({
     holder.push(item);
     console.log("_______________");
     console.log('Checking after push');
-    console.log(holder);
     // update state 
     this.setState({
       tasksArray: holder
     });
+    console.log("updated holder")
+    console.log(this.state.tasksArray);
     // reset input fiilds to nothing
     ReactDOM.findDOMNode(this.refs.taskText).value = "";
     ReactDOM.findDOMNode(this.refs.addressText).value = "";
