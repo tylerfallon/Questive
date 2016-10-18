@@ -27118,104 +27118,102 @@
 
 	'use strict';
 
-	// Include React and React-Router dependencies
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 
 	var Main = React.createClass({
-		displayName: 'Main',
+	  displayName: 'Main',
 
-		render: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'row' },
-				React.createElement(
-					'div',
-					{ className: 'container' },
-					React.createElement(
-						'nav',
-						{ className: 'bg-info navbar-dark theNavBar' },
-						React.createElement(
-							'div',
-							{ className: 'container-fluid' },
-							React.createElement(
-								'div',
-								{ className: 'navbar-header' },
-								React.createElement(
-									'a',
-									{ href: '#/' },
-									React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'collapse navbar-collapse navbar-ex1-collapse' },
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right' },
-									React.createElement(
-										'span',
-										{ className: 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/Create', className: 'navWords' },
-											React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' }),
-											' Create'
-										)
-									)
-								),
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right' },
-									React.createElement(
-										'span',
-										{ className: 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/join', className: 'navWords' },
-											React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' }),
-											' Join'
-										)
-									)
-								),
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right' },
-									React.createElement(
-										'span',
-										{ className: 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/Leaderboards', className: 'navWords' },
-											React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' }),
-											' Leaderboards'
-										)
-									)
-								),
-								React.createElement(
-									'span',
-									{ className: 'nav navbar-nav navbar-right navbar-for-responsiveness' },
-									React.createElement(
-										'span',
-										{ className: 'navWords' },
-										React.createElement(
-											'a',
-											{ href: '#/profile', className: 'navWords' },
-											React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' }),
-											' Profile'
-										)
-									)
-								)
-							)
-						)
-					),
-					this.props.children
-				)
-			);
-		}
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'row' },
+	      React.createElement(
+	        'div',
+	        { className: 'container' },
+	        React.createElement(
+	          'nav',
+	          { className: 'bg-info navbar-dark theNavBar' },
+	          React.createElement(
+	            'div',
+	            { className: 'container-fluid' },
+	            React.createElement(
+	              'div',
+	              { className: 'navbar-header' },
+	              React.createElement(
+	                'button',
+	                { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
+	                React.createElement(
+	                  'span',
+	                  { className: 'sr-only' },
+	                  'Toggle navigation'
+	                ),
+	                React.createElement('span', { className: 'icon-bar' }),
+	                React.createElement('span', { className: 'icon-bar' }),
+	                React.createElement('span', { className: 'icon-bar' })
+	              ),
+	              React.createElement(
+	                'a',
+	                { className: 'navbar-brand', href: '#' },
+	                React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+	              React.createElement(
+	                'ul',
+	                { className: 'nav navbar-nav navbar-right' },
+	                React.createElement(
+	                  'li',
+	                  null,
+	                  React.createElement(
+	                    'a',
+	                    { href: '#/Create' },
+	                    React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' }),
+	                    ' '
+	                  )
+	                ),
+	                React.createElement(
+	                  'li',
+	                  null,
+	                  React.createElement(
+	                    'a',
+	                    { href: '#/join' },
+	                    React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' }),
+	                    ' '
+	                  )
+	                ),
+	                React.createElement(
+	                  'li',
+	                  null,
+	                  React.createElement(
+	                    'a',
+	                    { href: '#/Leaderboards' },
+	                    React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' }),
+	                    ' '
+	                  )
+	                ),
+	                React.createElement(
+	                  'li',
+	                  null,
+	                  React.createElement(
+	                    'a',
+	                    { href: '#/profile' },
+	                    React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' }),
+	                    ' '
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        this.props.children
+	      )
+	    );
+	  }
 	});
 
-	// Export the module back to the route
 	module.exports = Main;
 
 /***/ },
@@ -46321,7 +46319,7 @@
 	          React.createElement(
 	            'th',
 	            null,
-	            '#'
+	            'Ranking'
 	          ),
 	          React.createElement(
 	            'th',
@@ -46332,11 +46330,6 @@
 	            'th',
 	            null,
 	            'Points'
-	          ),
-	          React.createElement(
-	            'th',
-	            null,
-	            'Something else'
 	          )
 	        )
 	      ),

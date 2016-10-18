@@ -78,10 +78,9 @@ var Results = React.createClass({
       <table className="leaderboard table table-striped">
         <thead>
           <tr>
-            <th>#</th>
+            <th>Ranking</th>
             <th>Username</th>
             <th>Points</th>
-            <th>Something else</th>
           </tr>
         </thead>
         <tbody>
