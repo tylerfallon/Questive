@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-
+var Promise = require('bluebird');
 // require Schemas
 // users schema
 var Users = require('./models/users.js');
@@ -30,7 +30,8 @@ app.use(express.static(process.cwd() + "/public"));
 // -------------------------------------------------
 
 // MongoDB Configuration configuration
-mongoose.connect('mongodb://admin:reactrocks@ds023593.mlab.com:23593/heroku_pg676kmk');
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/final');
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -63,19 +64,40 @@ app.get("*", function(req, res) {
 });
 
 app.post('/api/tasks',function(req, res){
-	// var newTasks = new Tasks(req.body);
-	console.log('Made it to saved post');
-	console.log(req.body[0]);
-	// update information to Mongoose 
-	for(var i = 0; i < req.body.length; i ++){
-		var newTasks = new Tasks(req.body[i]);
-		newTasks.save(function(err,doc){
-			if (err) {
-        return res.json({status: 500, error: err});
-      }
-      res.json({ status: 500, doc: doc });
-		})
-	}
+
+	 var newTasks = new Tasks(req.body);
+
+	 newTasks.save(function(err, doc){
+			if(err){
+				console.log(err);
+			} else {
+				console.log("Doc successful");
+				console.log(doc);
+				res.send(doc._id);
+			}
+	});
+	// var promises = [];
+	// // var newTasks = new Tasks(req.body);
+	// console.log('Made it to saved post');
+	// console.log(req.body[0]);
+	// // update information to Mongoose 
+	// var newTasks;
+	// var promises = req.body.map(function(task, i) {
+	// 	newTasks = new Tasks(req.body[i]);
+	// 		return newTasks.save().catch(function(err) {
+	// 			return err;
+	// 		})
+		
+	// });
+
+	// Promise.all(promises).then(function() {
+	// 	res.status(200).end();
+	// }).catch(function(err) {
+	// 	res.status(500).end();
+	// })
+	// for(var i = 0; i < req.body.length; i ++){
+		
+		// return newTasks.save();
 	// res.send(false);
 	
 

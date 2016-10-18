@@ -36,12 +36,15 @@ var Create = React.createClass({
       location: ReactDOM.findDOMNode(this.refs.addressText).value.trim(),
       additionalInfo: ReactDOM.findDOMNode(this.refs.descriptionText).value.trim()
     };
-    console.log("Checking Item");
-    console.log(item);
+     helpers.postSavedTasks(item)
+        .then(function(data){
+         console.log(data);
+       }.bind(this));
+
+   // update state 
     var holder = this.state.tasksArray;
     holder.push(item);
-    console.log("_______________");
-    console.log('Checking after push');
+  
     // update state 
     this.setState({
       tasksArray: holder

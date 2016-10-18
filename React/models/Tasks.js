@@ -23,7 +23,7 @@ var TasksSchema = new Schema({
 	},
 	additionalInfo:{
 		type:String,
-		required:true
+		
 	}
 	// scavengerhuntID:{
 	// 	type: Schema.type.ObjectId,
