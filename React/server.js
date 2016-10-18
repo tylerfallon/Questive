@@ -58,10 +58,7 @@ var Tasks = require('./models/Tasks.js');
 // -------------------------------------------------
 
 // Main Route
-app.get("*", function(req, res) {
-	console.log(0);
-  res.sendFile(__dirname + "/public/index.html");
-});
+
 
 app.post('/api/tasks',function(req, res){
 
@@ -76,6 +73,23 @@ app.post('/api/tasks',function(req, res){
 				res.send(doc._id);
 			}
 	});
+
+app.get('/api/grab', function(req, res){
+	console.log("made it to api grab route");
+	Tasks.find({})
+		.exec(function(err,doc){
+			if(err){
+				console.log(err);
+			}else{
+				res.json(doc);
+			}
+		})
+});
+
+app.get("*", function(req, res) {
+	console.log(0);
+  res.sendFile(__dirname + "/public/index.html");
+});
 	// var promises = [];
 	// // var newTasks = new Tasks(req.body);
 	// console.log('Made it to saved post');
