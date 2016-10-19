@@ -872,3 +872,8 @@ p.change_link{
     width: 300px;
     text-align: center;
 }
+
+#logButton {
+    text-align: center;
+    margin: 20px;
+}

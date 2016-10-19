@@ -33,7 +33,6 @@ var Register = React.createClass({
         password: $('#passwordLogin').val()
       },
       success: function (jsonData) {
-        debugger;
         hashHistory.push('profile');
       }.bind(this)
     });
@@ -51,7 +50,6 @@ var Register = React.createClass({
       },      
       url: '/register',
       success: function (jsonData) {
-        debugger;
         hashHistory.push('profile');        
       }.bind(this)
     });
@@ -60,19 +58,63 @@ var Register = React.createClass({
 		return(
       <div className="mainDiv">
         <Nav />
-
-      <div className="container">
-        <div className='boxAroundLogin'>
-        <form className="form-signin" onSubmit={this.onLogin}>
+          <div>
+          <center><h2>Welcome! Please login or register.</h2></center><br/>
+        {/* Button trigger modal */}
+        <center><button id='logButton' type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Existing User: Login
+        </button></center>
+        {/* Modal */}
+        <div className="modal fade" id="myModal" tabIndex={-1} role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <h4 className="modal-title" id="myModalLabel"></h4>
+              </div>
+              <div className="modal-body">
+                
+<form className="form-signin" onSubmit={this.onLogin}>
           <center><h3 className="form-signin-heading">Please sign in</h3>
           <label htmlFor="username" className="sr-only">Username</label>
           <input type="text" id="usernameLogin" name="username" className="form-control" placeholder="Username" required autofocus />
           <label htmlFor="inputPassword" className="sr-only">Password</label>
           <input type="password" id="passwordLogin" name="password" className="form-control" placeholder="Password" required />
-          <button className="btn btn-md btn-primary btn-block" type="submit">Sign in</button></center>
+          <button className="btn btn-md btn-primary btn-block" id='signInButton' type="submit" >Sign in</button></center>
         </form>
-  <div id='regForm'>
-    <Panel collapsible defaultExpanded={false} className="text-center"  header='New User?' >
+
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div>
+        {/* Button trigger modal */}
+        <center><button id='logButton' type="button" className="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal2">
+          New User: Register
+        </button></center>
+        {/* Modal */}
+        <div className="modal fade" id="myModal2" tabIndex={-1} role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <h4 className="modal-title" id="myModalLabel2"></h4>
+              </div>
+              <div className="modal-body">
+                
+
       <form className="form-signin" onSubmit={this.onRegister}>
           <center><h3 className="form-signin-heading">Register</h3>
           <label htmlFor="username" className="sr-only">Username</label>
@@ -81,12 +123,17 @@ var Register = React.createClass({
           <input type="email" id="emailRegister" name="email"  className="form-control" placeholder="Email address" required autofocus />
           <label htmlFor="inputPassword" className="sr-only">Password</label>
           <input type="password" id="passwordRegister" name="password" className="form-control" placeholder="Password" required />
-          <button className="btn btn-lg btn-primary btn-block" type="submit">Register   </button></center>
+          <button className="btn btn-lg btn-primary btn-block" id='registerButton' type="submit">Register   </button></center>
       </form>
-     </Panel>
-    </div>
-    </div>
-  </div>
+
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
     );
   }

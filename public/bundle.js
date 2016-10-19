@@ -27483,7 +27483,6 @@
 	      success: function (jsonData) {
 	        console.log('user', jsonData);
 	        if (!jsonData) {
-	          debugger;
 	          _reactRouter.hashHistory.push('register');
 	        } else {
 	          this.setState({
@@ -27494,7 +27493,6 @@
 	    });
 	  },
 	  componentDidMount: function componentDidMount() {
-	    debugger;
 	    this.getUser();
 	  },
 	  render: function render() {
@@ -48809,7 +48807,6 @@
 	        password: $('#passwordLogin').val()
 	      },
 	      success: function (jsonData) {
-	        debugger;
 	        _reactRouter.hashHistory.push('profile');
 	      }.bind(this)
 	    });
@@ -48827,7 +48824,6 @@
 	      },
 	      url: '/register',
 	      success: function (jsonData) {
-	        debugger;
 	        _reactRouter.hashHistory.push('profile');
 	      }.bind(this)
 	    });
@@ -48839,80 +48835,178 @@
 	      React.createElement(Nav, null),
 	      React.createElement(
 	        'div',
-	        { className: 'container' },
+	        null,
+	        React.createElement(
+	          'center',
+	          null,
+	          React.createElement(
+	            'h2',
+	            null,
+	            'Welcome! Please login or register.'
+	          )
+	        ),
+	        React.createElement('br', null),
+	        React.createElement(
+	          'center',
+	          null,
+	          React.createElement(
+	            'button',
+	            { id: 'logButton', type: 'button', className: 'btn btn-primary btn-lg', 'data-toggle': 'modal', 'data-target': '#myModal' },
+	            'Existing User: Login'
+	          )
+	        ),
 	        React.createElement(
 	          'div',
-	          { className: 'boxAroundLogin' },
-	          React.createElement(
-	            'form',
-	            { className: 'form-signin', onSubmit: this.onLogin },
-	            React.createElement(
-	              'center',
-	              null,
-	              React.createElement(
-	                'h3',
-	                { className: 'form-signin-heading' },
-	                'Please sign in'
-	              ),
-	              React.createElement(
-	                'label',
-	                { htmlFor: 'username', className: 'sr-only' },
-	                'Username'
-	              ),
-	              React.createElement('input', { type: 'text', id: 'usernameLogin', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
-	              React.createElement(
-	                'label',
-	                { htmlFor: 'inputPassword', className: 'sr-only' },
-	                'Password'
-	              ),
-	              React.createElement('input', { type: 'password', id: 'passwordLogin', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
-	              React.createElement(
-	                'button',
-	                { className: 'btn btn-md btn-primary btn-block', type: 'submit' },
-	                'Sign in'
-	              )
-	            )
-	          ),
+	          { className: 'modal fade', id: 'myModal', tabIndex: -1, role: 'dialog', 'aria-labelledby': 'myModalLabel', 'aria-hidden': 'true' },
 	          React.createElement(
 	            'div',
-	            { id: 'regForm' },
+	            { className: 'modal-dialog', role: 'document' },
 	            React.createElement(
-	              _reactBootstrap.Panel,
-	              { collapsible: true, defaultExpanded: false, className: 'text-center', header: 'New User?' },
+	              'div',
+	              { className: 'modal-content' },
 	              React.createElement(
-	                'form',
-	                { className: 'form-signin', onSubmit: this.onRegister },
+	                'div',
+	                { className: 'modal-header' },
 	                React.createElement(
-	                  'center',
-	                  null,
+	                  'button',
+	                  { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
 	                  React.createElement(
-	                    'h3',
-	                    { className: 'form-signin-heading' },
-	                    'Register'
-	                  ),
-	                  React.createElement(
-	                    'label',
-	                    { htmlFor: 'username', className: 'sr-only' },
-	                    'Username'
-	                  ),
-	                  React.createElement('input', { type: 'username', id: 'usernameRegister', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
-	                  React.createElement(
-	                    'label',
-	                    { htmlFor: 'inputEmail', className: 'sr-only' },
-	                    'Email address'
-	                  ),
-	                  React.createElement('input', { type: 'email', id: 'emailRegister', name: 'email', className: 'form-control', placeholder: 'Email address', required: true, autofocus: true }),
-	                  React.createElement(
-	                    'label',
-	                    { htmlFor: 'inputPassword', className: 'sr-only' },
-	                    'Password'
-	                  ),
-	                  React.createElement('input', { type: 'password', id: 'passwordRegister', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
-	                  React.createElement(
-	                    'button',
-	                    { className: 'btn btn-lg btn-primary btn-block', type: 'submit' },
-	                    'Register   '
+	                    'span',
+	                    { 'aria-hidden': 'true' },
+	                    '\xD7'
 	                  )
+	                ),
+	                React.createElement('h4', { className: 'modal-title', id: 'myModalLabel' })
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'modal-body' },
+	                React.createElement(
+	                  'form',
+	                  { className: 'form-signin', onSubmit: this.onLogin },
+	                  React.createElement(
+	                    'center',
+	                    null,
+	                    React.createElement(
+	                      'h3',
+	                      { className: 'form-signin-heading' },
+	                      'Please sign in'
+	                    ),
+	                    React.createElement(
+	                      'label',
+	                      { htmlFor: 'username', className: 'sr-only' },
+	                      'Username'
+	                    ),
+	                    React.createElement('input', { type: 'text', id: 'usernameLogin', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
+	                    React.createElement(
+	                      'label',
+	                      { htmlFor: 'inputPassword', className: 'sr-only' },
+	                      'Password'
+	                    ),
+	                    React.createElement('input', { type: 'password', id: 'passwordLogin', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
+	                    React.createElement(
+	                      'button',
+	                      { className: 'btn btn-md btn-primary btn-block', id: 'signInButton', type: 'submit' },
+	                      'Sign in'
+	                    )
+	                  )
+	                )
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'modal-footer' },
+	                React.createElement(
+	                  'button',
+	                  { type: 'button', className: 'btn btn-secondary', 'data-dismiss': 'modal' },
+	                  'Close'
+	                )
+	              )
+	            )
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'center',
+	          null,
+	          React.createElement(
+	            'button',
+	            { id: 'logButton', type: 'button', className: 'btn btn-danger btn-lg', 'data-toggle': 'modal', 'data-target': '#myModal2' },
+	            'New User: Register'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'modal fade', id: 'myModal2', tabIndex: -1, role: 'dialog', 'aria-labelledby': 'myModalLabel2', 'aria-hidden': 'true' },
+	          React.createElement(
+	            'div',
+	            { className: 'modal-dialog', role: 'document' },
+	            React.createElement(
+	              'div',
+	              { className: 'modal-content' },
+	              React.createElement(
+	                'div',
+	                { className: 'modal-header' },
+	                React.createElement(
+	                  'button',
+	                  { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+	                  React.createElement(
+	                    'span',
+	                    { 'aria-hidden': 'true' },
+	                    '\xD7'
+	                  )
+	                ),
+	                React.createElement('h4', { className: 'modal-title', id: 'myModalLabel2' })
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'modal-body' },
+	                React.createElement(
+	                  'form',
+	                  { className: 'form-signin', onSubmit: this.onRegister },
+	                  React.createElement(
+	                    'center',
+	                    null,
+	                    React.createElement(
+	                      'h3',
+	                      { className: 'form-signin-heading' },
+	                      'Register'
+	                    ),
+	                    React.createElement(
+	                      'label',
+	                      { htmlFor: 'username', className: 'sr-only' },
+	                      'Username'
+	                    ),
+	                    React.createElement('input', { type: 'username', id: 'usernameRegister', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
+	                    React.createElement(
+	                      'label',
+	                      { htmlFor: 'inputEmail', className: 'sr-only' },
+	                      'Email address'
+	                    ),
+	                    React.createElement('input', { type: 'email', id: 'emailRegister', name: 'email', className: 'form-control', placeholder: 'Email address', required: true, autofocus: true }),
+	                    React.createElement(
+	                      'label',
+	                      { htmlFor: 'inputPassword', className: 'sr-only' },
+	                      'Password'
+	                    ),
+	                    React.createElement('input', { type: 'password', id: 'passwordRegister', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
+	                    React.createElement(
+	                      'button',
+	                      { className: 'btn btn-lg btn-primary btn-block', id: 'registerButton', type: 'submit' },
+	                      'Register   '
+	                    )
+	                  )
+	                )
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'modal-footer' },
+	                React.createElement(
+	                  'button',
+	                  { type: 'button', className: 'btn btn-secondary', 'data-dismiss': 'modal' },
+	                  'Close'
 	                )
 	              )
 	            )

@@ -27,7 +27,6 @@ var Profile = React.createClass({
       success: function (jsonData) {
         console.log('user', jsonData);
         if (!jsonData) {
-          debugger;
           hashHistory.push('register');
         } else {
           this.setState({
@@ -38,7 +37,6 @@ var Profile = React.createClass({
     });    
   },
   componentDidMount: function () {
-    debugger;
     this.getUser();
   },    
 	render: function(){
