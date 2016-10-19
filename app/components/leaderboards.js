@@ -21,20 +21,21 @@ var Leaderboards = React.createClass({
     console.log("searching");
     $.ajax({
       type: "GET",
-      dataType: 'jsonp',
+      dataType: 'json',
       url: URL,
       success: function (jsonData) {
+        console.log('jsonData', jsonData);
         this.showResults(jsonData)
       }.bind(this)
     });
   },
   componentDidMount: function () {
-    this.search("userlinkhere");
+    this.search("/leaderboard");
   },
   render: function () {
     return (
       <div className="container">
-        <SearchBox search = {this.search}/>
+        {/* <SearchBox search = {this.search}/>*/}
         <Results searchResults = {this.state.searchResults}/>
       </div>
     );
@@ -71,7 +72,7 @@ var Results = React.createClass({
   render: function () {
     var resultItems = this.props.searchResults.map(function (result, index) {
       return (
-        <ResultItem key={index} reactKey={index} username={result.username} alltime={result.alltime} recent={result.recent} imageUrl={result.img}/>
+        <ResultItem key={index} reactKey={index} username={result.username} points={result.points} totalMiles={result.totalMiles} imageUrl={result.img}/>
       );
     })
     return (
@@ -81,6 +82,7 @@ var Results = React.createClass({
             <th>Ranking</th>
             <th>Username</th>
             <th>Points</th>
+            <th>Total Miles</th>
           </tr>
         </thead>
         <tbody>
@@ -99,10 +101,10 @@ var ResultItem = React.createClass({
     }
     return (
       <tr>
-        <td>{this.props.reactKey}</td>
+        <td>{this.props.reactKey +1}</td>
         <td><img src={this.props.imageUrl} style={imageStyle}></img> {this.props.username}</td>
-        <td>{this.props.recent}</td>
-        <td>{this.props.alltime}</td>
+        <td>{this.props.points}</td>
+        <td>{this.props.totalMiles}</td>
       </tr>
     );
   }

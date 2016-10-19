@@ -7,6 +7,8 @@ var Promise = require('bluebird');
 // require Schemas
 // users schema
 var Users = require('./models/users.js');
+
+var Questors = require('./models/Questors.js');
 //require tasks schema
 var Tasks = require('./models/Tasks.js');
 //require scavenger hunt schema
@@ -123,9 +125,10 @@ app.post('/signup',function(req, res){
 
 //Leaderboard Route
 app.get("/leaderboard", function(req, res) {
-  User.find({}).sort(-'score'), function (err, users) { 
-    res.send(users);
-  }
+  console.log("in leaderboard");
+  Questors.find({}).sort('-points').exec(function (err, questors) { 
+    res.send(questors);
+  });
 });
 
 //Tasks Route - Update Task DB*
