@@ -55,13 +55,14 @@
 
 	// Grabs the Routes
 	var routes = __webpack_require__(235);
+	var hashHistory = __webpack_require__(172).hashHistory;
 
 	// Renders the contents according to the route page. 
 	// Displays the contents in the div app of index.html
 	// Note how ReactDOM takes in two parameters (the contents and the location)
 	ReactDOM.render(React.createElement(
 		Router,
-		null,
+		{ history: hashHistory },
 		routes
 	), document.getElementById('app'));
 
@@ -27100,19 +27101,17 @@
 	var Create = __webpack_require__(491);
 	var Route = Router.Route;
 	var IndexRoute = Router.IndexRoute;
+	var hashHistory = __webpack_require__(172).hashHistory;
 
 	module.exports = React.createElement(
-		Route,
-		{ path: '/', component: Home },
-		React.createElement(
-			Route,
-			{ path: 'Main', component: Main },
-			React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
-			React.createElement(Route, { path: 'Profile', component: Profile }),
-			React.createElement(Route, { path: 'Join', component: Join }),
-			React.createElement(Route, { path: 'Create', component: Create }),
-			React.createElement(IndexRoute, { component: Home })
-		)
+	  Router,
+	  { history: hashHistory },
+	  React.createElement(Route, { path: '/', component: Home }),
+	  React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
+	  React.createElement(Route, { path: 'Profile', component: Profile }),
+	  React.createElement(Route, { path: 'Join', component: Join }),
+	  React.createElement(Route, { path: 'Create', component: Create }),
+	  React.createElement(IndexRoute, { component: Home })
 	);
 
 /***/ },
@@ -27202,8 +27201,7 @@
 	            )
 	          )
 	        )
-	      ),
-	      this.props.children
+	      )
 	    );
 	  }
 	});
@@ -27258,15 +27256,11 @@
 	                      null,
 	                      React.createElement(
 	                        'a',
-	                        { href: '/Leaderboards' },
+	                        { href: '#/profile', type: 'button', id: 'getStarted', className: 'btn btn-danger center getStarted' },
 	                        React.createElement(
-	                          'button',
-	                          { type: 'button', id: 'getStarted', className: 'btn btn-danger center getStarted' },
-	                          React.createElement(
-	                            'h4',
-	                            null,
-	                            'Get Started'
-	                          )
+	                          'h4',
+	                          null,
+	                          'Get Started'
 	                        )
 	                      )
 	                    ),
@@ -27392,6 +27386,7 @@
 
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
+	var Main = __webpack_require__(236);
 
 
 	var Profile = React.createClass({
@@ -27400,139 +27395,144 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'main-container' },
+	      { className: 'mainDiv' },
+	      React.createElement(Main, null),
 	      React.createElement(
 	        'div',
-	        { className: 'container' },
+	        { className: 'main-container' },
 	        React.createElement(
 	          'div',
-	          { className: 'row' },
+	          { className: 'container' },
 	          React.createElement(
 	            'div',
-	            { className: 'col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6' },
+	            { className: 'row' },
 	            React.createElement(
 	              'div',
-	              { className: 'profile-box well profile' },
+	              { className: 'col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6' },
 	              React.createElement(
 	                'div',
-	                { className: 'col-sm-12' },
+	                { className: 'profile-box well profile' },
 	                React.createElement(
 	                  'div',
-	                  { className: 'col-xs-12 col-sm-5' },
+	                  { className: 'col-sm-12' },
 	                  React.createElement(
-	                    'span',
-	                    { className: 'headMain' },
-	                    React.createElement(
-	                      'p',
-	                      { className: 'strong text-center' },
-	                      'Tyler Fallon'
-	                    ),
-	                    React.createElement('img', { src: 'https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg', className: 'text-center img-circle imageScale' })
-	                  )
-	                ),
-	                React.createElement(
-	                  'div',
-	                  { className: 'col-xs-12 col-sm-7 text-center' },
-	                  React.createElement(
-	                    'figure',
-	                    { className: 'justify' },
-	                    React.createElement(
-	                      'p',
-	                      null,
-	                      React.createElement(
-	                        'strong',
-	                        null,
-	                        'About: '
-	                      ),
-	                      ' Full Stack Developer / UI Designer / General Boss '
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      null,
-	                      React.createElement(
-	                        'strong',
-	                        null,
-	                        'Hobbies: '
-	                      ),
-	                      ' Blackjack UI/UX '
-	                    ),
-	                    React.createElement(
-	                      'p',
-	                      null,
-	                      React.createElement(
-	                        'strong',
-	                        null,
-	                        'Contests Completed:'
-	                      )
-	                    ),
+	                    'div',
+	                    { className: 'col-xs-12 col-sm-5' },
 	                    React.createElement(
 	                      'span',
-	                      { className: 'tags' },
-	                      'AC Hunt'
-	                    )
-	                  )
-	                )
-	              ),
-	              React.createElement(
-	                'div',
-	                { className: 'col-xs-12 divider text-center' },
-	                React.createElement(
-	                  'div',
-	                  { className: 'col-xs-12 col-sm-6' },
-	                  React.createElement(
-	                    'h2',
-	                    null,
-	                    React.createElement(
-	                      'strong',
-	                      null,
-	                      ' 4 '
-	                    )
-	                  ),
-	                  React.createElement(
-	                    'p',
-	                    null,
-	                    React.createElement(
-	                      'small',
-	                      null,
-	                      'Followers'
-	                    )
-	                  ),
-	                  React.createElement(
-	                    'button',
-	                    { className: 'btn btn-success btn-block' },
-	                    React.createElement('span', { className: 'fa fa-plus-circle' }),
-	                    ' Follow '
-	                  )
-	                ),
-	                React.createElement(
-	                  'div',
-	                  { className: 'col-xs-12 col-sm-6' },
-	                  React.createElement(
-	                    'h2',
-	                    null,
-	                    React.createElement(
-	                      'strong',
-	                      null,
-	                      '1'
-	                    )
-	                  ),
-	                  React.createElement(
-	                    'p',
-	                    null,
-	                    React.createElement(
-	                      'small',
-	                      null,
-	                      'Contests Completed'
+	                      { className: 'headMain' },
+	                      React.createElement(
+	                        'p',
+	                        { className: 'strong text-center' },
+	                        'Tyler Fallon'
+	                      ),
+	                      React.createElement('img', { src: 'https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg', className: 'text-center img-circle imageScale' })
 	                    )
 	                  ),
 	                  React.createElement(
 	                    'div',
-	                    { className: 'btn-group dropup btn-block' },
+	                    { className: 'col-xs-12 col-sm-7 text-center' },
+	                    React.createElement(
+	                      'figure',
+	                      { className: 'justify' },
+	                      React.createElement(
+	                        'p',
+	                        null,
+	                        React.createElement(
+	                          'strong',
+	                          null,
+	                          'About: '
+	                        ),
+	                        ' Full Stack Developer / UI Designer / General Boss '
+	                      ),
+	                      React.createElement(
+	                        'p',
+	                        null,
+	                        React.createElement(
+	                          'strong',
+	                          null,
+	                          'Hobbies: '
+	                        ),
+	                        ' Blackjack UI/UX '
+	                      ),
+	                      React.createElement(
+	                        'p',
+	                        null,
+	                        React.createElement(
+	                          'strong',
+	                          null,
+	                          'Contests Completed:'
+	                        )
+	                      ),
+	                      React.createElement(
+	                        'span',
+	                        { className: 'tags' },
+	                        'AC Hunt'
+	                      )
+	                    )
+	                  )
+	                ),
+	                React.createElement(
+	                  'div',
+	                  { className: 'col-xs-12 divider text-center' },
+	                  React.createElement(
+	                    'div',
+	                    { className: 'col-xs-12 col-sm-6' },
+	                    React.createElement(
+	                      'h2',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' 4 '
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      null,
+	                      React.createElement(
+	                        'small',
+	                        null,
+	                        'Followers'
+	                      )
+	                    ),
 	                    React.createElement(
 	                      'button',
-	                      { type: 'button', className: 'btn btn-primary btn-block' },
-	                      React.createElement('span', { className: 'fa fa-gear' }),
-	                      ' Contact User '
+	                      { className: 'btn btn-success btn-block' },
+	                      React.createElement('span', { className: 'fa fa-plus-circle' }),
+	                      ' Follow '
+	                    )
+	                  ),
+	                  React.createElement(
+	                    'div',
+	                    { className: 'col-xs-12 col-sm-6' },
+	                    React.createElement(
+	                      'h2',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        '1'
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'p',
+	                      null,
+	                      React.createElement(
+	                        'small',
+	                        null,
+	                        'Contests Completed'
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'div',
+	                      { className: 'btn-group dropup btn-block' },
+	                      React.createElement(
+	                        'button',
+	                        { type: 'button', className: 'btn btn-primary btn-block' },
+	                        React.createElement('span', { className: 'fa fa-gear' }),
+	                        ' Contact User '
+	                      )
 	                    )
 	                  )
 	                )
@@ -46210,6 +46210,7 @@
 
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
+	var Main = __webpack_require__(236);
 
 
 	var Leaderboards = React.createClass({
@@ -46243,9 +46244,14 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'container' },
-	      React.createElement(SearchBox, { search: this.search }),
-	      React.createElement(Results, { searchResults: this.state.searchResults })
+	      { className: 'mainDiv' },
+	      React.createElement(Main, null),
+	      React.createElement(
+	        'div',
+	        { className: 'container' },
+	        React.createElement(SearchBox, { search: this.search }),
+	        React.createElement(Results, { searchResults: this.state.searchResults })
+	      )
 	    );
 	  }
 	});
@@ -46389,6 +46395,7 @@
 
 	// Include React and React-Router dependencies
 	var React = __webpack_require__(1);
+	var Main = __webpack_require__(236);
 
 
 	// Query Component Declaration
@@ -46427,120 +46434,125 @@
 
 			return React.createElement(
 				'div',
-				{ className: 'container' },
+				{ className: 'mainDiv' },
+				React.createElement(Main, null),
 				React.createElement(
 					'div',
-					{ className: 'main-container' },
+					{ className: 'container' },
 					React.createElement(
 						'div',
-						{ className: 'row' },
+						{ className: 'main-container' },
 						React.createElement(
 							'div',
-							{ className: 'col-lg-12' },
+							{ className: 'row' },
 							React.createElement(
 								'div',
-								{ className: 'navbar navbar-light bg-default' },
+								{ className: 'col-lg-12' },
 								React.createElement(
 									'div',
-									{ className: 'panel-heading' },
+									{ className: 'navbar navbar-light bg-default' },
 									React.createElement(
-										'h1',
-										{ className: 'panel-title' },
+										'div',
+										{ className: 'panel-heading' },
 										React.createElement(
-											'strong',
-											null,
-											React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
-											'  Search for a Contest'
+											'h1',
+											{ className: 'panel-title' },
+											React.createElement(
+												'strong',
+												null,
+												React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
+												'  Search for a Contest'
+											)
 										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'panel-body' },
+									),
 									React.createElement(
-										'form',
-										null,
+										'div',
+										{ className: 'panel-body' },
 										React.createElement(
-											'div',
-											{ className: 'form-group' },
+											'form',
+											null,
 											React.createElement(
-												'h4',
-												{ className: '' },
-												React.createElement(
-													'strong',
-													null,
-													'Topic'
-												)
-											),
-											React.createElement('input', { type: 'text', value: this.state.value, className: 'form-control ', id: 'search', onChange: this.handleChange, required: true })
-										),
-										React.createElement(
-											'div',
-											{ className: 'pull-left' },
-											React.createElement(
-												'button',
-												{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+												'div',
+												{ className: 'form-group' },
 												React.createElement(
 													'h4',
-													null,
-													'Submit'
+													{ className: '' },
+													React.createElement(
+														'strong',
+														null,
+														'Topic'
+													)
+												),
+												React.createElement('input', { type: 'text', value: this.state.value, className: 'form-control ', id: 'search', onChange: this.handleChange, required: true })
+											),
+											React.createElement(
+												'div',
+												{ className: 'pull-left' },
+												React.createElement(
+													'button',
+													{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+													React.createElement(
+														'h4',
+														null,
+														'Submit'
+													)
 												)
 											)
 										)
 									)
 								)
 							)
-						)
-					),
-					React.createElement(
-						'center',
-						null,
+						),
 						React.createElement(
-							_reactBootstrap.PageHeader,
+							'center',
 							null,
-							'OR'
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'row' },
+							React.createElement(
+								_reactBootstrap.PageHeader,
+								null,
+								'OR'
+							)
+						),
 						React.createElement(
 							'div',
-							{ className: 'col-lg-12' },
+							{ className: 'row' },
 							React.createElement(
 								'div',
-								{ className: 'navbar navbar-light bg-default' },
+								{ className: 'col-lg-12' },
 								React.createElement(
 									'div',
-									{ className: 'panel-heading' },
+									{ className: 'navbar navbar-light bg-default' },
 									React.createElement(
-										'h1',
-										{ className: 'panel-title' },
+										'div',
+										{ className: 'panel-heading' },
 										React.createElement(
-											'strong',
-											null,
-											React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
-											'  See All Current Contests'
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'panel-body' },
-									React.createElement(
-										'form',
-										null,
-										React.createElement('div', { className: 'form-group' }),
-										React.createElement(
-											'div',
-											{ className: 'pull-left' },
+											'h1',
+											{ className: 'panel-title' },
 											React.createElement(
-												'button',
-												{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+												'strong',
+												null,
+												React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
+												'  See All Current Contests'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'panel-body' },
+										React.createElement(
+											'form',
+											null,
+											React.createElement('div', { className: 'form-group' }),
+											React.createElement(
+												'div',
+												{ className: 'pull-left' },
 												React.createElement(
-													'h4',
-													null,
-													'Populate List'
+													'button',
+													{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+													React.createElement(
+														'h4',
+														null,
+														'Populate List'
+													)
 												)
 											)
 										)
@@ -46569,6 +46581,7 @@
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 	var ReactDOM = __webpack_require__(34);
+	var Main = __webpack_require__(236);
 
 	var subTasks = __webpack_require__(492);
 
@@ -46653,130 +46666,135 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { 'class': 'add' },
+	      { 'class': 'mainDiv' },
+	      React.createElement(Main, null),
 	      React.createElement(
 	        'div',
-	        { className: 'main-container' },
+	        { 'class': 'add' },
 	        React.createElement(
 	          'div',
-	          { className: 'container' },
+	          { className: 'main-container' },
 	          React.createElement(
-	            'center',
-	            null,
+	            'div',
+	            { className: 'container' },
 	            React.createElement(
-	              _reactBootstrap.PageHeader,
-	              null,
-	              'Create A Contest'
-	            )
-	          ),
-	          React.createElement('div', null),
-	          React.createElement(
-	            'form',
-	            { onChange: this.handleTitleChange },
-	            React.createElement(
-	              _reactBootstrap.ControlLabel,
-	              null,
-	              'Contest Name'
-	            ),
-	            React.createElement(_reactBootstrap.FormControl, { type: 'text', ref: 'titleText', placeholder: this.state.title }),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactBootstrap.FormGroup,
-	              { controlId: 'formControlsTextarea' },
-	              React.createElement(
-	                _reactBootstrap.ControlLabel,
-	                null,
-	                'Contest Description'
-	              ),
-	              React.createElement(_reactBootstrap.FormControl, {
-	                componentClass: 'textarea',
-	                ref: 'titleDescriptionText',
-	                placeholder: this.state.titleDescription })
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactBootstrap.FormGroup,
+	              'center',
 	              null,
 	              React.createElement(
-	                _reactBootstrap.ControlLabel,
+	                _reactBootstrap.PageHeader,
 	                null,
-	                'Add the instructions for your contest below! Click to Expand.'
+	                'Create A Contest'
 	              )
 	            ),
+	            React.createElement('div', null),
 	            React.createElement(
-	              'div',
-	              { id: 'placeholder' },
+	              'form',
+	              { onChange: this.handleTitleChange },
+	              React.createElement(
+	                _reactBootstrap.ControlLabel,
+	                null,
+	                'Contest Name'
+	              ),
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', ref: 'titleText', placeholder: this.state.title }),
+	              React.createElement('br', null),
+	              React.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'formControlsTextarea' },
+	                React.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Contest Description'
+	                ),
+	                React.createElement(_reactBootstrap.FormControl, {
+	                  componentClass: 'textarea',
+	                  ref: 'titleDescriptionText',
+	                  placeholder: this.state.titleDescription })
+	              ),
+	              React.createElement('br', null),
+	              React.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                React.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Add the instructions for your contest below! Click to Expand.'
+	                )
+	              ),
 	              React.createElement(
 	                'div',
-	                { id: 'template' },
+	                { id: 'placeholder' },
 	                React.createElement(
-	                  _reactBootstrap.Panel,
-	                  { collapsible: true, defaultExpanded: true, header: 'Task' },
+	                  'div',
+	                  { id: 'template' },
 	                  React.createElement(
-	                    'form',
-	                    { className: 'new task', onSubmit: this.handleRequest },
+	                    _reactBootstrap.Panel,
+	                    { collapsible: true, defaultExpanded: true, header: 'Task' },
 	                    React.createElement(
-	                      _reactBootstrap.ListGroup,
-	                      { fill: true },
+	                      'form',
+	                      { className: 'new task', onSubmit: this.handleRequest },
 	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'text',
-	                          ref: 'taskText',
-	                          placeholder: 'Default Action'
-	                        })
-	                      ),
-	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'text',
-	                          ref: 'addressText',
-	                          placeholder: 'Default Address'
-	                        })
-	                      ),
-	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'text',
-	                          ref: 'descriptionText',
-	                          placeholder: 'Default Description'
-	                        })
-	                      ),
-	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'submit',
-	                          value: 'Submit'
-	                        })
+	                        _reactBootstrap.ListGroup,
+	                        { fill: true },
+	                        React.createElement(
+	                          _reactBootstrap.ListGroupItem,
+	                          null,
+	                          React.createElement(_reactBootstrap.FormControl, {
+	                            type: 'text',
+	                            ref: 'taskText',
+	                            placeholder: 'Default Action'
+	                          })
+	                        ),
+	                        React.createElement(
+	                          _reactBootstrap.ListGroupItem,
+	                          null,
+	                          React.createElement(_reactBootstrap.FormControl, {
+	                            type: 'text',
+	                            ref: 'addressText',
+	                            placeholder: 'Default Address'
+	                          })
+	                        ),
+	                        React.createElement(
+	                          _reactBootstrap.ListGroupItem,
+	                          null,
+	                          React.createElement(_reactBootstrap.FormControl, {
+	                            type: 'text',
+	                            ref: 'descriptionText',
+	                            placeholder: 'Default Description'
+	                          })
+	                        ),
+	                        React.createElement(
+	                          _reactBootstrap.ListGroupItem,
+	                          null,
+	                          React.createElement(_reactBootstrap.FormControl, {
+	                            type: 'submit',
+	                            value: 'Submit'
+	                          })
+	                        )
 	                      )
 	                    )
 	                  )
 	                )
-	              )
-	            ),
-	            this.renderTasks(),
-	            React.createElement('subTasks', null),
-	            React.createElement(
-	              _reactBootstrap.Pager,
-	              null,
+	              ),
+	              this.renderTasks(),
+	              React.createElement('subTasks', null),
 	              React.createElement(
-	                _reactBootstrap.Pager.Item,
-	                { onClick: this.Add, previous: true, href: '#' },
-	                'Add Additional Tasks \u2192'
-	              )
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              'div',
-	              { className: 'well' },
+	                _reactBootstrap.Pager,
+	                null,
+	                React.createElement(
+	                  _reactBootstrap.Pager.Item,
+	                  { onClick: this.Add, previous: true, href: '#' },
+	                  'Add Additional Tasks \u2192'
+	                )
+	              ),
+	              React.createElement('br', null),
 	              React.createElement(
-	                _reactBootstrap.Button,
-	                { bsSize: 'large', block: true, onClick: this.handleSubmitClick },
-	                'Submit Contest'
+	                'div',
+	                { className: 'well' },
+	                React.createElement(
+	                  _reactBootstrap.Button,
+	                  { bsSize: 'large', block: true, onClick: this.handleSubmitClick },
+	                  'Submit Contest'
+	                )
 	              )
 	            )
 	          )

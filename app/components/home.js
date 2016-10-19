@@ -3,6 +3,7 @@ var React = require('react');
 var Router = require('react-router')
 
 
+
 var Home = React.createClass({
 
 	render: function(){
@@ -17,7 +18,7 @@ var Home = React.createClass({
           <div id="group2" className="parallax__group">
             <div className="parallax__layer parallax__layer--base">
               <center><h3 className="tagline">Discover. Connect. Adventure. <br /> <br />
-              <center><a href="/Leaderboards"><button type="button" id="getStarted" className="btn btn-danger center getStarted"><h4>Get Started</h4></button></a></center><br /></h3></center>         
+              <center><a href="#/profile" type="button" id="getStarted" className="btn btn-danger center getStarted"><h4>Get Started</h4></a></center><br /></h3></center>         
                <br /><br /> <br />
              <center><a href="#"><img src={'https://s10.postimg.org/dfh868909/Questive_Logo.png'} height='100' width='250' className="logoArea"/></a></center>
             </div>

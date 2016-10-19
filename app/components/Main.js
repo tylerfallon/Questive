@@ -27,7 +27,6 @@ var Main = React.createClass({
           </div>{/* /.navbar-collapse */}
         </div>{/* /.container-fluid */}
       </nav>
-					{this.props.children}
 			
 		</div>
 		)

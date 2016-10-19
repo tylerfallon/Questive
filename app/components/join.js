@@ -1,5 +1,6 @@
 // Include React and React-Router dependencies
 var React = require('react');
+var Main = require('./Main');
 import { PageHeader } from 'react-bootstrap';
 
 // Query Component Declaration
@@ -35,6 +36,8 @@ var Join = React.createClass({
 	render: function(){
 
 		return(
+			<div className="mainDiv">
+			<Main />
 			<div className="container">
 			<div className ="main-container">
 
@@ -97,7 +100,7 @@ var Join = React.createClass({
 
 			</div>
 		</div>
-
+	</div>
 
 
 

@@ -9,17 +9,16 @@ var Join = require('../components/join.js')
 var Create = require('../components/create.js')
 var Route = Router.Route;
 var IndexRoute	= Router.IndexRoute;
+var hashHistory = require('react-router').hashHistory
 
 
 module.exports = (
-
-	<Route path='/' component={Home}>
-    <Route path='Main' component={Main}>
-		  <Route path='Leaderboards' component={Leaderboards} />
-		  <Route path='Profile' component={Profile} />
-		  <Route path='Join' component={Join} />
-		  <Route path='Create' component={Create} />
-		  <IndexRoute component={Home} />
-    </Route>
-	</Route>
+  <Router history={hashHistory}>
+  	<Route path='/' component={Home} />
+  		<Route path='Leaderboards' component={Leaderboards} />
+  		<Route path='Profile' component={Profile} />
+  		<Route path='Join' component={Join} />
+  		<Route path='Create' component={Create} />
+  		<IndexRoute component={Home} />
+  </ Router>
 );

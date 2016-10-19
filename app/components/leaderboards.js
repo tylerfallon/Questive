@@ -1,5 +1,6 @@
 var React = require('react');
 var Router = require('react-router');
+var Main = require('./Main');
 import { Button } from 'react-bootstrap';
 
 
@@ -33,10 +34,14 @@ var Leaderboards = React.createClass({
   },
   render: function () {
     return (
+
+      <div className="mainDiv">
+      <Main />
       <div className="container">
         <SearchBox search = {this.search}/>
         <Results searchResults = {this.state.searchResults}/>
       </div>
+    </div>
     );
   }
 });
