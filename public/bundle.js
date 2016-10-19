@@ -27348,7 +27348,7 @@
 	                  React.createElement(
 	                    'a',
 	                    { href: '#' },
-	                    React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '100', width: '250', className: 'logoArea' })
+	                    React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '100', width: '250', className: 'logoArea wow lightSpeedIn' })
 	                  )
 	                )
 	              ),
