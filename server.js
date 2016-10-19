@@ -7,13 +7,13 @@ var Promise = require('bluebird');
 var bCrypt = require('bcrypt-nodejs');
 // require Schemas
 // users schema
-<<<<<<< HEAD
+
 var User = require('./models/users.js');
-=======
+
 var Users = require('./models/users.js');
 
 var Questors = require('./models/Questors.js');
->>>>>>> 199d2e96879e6fb7156cf525f8805b2b875a7afa
+
 //require tasks schema
 var Tasks = require('./models/Tasks.js');
 //require scavenger hunt schema

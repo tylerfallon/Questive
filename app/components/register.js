@@ -31,7 +31,7 @@ var Register = React.createClass({
       dataType: 'json',
       data: {
         username: $('#usernameRegister').val(),
-        password: $('#passwordRegister').val()
+        password: $('#passwordRegister').val(),
         email: $('#emailRegister').val()
       },      
       url: '/register',
