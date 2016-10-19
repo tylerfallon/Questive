@@ -27507,6 +27507,17 @@
 	          'div',
 	          { className: 'container' },
 	          React.createElement(
+	            'span',
+	            { 'class': 'leftSide' },
+	            'Logged in as:',
+	            React.createElement(
+	              'span',
+	              { className: 'strong text-center' },
+	              ' ',
+	              this.state.user.username
+	            )
+	          ),
+	          React.createElement(
 	            'div',
 	            { className: 'row' },
 	            React.createElement(
@@ -46628,7 +46639,11 @@
 
 	'use strict';
 
+	var _React$createClass;
+
 	var _reactBootstrap = __webpack_require__(240);
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	// Include React and React-Router dependencies
 	var React = __webpack_require__(1);
@@ -46637,441 +46652,600 @@
 	var Main = __webpack_require__(236);
 
 	// Query Component Declaration
-	var Join = React.createClass({
-		displayName: 'Join',
+	var Join = React.createClass((_React$createClass = {
+	  displayName: 'Join',
 
 
-		// Here we set initial variables for the component to be blanks
-		getInitialState: function getInitialState() {
-			return {
-				search: ""
-			};
-		},
+	  // Here we set initial variables for the component to be blanks
+	  getInitialState: function getInitialState() {
+	    return {
+	      search: ""
+	    };
+	  }
 
-		// Whenever we detect ANY change in the textbox, we register it. 
-		handleChange: function handleChange(event) {
-			console.log("TEXT CHANGED");
+	}, _defineProperty(_React$createClass, 'getInitialState', function getInitialState() {
+	  return {
+	    user: {
+	      username: '',
+	      email: ''
+	    }
+	  };
+	}), _defineProperty(_React$createClass, 'getUser', function getUser() {
+	  $.ajax({
+	    type: "GET",
+	    dataType: 'json',
+	    url: '/user',
+	    error: function error() {
+	      hashHistory.push('register');
+	    },
+	    success: function (jsonData) {
+	      console.log('user', jsonData);
+	      if (!jsonData) {
+	        hashHistory.push('register');
+	      } else {
+	        this.setState({
+	          user: jsonData
+	        });
+	      }
+	    }.bind(this)
+	  });
+	}), _defineProperty(_React$createClass, 'componentDidMount', function componentDidMount() {
+	  this.getUser();
+	}), _defineProperty(_React$createClass, 'main', function main() {
+	  $('form').submit(function (event) {
+	    var $input = $(event.target).find('input');
+	    var comment = $input.val();
 
-			// Here we create syntax to capture any change in text to the query terms (pre-search).
-			// See this Stack Overflow answer for more details: 
-			// http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
-			var newState = {};
-			newState[event.target.id] = event.target.value;
-			this.setState(newState);
-		},
+	    if (comment != "") {
+	      var html = $('<div>').html('tyler: ' + comment);
+	      html.prependTo('#comments');
+	      $input.val("");
+	    }
 
-		/*This code handles the sending of the search terms to the parent Search component*/
-		handleSubmit: function handleSubmit() {
-			console.log("CLICKED");
-			this.props.updateSearch(this.state.search);
-			return false;
-		},
+	    return false;
+	  });
+	}), _defineProperty(_React$createClass, 'main2', function main2() {
+	  $('form').submit(function (event) {
+	    var $input = $(event.target).find('input');
+	    var comment2 = $input.val();
 
-		// Here we render the Query component
-		render: function render() {
+	    if (comment2 != "") {
+	      var html2 = $('<div>').html('tyler: ' + comment2);
+	      html2.prependTo('#comments2');
+	      $input.val("");
+	    }
 
-			return React.createElement(
-				'div',
-				{ className: 'mainDiv' },
-				React.createElement(Main, null),
-				React.createElement(
-					'div',
-					{ className: 'container' },
-					React.createElement(
-						'div',
-						{ className: 'main-container' },
-						React.createElement(
-							'div',
-							{ className: 'container' },
-							React.createElement(
-								'div',
-								{ className: 'row' },
-								React.createElement(
-									'left',
-									null,
-									React.createElement(
-										_reactBootstrap.PageHeader,
-										null,
-										'Join A Contest'
-									)
-								),
-								React.createElement('div', null),
-								React.createElement(
-									_reactBootstrap.ControlLabel,
-									null,
-									React.createElement(
-										'h2',
-										null,
-										React.createElement(
-											'strong',
-											null,
-											'Active Contests'
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ id: 'placeholder' },
-									React.createElement(
-										_reactBootstrap.Panel,
-										{ collapsible: true, defaultExpanded: false, className: 'text-center', header: 'Rutgers Wicked Homecoming Quest' },
-										React.createElement(
-											_reactBootstrap.ListGroup,
-											{ fill: true },
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Task 1:'
-													),
-													' Take a picture of the first player to ever score a touchdown at Rutgers'
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														'Location:'
-													),
-													' Rutgers New Brunswick '
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														'Additional Info:'
-													),
-													' You can find this player at the place where this all started'
-												)
-											),
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Task 2:'
-													),
-													' Finish 3 Fatsandwiches at the original Grease Truck'
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Location:'
-													),
-													' Rutgers New Brunswick College Ave'
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Additional Info:'
-													),
-													' The FAT CAT & FAT DAD are my personal Favorites'
-												)
-											),
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Task 3:'
-													),
-													'Take the rutgers challenge  '
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Location:'
-													),
-													' Rutgers New Brunswick College Ave'
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Additional Info:'
-													),
-													' The FAT CAT & FAT DAD are my personal Favorites'
-												)
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ id: 'placeholder' },
-									React.createElement(
-										_reactBootstrap.Panel,
-										{ collapsible: true, defaultExpanded: false, className: 'text-center', header: 'A Wacky Halloween on Easton' },
-										React.createElement(
-											_reactBootstrap.ListGroup,
-											{ fill: true },
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Task 1:'
-													),
-													' Take a picture with a the random clown'
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Location:'
-													),
-													'Easton Ave.  '
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Additional Info:'
-													),
-													' Dont get to close to the clowns. Make sure to have your pepper spray'
-												)
-											),
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Task 2:'
-													),
-													' Challenge the Wizard King to a game of darts '
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Location:'
-													),
-													' Easton Ave'
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Additional Info:'
-													),
-													' Make sure to not anger the wizard or you could be tasked with completing an additional quest '
-												)
-											),
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Task 3:'
-													),
-													' Find the golden Snitch '
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Location:'
-													),
-													' Golden Rail bar'
-												),
-												React.createElement(
-													'h5',
-													null,
-													React.createElement(
-														'strong',
-														null,
-														' Additional Info:'
-													),
-													' First one to find the snitch wins the match'
-												)
-											)
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ id: 'placeholder' },
-									React.createElement(
-										_reactBootstrap.Panel,
-										{ collapsible: true, defaultExpanded: false, className: 'text-center', header: 'A New Students First Day!' },
-										React.createElement(
-											_reactBootstrap.ListGroup,
-											{ fill: true },
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													' Task 4: Eat in every on-campus cafeteria '
-												),
-												React.createElement(
-													'h5',
-													null,
-													' Location: Rutgers-New Brunswick: every campus'
-												),
-												React.createElement(
-													'h5',
-													null,
-													' Additional Info: Don\'t over eat!'
-												)
-											),
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													' Task 5: Check-in at every park in New Brunswick '
-												),
-												React.createElement(
-													'h5',
-													null,
-													' Location:New Brunswick, NJ'
-												),
-												React.createElement(
-													'h5',
-													null,
-													' Additional Info: A lot of the parks are along the Raritan. Take some great pics!'
-												)
-											),
-											React.createElement(
-												_reactBootstrap.ListGroupItem,
-												null,
-												React.createElement(
-													'h5',
-													null,
-													' Task 6: Take a selfie from the top of Plaza Square Apartments '
-												),
-												React.createElement(
-													'h5',
-													null,
-													' Location:1 Richmond Street, New Brunswick, NJ'
-												),
-												React.createElement(
-													'h5',
-													null,
-													' Additional Info: The custodians rarely lock the roof access doors. Lots of interesting scenes from up there!'
-												)
-											)
-										)
-									)
-								)
-							),
-							' '
-						),
-						React.createElement(
-							'center',
-							null,
-							React.createElement(
-								_reactBootstrap.PageHeader,
-								null,
-								'OR'
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'row' },
-							React.createElement(
-								'div',
-								{ className: 'col-lg-12' },
-								React.createElement(
-									'div',
-									{ className: 'navbar navbar-light bg-default' },
-									React.createElement(
-										'div',
-										{ className: 'panel-heading' },
-										React.createElement(
-											'h1',
-											{ className: 'panel-title' },
-											React.createElement(
-												'strong',
-												null,
-												React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
-												'  See All Current Contests'
-											)
-										)
-									),
-									React.createElement(
-										'div',
-										{ className: 'panel-body' },
-										React.createElement(
-											'form',
-											null,
-											React.createElement('div', { className: 'form-group' }),
-											React.createElement(
-												'div',
-												{ className: 'pull-left' },
-												React.createElement(
-													'button',
-													{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
-													React.createElement(
-														'h4',
-														null,
-														'Populate List'
-													)
-												)
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				)
-			);
-		}
+	    return false;
+	  });
+	}), _defineProperty(_React$createClass, 'main3', function main3() {
+	  $('form').submit(function (event) {
+	    var $input = $(event.target).find('input');
+	    var comment3 = $input.val();
 
-	});
+	    if (comment3 != "") {
+	      var html3 = $('<div>').html('tyler: ' + comment3);
+	      html3.prependTo('#comments3');
+	      $input.val("");
+	    }
+
+	    return false;
+	  });
+	}), _defineProperty(_React$createClass, 'handleChange', function handleChange(event) {
+	  console.log("TEXT CHANGED");
+
+	  // Here we create syntax to capture any change in text to the query terms (pre-search).
+	  // See this Stack Overflow answer for more details: 
+	  // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
+	  var newState = {};
+	  newState[event.target.id] = event.target.value;
+	  this.setState(newState);
+	}), _defineProperty(_React$createClass, 'handleSubmit', function handleSubmit() {
+	  console.log("CLICKED");
+	  this.props.updateSearch(this.state.search);
+	  return false;
+	}), _defineProperty(_React$createClass, 'render', function render() {
+
+	  return React.createElement(
+	    'div',
+	    { className: 'mainDiv' },
+	    React.createElement(Main, null),
+	    React.createElement(
+	      'div',
+	      { className: 'container' },
+	      React.createElement(
+	        'div',
+	        { className: 'main-container' },
+	        React.createElement(
+	          'div',
+	          { className: 'container' },
+	          React.createElement(
+	            'span',
+	            { 'class': 'leftSide' },
+	            'Logged in as:',
+	            React.createElement(
+	              'span',
+	              { className: 'strong text-center' },
+	              ' ',
+	              this.state.user.username
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: 'row' },
+	            React.createElement(
+	              'center',
+	              null,
+	              React.createElement(
+	                _reactBootstrap.PageHeader,
+	                null,
+	                'Join A Contest'
+	              )
+	            ),
+	            React.createElement('div', null),
+	            React.createElement(
+	              _reactBootstrap.ControlLabel,
+	              null,
+	              React.createElement(
+	                'h2',
+	                null,
+	                React.createElement(
+	                  'strong',
+	                  null,
+	                  'Active Contests'
+	                )
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { id: 'placeholder' },
+	              React.createElement(
+	                _reactBootstrap.Panel,
+	                { collapsible: true, defaultExpanded: false, className: 'text-center', header: 'Rutgers Wicked Homecoming Quest' },
+	                React.createElement(
+	                  _reactBootstrap.ListGroup,
+	                  { fill: true },
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Task 1:'
+	                      ),
+	                      ' Take a picture of the first player to ever score a touchdown at Rutgers'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        'Location:'
+	                      ),
+	                      ' Rutgers New Brunswick '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        'Additional Info:'
+	                      ),
+	                      ' You can find this player at the place where this all started'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Task 2:'
+	                      ),
+	                      ' Finish 3 Fatsandwiches at the original Grease Truck'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Location:'
+	                      ),
+	                      ' Rutgers New Brunswick College Ave'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Additional Info:'
+	                      ),
+	                      ' The FAT CAT & FAT DAD are my personal Favorites'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Task 3:'
+	                      ),
+	                      'Take the rutgers challenge  '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Location:'
+	                      ),
+	                      ' Rutgers New Brunswick College Ave'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Additional Info:'
+	                      ),
+	                      ' The FAT CAT & FAT DAD are my personal Favorites'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h4',
+	                      null,
+	                      'Quest Comments by Users:'
+	                    ),
+	                    React.createElement('br', null),
+	                    React.createElement(
+	                      'ul',
+	                      { 'class': 'comments', id: 'comments' },
+	                      React.createElement(
+	                        'left',
+	                        null,
+	                        React.createElement(
+	                          'div',
+	                          null,
+	                          this.state.user.username,
+	                          ': This Quest looks awesome!'
+	                        )
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'div',
+	                      { 'class': 'row' },
+	                      React.createElement(
+	                        'form',
+	                        { 'class': 'form' },
+	                        React.createElement(
+	                          'div',
+	                          { 'class': 'col-xs-8 col-md-10' },
+	                          React.createElement('br', null),
+	                          React.createElement('br', null),
+	                          React.createElement('input', { id: 'comment', type: 'text',
+	                            placeholder: 'add a comment...' })
+	                        ),
+	                        React.createElement(
+	                          'div',
+	                          { 'class': 'col-xs-4 col-md-2' },
+	                          React.createElement(
+	                            'button',
+	                            { type: 'submit', 'class': 'btn btn-primary', onClick: this.main },
+	                            'post'
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { id: 'placeholder' },
+	              React.createElement(
+	                _reactBootstrap.Panel,
+	                { collapsible: true, defaultExpanded: false, className: 'text-center', header: 'A Wacky Halloween on Easton' },
+	                React.createElement(
+	                  _reactBootstrap.ListGroup,
+	                  { fill: true },
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Task 1:'
+	                      ),
+	                      ' Take a picture with a the random clown'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Location:'
+	                      ),
+	                      'Easton Ave.  '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Additional Info:'
+	                      ),
+	                      ' Dont get to close to the clowns. Make sure to have your pepper spray'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Task 2:'
+	                      ),
+	                      ' Challenge the Wizard King to a game of darts '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Location:'
+	                      ),
+	                      ' Easton Ave'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Additional Info:'
+	                      ),
+	                      ' Make sure to not anger the wizard or you could be tasked with completing an additional quest '
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Task 3:'
+	                      ),
+	                      ' Find the golden Snitch '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Location:'
+	                      ),
+	                      ' Golden Rail bar'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      React.createElement(
+	                        'strong',
+	                        null,
+	                        ' Additional Info:'
+	                      ),
+	                      ' First one to find the snitch wins the match'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h4',
+	                      null,
+	                      'Quest Comments by Users:'
+	                    ),
+	                    React.createElement('br', null),
+	                    React.createElement(
+	                      'ul',
+	                      { 'class': 'comments2', id: 'comments2' },
+	                      React.createElement(
+	                        'left',
+	                        null,
+	                        React.createElement(
+	                          'div',
+	                          null,
+	                          this.state.user.username,
+	                          ': This Quest looks awesome!'
+	                        )
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'div',
+	                      { 'class': 'row' },
+	                      React.createElement(
+	                        'form',
+	                        { 'class': 'form2' },
+	                        React.createElement(
+	                          'div',
+	                          { 'class': 'col-xs-8 col-md-10' },
+	                          React.createElement('br', null),
+	                          React.createElement('br', null),
+	                          React.createElement('input', { id: 'comment2', type: 'text',
+	                            placeholder: 'add a comment...' })
+	                        ),
+	                        React.createElement(
+	                          'div',
+	                          { 'class': 'col-xs-4 col-md-2' },
+	                          React.createElement(
+	                            'button',
+	                            { type: 'submit', 'class': 'btn btn-primary', onClick: this.main2 },
+	                            'post'
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { id: 'placeholder' },
+	              React.createElement(
+	                _reactBootstrap.Panel,
+	                { collapsible: true, defaultExpanded: false, className: 'text-center', header: 'A New Students First Day!' },
+	                React.createElement(
+	                  _reactBootstrap.ListGroup,
+	                  { fill: true },
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Task 4: Eat in every on-campus cafeteria '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Location: Rutgers-New Brunswick: every campus'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Additional Info: Don\'t over eat!'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Task 5: Check-in at every park in New Brunswick '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Location:New Brunswick, NJ'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Additional Info: A lot of the parks are along the Raritan. Take some great pics!'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Task 6: Take a selfie from the top of Plaza Square Apartments '
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Location:1 Richmond Street, New Brunswick, NJ'
+	                    ),
+	                    React.createElement(
+	                      'h5',
+	                      null,
+	                      ' Additional Info: The custodians rarely lock the roof access doors. Lots of interesting scenes from up there!'
+	                    )
+	                  ),
+	                  React.createElement(
+	                    _reactBootstrap.ListGroupItem,
+	                    null,
+	                    React.createElement(
+	                      'h4',
+	                      null,
+	                      'Quest Comments by Users:'
+	                    ),
+	                    React.createElement('br', null),
+	                    React.createElement(
+	                      'ul',
+	                      { 'class': 'comments3', id: 'comments3' },
+	                      React.createElement(
+	                        'left',
+	                        null,
+	                        React.createElement(
+	                          'div',
+	                          null,
+	                          this.state.user.username,
+	                          ': This Quest looks awesome!'
+	                        )
+	                      )
+	                    ),
+	                    React.createElement(
+	                      'div',
+	                      { 'class': 'row' },
+	                      React.createElement(
+	                        'form',
+	                        { 'class': 'form3' },
+	                        React.createElement(
+	                          'div',
+	                          { 'class': 'col-xs-8 col-md-10' },
+	                          React.createElement('br', null),
+	                          React.createElement('br', null),
+	                          React.createElement('input', { id: 'comment3', type: 'text',
+	                            placeholder: 'add a comment...' })
+	                        ),
+	                        React.createElement(
+	                          'div',
+	                          { 'class': 'col-xs-4 col-md-2' },
+	                          React.createElement(
+	                            'button',
+	                            { type: 'submit', 'class': 'btn btn-primary', onClick: this.main3 },
+	                            'post'
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          ' '
+	        )
+	      )
+	    )
+	  );
+	}), _React$createClass));
 
 	// Export the module back to the route
 	module.exports = Join;

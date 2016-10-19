@@ -45,6 +45,7 @@ var Profile = React.createClass({
         <Main />
 			<div className="main-container"> 
       <div className="container">
+      <span class='leftSide'>Logged in as:<span className="strong text-center"> {this.state.user.username}</span></span>
         <div className="row">
           <div className="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
             <div className="profile-box well profile">

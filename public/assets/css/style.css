@@ -877,3 +877,7 @@ p.change_link{
     text-align: center;
     margin: 20px;
 }
+
+.leftSide {
+    text-align: left;
+}
