@@ -54,14 +54,10 @@ var Register = React.createClass({
       }.bind(this)
     });
   },    
-	render: function(){
-		return(
+  render: function(){
+    return(
       <div className="mainDiv">
         <Nav />
-      <div className="signContainer">
-      <div className="container">
-        <form className="form-signin" onSubmit={this.onLogin}>
-          <h2 className="form-signin-heading">Please sign in</h2>
           <div>
           <center><h2>Welcome! Please login or register.</h2></center><br/>
         {/* Button trigger modal */}
@@ -79,6 +75,15 @@ var Register = React.createClass({
                 <h4 className="modal-title" id="myModalLabel"></h4>
               </div>
               <div className="modal-body">
+                
+<form className="form-signin" onSubmit={this.onLogin}>
+          <center><h3 className="form-signin-heading">Please sign in</h3>
+          <label htmlFor="username" className="sr-only">Username</label>
+          <input type="text" id="usernameLogin" name="username" className="form-control" placeholder="Username" required autofocus />
+          <label htmlFor="inputPassword" className="sr-only">Password</label>
+          <input type="password" id="passwordLogin" name="password" className="form-control" placeholder="Password" required />
+          <button className="btn btn-md btn-primary btn-block" id='signInButton' type="submit" >Sign in</button></center>
+        </form>
 
               </div>
               <div className="modal-footer">
