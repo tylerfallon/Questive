@@ -27103,13 +27103,16 @@
 
 	module.exports = React.createElement(
 		Route,
-		{ path: '/', component: Main },
-		React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
-		React.createElement(Route, { path: 'Profile', component: Profile }),
-		React.createElement(Route, { path: 'Home', component: Home }),
-		React.createElement(Route, { path: 'Join', component: Join }),
-		React.createElement(Route, { path: 'Create', component: Create }),
-		React.createElement(IndexRoute, { component: Home })
+		{ path: '/', component: Home },
+		React.createElement(
+			Route,
+			{ path: 'Main', component: Main },
+			React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
+			React.createElement(Route, { path: 'Profile', component: Profile }),
+			React.createElement(Route, { path: 'Join', component: Join }),
+			React.createElement(Route, { path: 'Create', component: Create }),
+			React.createElement(IndexRoute, { component: Home })
+		)
 	);
 
 /***/ },
@@ -27148,11 +27151,6 @@
 	              React.createElement('span', { className: 'icon-bar' }),
 	              React.createElement('span', { className: 'icon-bar' }),
 	              React.createElement('span', { className: 'icon-bar' })
-	            ),
-	            React.createElement(
-	              'a',
-	              { className: 'navbar-brand', href: '#' },
-	              React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
 	            )
 	          ),
 	          React.createElement(
@@ -27259,12 +27257,16 @@
 	                      'center',
 	                      null,
 	                      React.createElement(
-	                        'button',
-	                        { type: 'button', className: 'btn btn-danger center', onClick: this.handleSubmit },
+	                        'a',
+	                        { href: '/Leaderboards' },
 	                        React.createElement(
-	                          'h4',
-	                          null,
-	                          'Get Started'
+	                          'button',
+	                          { type: 'button', id: 'getStarted', className: 'btn btn-danger center getStarted' },
+	                          React.createElement(
+	                            'h4',
+	                            null,
+	                            'Get Started'
+	                          )
 	                        )
 	                      )
 	                    ),
@@ -27279,9 +27281,9 @@
 	                  'center',
 	                  null,
 	                  React.createElement(
-	                    'h1',
-	                    { className: 'center' },
-	                    'Welcome to Questive.'
+	                    'a',
+	                    { href: '#' },
+	                    React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '100', width: '250', className: 'logoArea' })
 	                  )
 	                )
 	              ),
