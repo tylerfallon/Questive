@@ -27218,8 +27218,7 @@
 	            )
 	          )
 	        )
-	      ),
-	      this.props.children
+	      )
 	    );
 	  }
 	});
@@ -27274,15 +27273,11 @@
 	                      null,
 	                      React.createElement(
 	                        'a',
-	                        { href: '/Leaderboards' },
+	                        { href: '#/profile', type: 'button', id: 'getStarted', className: 'btn btn-danger center getStarted' },
 	                        React.createElement(
-	                          'button',
-	                          { type: 'button', id: 'getStarted', className: 'btn btn-danger center getStarted' },
-	                          React.createElement(
-	                            'h4',
-	                            null,
-	                            'Get Started'
-	                          )
+	                          'h4',
+	                          null,
+	                          'Get Started'
 	                        )
 	                      )
 	                    ),
@@ -46935,7 +46930,7 @@
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 	var ReactDOM = __webpack_require__(34);
-
+	var Main = __webpack_require__(236);
 
 	// add helper
 	var helpers = __webpack_require__(493);
@@ -47018,124 +47013,129 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { 'class': 'add' },
+	      { 'class': 'mainDiv' },
+	      React.createElement(Main, null),
 	      React.createElement(
 	        'div',
-	        { className: 'main-container' },
+	        { 'class': 'add' },
 	        React.createElement(
 	          'div',
-	          { className: 'container' },
-	          React.createElement(
-	            'center',
-	            null,
-	            React.createElement(
-	              _reactBootstrap.PageHeader,
-	              null,
-	              'Create A Contest'
-	            )
-	          ),
-	          React.createElement('div', null),
-	          React.createElement(
-	            'form',
-	            { onChange: this.handleTitleChange },
-	            React.createElement(
-	              _reactBootstrap.ControlLabel,
-	              null,
-	              'Contest Name'
-	            ),
-	            React.createElement(_reactBootstrap.FormControl, { type: 'text', ref: 'titleText', placeholder: this.state.title }),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactBootstrap.FormGroup,
-	              { controlId: 'formControlsTextarea' },
-	              React.createElement(
-	                _reactBootstrap.ControlLabel,
-	                null,
-	                'Contest Description'
-	              ),
-	              React.createElement(_reactBootstrap.FormControl, {
-	                componentClass: 'textarea',
-	                ref: 'titleDescriptionText',
-	                placeholder: this.state.titleDescription })
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              _reactBootstrap.FormGroup,
-	              null,
-	              React.createElement(
-	                _reactBootstrap.ControlLabel,
-	                null,
-	                'Add the instructions for your contest below! Click to Expand.'
-	              )
-	            )
-	          ),
+	          { className: 'main-container' },
 	          React.createElement(
 	            'div',
-	            { id: 'placeholder' },
+	            { className: 'container' },
+	            React.createElement(
+	              'center',
+	              null,
+	              React.createElement(
+	                _reactBootstrap.PageHeader,
+	                null,
+	                'Create A Contest'
+	              )
+	            ),
+	            React.createElement('div', null),
+	            React.createElement(
+	              'form',
+	              { onChange: this.handleTitleChange },
+	              React.createElement(
+	                _reactBootstrap.ControlLabel,
+	                null,
+	                'Contest Name'
+	              ),
+	              React.createElement(_reactBootstrap.FormControl, { type: 'text', ref: 'titleText', placeholder: this.state.title }),
+	              React.createElement('br', null),
+	              React.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'formControlsTextarea' },
+	                React.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Contest Description'
+	                ),
+	                React.createElement(_reactBootstrap.FormControl, {
+	                  componentClass: 'textarea',
+	                  ref: 'titleDescriptionText',
+	                  placeholder: this.state.titleDescription })
+	              ),
+	              React.createElement('br', null),
+	              React.createElement(
+	                _reactBootstrap.FormGroup,
+	                null,
+	                React.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  null,
+	                  'Add the instructions for your contest below! Click to Expand.'
+	                )
+	              )
+	            ),
 	            React.createElement(
 	              'div',
-	              { id: 'template' },
+	              { id: 'placeholder' },
 	              React.createElement(
-	                _reactBootstrap.Panel,
-	                { collapsible: true, defaultExpanded: true, header: 'Task' },
+	                'div',
+	                { id: 'template' },
 	                React.createElement(
-	                  'form',
-	                  { className: 'new task', onSubmit: this.handleRequest },
+	                  _reactBootstrap.Panel,
+	                  { collapsible: true, defaultExpanded: true, header: 'Task' },
 	                  React.createElement(
-	                    _reactBootstrap.ListGroup,
-	                    { fill: true },
+	                    'form',
+	                    { className: 'new task', onSubmit: this.handleRequest },
 	                    React.createElement(
-	                      _reactBootstrap.ListGroupItem,
-	                      null,
-	                      React.createElement(_reactBootstrap.FormControl, {
-	                        type: 'text',
-	                        ref: 'taskText',
-	                        placeholder: 'Default Action'
-	                      })
-	                    ),
-	                    React.createElement(
-	                      _reactBootstrap.ListGroupItem,
-	                      null,
-	                      React.createElement(_reactBootstrap.FormControl, {
-	                        type: 'text',
-	                        ref: 'addressText',
-	                        placeholder: 'Default Address'
-	                      })
-	                    ),
-	                    React.createElement(
-	                      _reactBootstrap.ListGroupItem,
-	                      null,
-	                      React.createElement(_reactBootstrap.FormControl, {
-	                        type: 'text',
-	                        ref: 'descriptionText',
-	                        placeholder: 'Default Description'
-	                      })
-	                    ),
-	                    React.createElement(
-	                      _reactBootstrap.ListGroupItem,
-	                      null,
-	                      React.createElement(_reactBootstrap.FormControl, {
-	                        type: 'submit',
-	                        value: 'Submit'
-	                      })
+	                      _reactBootstrap.ListGroup,
+	                      { fill: true },
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement(_reactBootstrap.FormControl, {
+	                          type: 'text',
+	                          ref: 'taskText',
+	                          placeholder: 'Default Action'
+	                        })
+	                      ),
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement(_reactBootstrap.FormControl, {
+	                          type: 'text',
+	                          ref: 'addressText',
+	                          placeholder: 'Default Address'
+	                        })
+	                      ),
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement(_reactBootstrap.FormControl, {
+	                          type: 'text',
+	                          ref: 'descriptionText',
+	                          placeholder: 'Default Description'
+	                        })
+	                      ),
+	                      React.createElement(
+	                        _reactBootstrap.ListGroupItem,
+	                        null,
+	                        React.createElement(_reactBootstrap.FormControl, {
+	                          type: 'submit',
+	                          value: 'Submit'
+	                        })
+	                      )
 	                    )
 	                  )
 	                )
 	              )
-	            )
-	          ),
-	          React.createElement(_subTasks2.default, { tasks: this.state.tasksArray }),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'div',
-	            { className: 'well' },
+	            ),
+	            React.createElement(_subTasks2.default, { tasks: this.state.tasksArray }),
+	            React.createElement('br', null),
 	            React.createElement(
-	              'a',
-	              { href: '#/join' },
+	              'div',
+	              { className: 'well' },
 	              React.createElement(
-	                _reactBootstrap.Button,
-	                { bsSize: 'large', block: true },
-	                'Submit Contest'
+	                'a',
+	                { href: '#/join' },
+	                React.createElement(
+	                  _reactBootstrap.Button,
+	                  { bsSize: 'large', block: true },
+	                  'Submit Contest'
+	                )
 	              )
 	            )
 	          )

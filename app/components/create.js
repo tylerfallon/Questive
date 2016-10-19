@@ -1,6 +1,8 @@
 var React = require('react');
 var Router = require('react-router');
 var ReactDOM = require('react-dom');
+var Main = require('./Main');
+
 import { Button } from 'react-bootstrap';
 import { Checkbox } from 'react-bootstrap';
 import { FieldGroup } from 'react-bootstrap';
@@ -98,6 +100,8 @@ var Create = React.createClass({
 
   render: function(){
     return(
+      <div class="mainDiv">
+        <Main />
       <div class="add">
         <div className="main-container"> 
           <div className="container">
@@ -186,6 +190,7 @@ var Create = React.createClass({
           </div>
         </div>
       </div>
+    </div>
     );
     }
 
