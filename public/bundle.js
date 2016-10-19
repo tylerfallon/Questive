@@ -48613,9 +48613,7 @@
 
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
-
 	var Main = __webpack_require__(236);
-
 
 	var Register = React.createClass({
 	  displayName: 'Register',
@@ -48658,63 +48656,68 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'container' },
+	      { className: 'mainDiv' },
+	      React.createElement(Main, null),
 	      React.createElement(
-	        'form',
-	        { className: 'form-signin', onSubmit: this.onLogin },
+	        'div',
+	        { className: 'container' },
 	        React.createElement(
-	          'h2',
-	          { className: 'form-signin-heading' },
-	          'Please sign in'
+	          'form',
+	          { className: 'form-signin', onSubmit: this.onLogin },
+	          React.createElement(
+	            'h2',
+	            { className: 'form-signin-heading' },
+	            'Please sign in'
+	          ),
+	          React.createElement(
+	            'label',
+	            { htmlFor: 'username', className: 'sr-only' },
+	            'Username'
+	          ),
+	          React.createElement('input', { type: 'text', id: 'usernameLogin', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
+	          React.createElement(
+	            'label',
+	            { htmlFor: 'inputPassword', className: 'sr-only' },
+	            'Password'
+	          ),
+	          React.createElement('input', { type: 'password', id: 'passwordLogin', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
+	          React.createElement(
+	            'button',
+	            { className: 'btn btn-lg btn-primary btn-block', type: 'submit' },
+	            'Sign in'
+	          )
 	        ),
 	        React.createElement(
-	          'label',
-	          { htmlFor: 'username', className: 'sr-only' },
-	          'Username'
-	        ),
-	        React.createElement('input', { type: 'text', id: 'usernameLogin', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
-	        React.createElement(
-	          'label',
-	          { htmlFor: 'inputPassword', className: 'sr-only' },
-	          'Password'
-	        ),
-	        React.createElement('input', { type: 'password', id: 'passwordLogin', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
-	        React.createElement(
-	          'button',
-	          { className: 'btn btn-lg btn-primary btn-block', type: 'submit' },
-	          'Sign in'
-	        )
-	      ),
-	      React.createElement(
-	        'form',
-	        { className: 'form-signin', onSubmit: this.onRegister },
-	        React.createElement(
-	          'h2',
-	          { className: 'form-signin-heading' },
-	          'Register'
-	        ),
-	        React.createElement(
-	          'label',
-	          { htmlFor: 'username', className: 'sr-only' },
-	          'Username'
-	        ),
-	        React.createElement('input', { type: 'username', id: 'usernameRegister', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
-	        React.createElement(
-	          'label',
-	          { htmlFor: 'inputEmail', className: 'sr-only' },
-	          'Email address'
-	        ),
-	        React.createElement('input', { type: 'email', id: 'emailRegister', name: 'email', className: 'form-control', placeholder: 'Email address', required: true, autofocus: true }),
-	        React.createElement(
-	          'label',
-	          { htmlFor: 'inputPassword', className: 'sr-only' },
-	          'Password'
-	        ),
-	        React.createElement('input', { type: 'password', id: 'passwordRegister', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
-	        React.createElement(
-	          'button',
-	          { className: 'btn btn-lg btn-primary btn-block', type: 'submit' },
-	          'Register   '
+	          'form',
+	          { className: 'form-signin', onSubmit: this.onRegister },
+	          React.createElement(
+	            'h2',
+	            { className: 'form-signin-heading' },
+	            'Register'
+	          ),
+	          React.createElement(
+	            'label',
+	            { htmlFor: 'username', className: 'sr-only' },
+	            'Username'
+	          ),
+	          React.createElement('input', { type: 'username', id: 'usernameRegister', name: 'username', className: 'form-control', placeholder: 'Username', required: true, autofocus: true }),
+	          React.createElement(
+	            'label',
+	            { htmlFor: 'inputEmail', className: 'sr-only' },
+	            'Email address'
+	          ),
+	          React.createElement('input', { type: 'email', id: 'emailRegister', name: 'email', className: 'form-control', placeholder: 'Email address', required: true, autofocus: true }),
+	          React.createElement(
+	            'label',
+	            { htmlFor: 'inputPassword', className: 'sr-only' },
+	            'Password'
+	          ),
+	          React.createElement('input', { type: 'password', id: 'passwordRegister', name: 'password', className: 'form-control', placeholder: 'Password', required: true }),
+	          React.createElement(
+	            'button',
+	            { className: 'btn btn-lg btn-primary btn-block', type: 'submit' },
+	            'Register   '
+	          )
 	        )
 	      )
 	    );

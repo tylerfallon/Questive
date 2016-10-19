@@ -1,7 +1,8 @@
 var React = require('react');
 var Router = require('react-router');
-import { Button } from 'react-bootstrap';
 var Main = require('./Main.js');
+
+import { Button } from 'react-bootstrap';
 import { hashHistory } from 'react-router';
 
 
@@ -43,7 +44,8 @@ var Register = React.createClass({
   },    
 	render: function(){
 		return(
-
+      <div className="mainDiv">
+        <Main />
       <div className="container">
         <form className="form-signin" onSubmit={this.onLogin}>
           <h2 className="form-signin-heading">Please sign in</h2>
@@ -65,6 +67,7 @@ var Register = React.createClass({
           <button className="btn btn-lg btn-primary btn-block" type="submit">Register   </button>
       </form>
     </div>
+  </div>
     );
   }
 });
