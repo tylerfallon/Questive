@@ -28,6 +28,84 @@ var Join = React.createClass({
 		}
 	},
 
+	  getInitialState: function () {
+    return (
+      {
+        user: {
+          username: '',
+          email: ''
+        }
+      }
+    );
+  },  
+  getUser: function() {
+    $.ajax({
+      type: "GET",
+      dataType: 'json',
+      url: '/user',
+      error: function() {
+        hashHistory.push('register');
+      },
+      success: function (jsonData) {
+        console.log('user', jsonData);
+        if (!jsonData) {
+          hashHistory.push('register');
+        } else {
+          this.setState({
+            user: jsonData
+          });          
+        }
+      }.bind(this)
+    });    
+  },
+  componentDidMount: function () {
+    this.getUser();
+  },
+
+	main: function() {
+		$('form').submit(function(event) {
+    	var $input = $(event.target).find('input')
+    	var comment = $input.val();
+
+    if (comment != "") {
+      var html = $('<div>').html('tyler: ' + comment);
+      html.prependTo('#comments')
+      $input.val("");
+    }
+
+    return false;
+  });
+	},
+    main2: function() {
+    $('form').submit(function(event) {
+      var $input = $(event.target).find('input')
+      var comment2 = $input.val();
+
+    if (comment2 != "") {
+      var html2 = $('<div>').html('tyler: ' + comment2);
+      html2.prependTo('#comments2')
+      $input.val("");
+    }
+
+    return false;
+  });
+  },
+
+    main3: function() {
+    $('form').submit(function(event) {
+      var $input = $(event.target).find('input')
+      var comment3 = $input.val();
+
+    if (comment3 != "") {
+      var html3 = $('<div>').html('tyler: ' + comment3);
+      html3.prependTo('#comments3')
+      $input.val("");
+    }
+
+    return false;
+  });
+  },
+
 	// Whenever we detect ANY change in the textbox, we register it. 
     handleChange: function(event) {
     	console.log("TEXT CHANGED");
@@ -56,8 +134,9 @@ var Join = React.createClass({
 			<div className="container">
 			<div className ="main-container">
 				<div className ="container">
+				<span class='leftSide'>Logged in as:<span className="strong text-center"> {this.state.user.username}</span></span>
 					<div className="row">
-            <left><PageHeader>Join A Contest</PageHeader></left>
+            <center><PageHeader>Join A Contest</PageHeader></center>
             <div></div>
           	<ControlLabel><h2><strong>Active Contests</strong></h2></ControlLabel>
           	<div id='placeholder'>
@@ -78,9 +157,39 @@ var Join = React.createClass({
                		<h5><strong> Location:</strong> Rutgers New Brunswick College Ave</h5>
                		<h5><strong> Additional Info:</strong> The FAT CAT & FAT DAD are my personal Favorites</h5>
                	</ListGroupItem>
+               	  <ListGroupItem>
+               		
+<h4>Quest Comments by Users:</h4><br/>
+           <ul class="comments" id="comments">
+          <left>
+          <div>{this.state.user.username}: This Quest looks awesome!</div>
+          </left>
+        </ul>
+        <div class="row">
+          <form class="form">
+            <div class="col-xs-8 col-md-10">
+            <br/><br/>
+              <input id="comment" type="text" 
+              placeholder="add a comment..." />
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <button type="submit" class="btn btn-primary" onClick={this.main}>post</button>
+            </div>
+          </form>
+        </div>
+               	</ListGroupItem>
                </ListGroup>
           		</Panel>
           	</div>{/*Close placeholder*/}
+
+
+
+
+
+
+
+
+
           	<div id='placeholder'>
           		<Panel collapsible defaultExpanded={false} className="text-center" header='A Wacky Halloween on Easton' > 
                <ListGroup fill>
@@ -99,9 +208,43 @@ var Join = React.createClass({
                		<h5><strong> Location:</strong> Golden Rail bar</h5>
                		<h5><strong> Additional Info:</strong> First one to find the snitch wins the match</h5>
                	</ListGroupItem>
+              <ListGroupItem>  
+<h4>Quest Comments by Users:</h4><br/>
+           <ul class="comments2" id="comments2">
+          <left>
+          <div>{this.state.user.username}: This Quest looks awesome!</div>
+          </left>
+        </ul>
+        <div class="row">
+          <form class="form2">
+            <div class="col-xs-8 col-md-10">
+            <br/><br/>
+              <input id="comment2" type="text" 
+              placeholder="add a comment..." />
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <button type="submit" class="btn btn-primary" onClick={this.main2}>post</button>
+            </div>
+          </form>
+        </div>
+                </ListGroupItem>
+
+
                </ListGroup>
           		</Panel>
           	</div>{/*Close placeholder*/}
+
+
+
+
+
+
+
+
+
+
+
+
           		<div id='placeholder'>
           		<Panel collapsible defaultExpanded={false} className="text-center" header='A New Students First Day!' > 
                <ListGroup fill>
@@ -120,6 +263,27 @@ var Join = React.createClass({
 							     <h5> Location:1 Richmond Street, New Brunswick, NJ</h5>
 							     <h5> Additional Info: The custodians rarely lock the roof access doors. Lots of interesting scenes from up there!</h5>
 							</ListGroupItem>
+                            <ListGroupItem>
+                  
+<h4>Quest Comments by Users:</h4><br/>
+           <ul class="comments3" id="comments3">
+          <left>
+          <div>{this.state.user.username}: This Quest looks awesome!</div>
+          </left>
+        </ul>
+        <div class="row">
+          <form class="form3">
+            <div class="col-xs-8 col-md-10">
+            <br/><br/>
+              <input id="comment3" type="text" 
+              placeholder="add a comment..." />
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <button type="submit" class="btn btn-primary" onClick={this.main3}>post</button>
+            </div>
+          </form>
+        </div>
+                </ListGroupItem>
                </ListGroup>
           		</Panel>
           	</div>{/*Close placeholder*/}
@@ -127,33 +291,25 @@ var Join = React.createClass({
 				</div>
 
 					
-<center><PageHeader>OR</PageHeader></center>
+{/* <center><PageHeader>OR</PageHeader></center>
 					<div className="row">
 						<div className="col-lg-12">
-
 							<div className="navbar navbar-light bg-default">
 								<div className="panel-heading">
 									<h1 className="panel-title"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i>  See All Current Contests</strong></h1>
 								</div>
 								<div className="panel-body">
-
-									{/*Note how we associate the text-box inputs with the state values*/}
 									<form>
 										<div className="form-group">
-	
 										</div>
-
-										
 										<div className="pull-left">
 											<button type="button" className="btn btn-danger" onClick={this.handleSubmit}><h4>Populate List</h4></button>
 										</div>
 									</form>
-
 								</div>
 							</div>
-
 						</div>
-					</div>
+					</div> */}
 
 			</div>
 		</div>

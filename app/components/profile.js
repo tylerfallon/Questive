@@ -27,7 +27,6 @@ var Profile = React.createClass({
       success: function (jsonData) {
         console.log('user', jsonData);
         if (!jsonData) {
-          debugger;
           hashHistory.push('register');
         } else {
           this.setState({
@@ -38,7 +37,6 @@ var Profile = React.createClass({
     });    
   },
   componentDidMount: function () {
-    debugger;
     this.getUser();
   },    
 	render: function(){
@@ -47,6 +45,7 @@ var Profile = React.createClass({
         <Main />
 			<div className="main-container"> 
       <div className="container">
+      <span class='leftSide'>Logged in as:<span className="strong text-center"> {this.state.user.username}</span></span>
         <div className="row">
           <div className="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
             <div className="profile-box well profile">
@@ -57,10 +56,12 @@ var Profile = React.createClass({
                   </div>
                   <div className="col-xs-12 col-sm-7 text-center">
                   <figure className="justify">
-                     <p><strong>About: </strong> Full Stack Developer / UI Designer / General Boss </p>
-                      <p><strong>Hobbies: </strong> Blackjack UI/UX </p>
-                      <p><strong>Contests Completed:</strong></p>
-                        <span className="tags">AC Hunt</span>      
+                     <p><strong>About: </strong></p>
+                      <p><strong>Hobbies: </strong> </p>
+                      <p><strong>Contests Completed: </strong><span className="tags">AC Hunt</span></p>
+                        
+                        <p><strong>Email Address: </strong>{this.state.user.email}</p>
+                            
                   </figure>
                 </div>
               </div>            
