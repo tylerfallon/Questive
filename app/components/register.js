@@ -5,6 +5,19 @@ var Nav = require('./nav.js');
 
 import { Button } from 'react-bootstrap';
 import { hashHistory } from 'react-router';
+import { PageHeader } from 'react-bootstrap';
+import { Checkbox } from 'react-bootstrap';
+import { FieldGroup } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
+import { FormGroup } from 'react-bootstrap';
+import { Radio } from 'react-bootstrap';
+import { ControlLabel } from 'react-bootstrap';
+import { Well } from 'react-bootstrap';
+import { Panel } from 'react-bootstrap';
+import { ListGroup} from 'react-bootstrap';
+import { ListGroupItem } from 'react-bootstrap';
+import { Pager } from 'react-bootstrap';
+
 
 
 var Register = React.createClass({
@@ -48,6 +61,7 @@ var Register = React.createClass({
       <div className="mainDiv">
         <Nav />
       <div className="container">
+      <div className="container">
         <form className="form-signin" onSubmit={this.onLogin}>
           <h2 className="form-signin-heading">Please sign in</h2>
           <label htmlFor="username" className="sr-only">Username</label>
@@ -57,6 +71,7 @@ var Register = React.createClass({
           <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
     
+    <Panel collapsible defaultExpanded={false} className="text-center"  header='New User?' >
       <form className="form-signin" onSubmit={this.onRegister}>
           <h2 className="form-signin-heading">Register</h2>
           <label htmlFor="username" className="sr-only">Username</label>
@@ -67,8 +82,10 @@ var Register = React.createClass({
           <input type="password" id="passwordRegister" name="password" className="form-control" placeholder="Password" required />
           <button className="btn btn-lg btn-primary btn-block" type="submit">Register   </button>
       </form>
+     </Panel>
     </div>
   </div>
+</div>
     );
   }
 });
