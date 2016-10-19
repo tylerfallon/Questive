@@ -27545,8 +27545,7 @@
 	                          'strong',
 	                          null,
 	                          'About: '
-	                        ),
-	                        ' Full Stack Developer / UI Designer / General Boss '
+	                        )
 	                      ),
 	                      React.createElement(
 	                        'p',
@@ -27556,7 +27555,7 @@
 	                          null,
 	                          'Hobbies: '
 	                        ),
-	                        ' Blackjack UI/UX '
+	                        ' '
 	                      ),
 	                      React.createElement(
 	                        'p',
@@ -27564,13 +27563,23 @@
 	                        React.createElement(
 	                          'strong',
 	                          null,
-	                          'Contests Completed:'
+	                          'Contests Completed: '
+	                        ),
+	                        React.createElement(
+	                          'span',
+	                          { className: 'tags' },
+	                          'AC Hunt'
 	                        )
 	                      ),
 	                      React.createElement(
-	                        'span',
-	                        { className: 'tags' },
-	                        'AC Hunt'
+	                        'p',
+	                        null,
+	                        React.createElement(
+	                          'strong',
+	                          null,
+	                          'Email Address: '
+	                        ),
+	                        this.state.user.email
 	                      )
 	                    )
 	                  )

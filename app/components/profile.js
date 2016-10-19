@@ -55,10 +55,12 @@ var Profile = React.createClass({
                   </div>
                   <div className="col-xs-12 col-sm-7 text-center">
                   <figure className="justify">
-                     <p><strong>About: </strong> Full Stack Developer / UI Designer / General Boss </p>
-                      <p><strong>Hobbies: </strong> Blackjack UI/UX </p>
-                      <p><strong>Contests Completed:</strong></p>
-                        <span className="tags">AC Hunt</span>      
+                     <p><strong>About: </strong></p>
+                      <p><strong>Hobbies: </strong> </p>
+                      <p><strong>Contests Completed: </strong><span className="tags">AC Hunt</span></p>
+                        
+                        <p><strong>Email Address: </strong>{this.state.user.email}</p>
+                            
                   </figure>
                 </div>
               </div>            
