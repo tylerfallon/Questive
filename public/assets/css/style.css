@@ -299,7 +299,8 @@ a:active {
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             z-index: 4;
-             background-image:url('https://media.giphy.com/media/3o6ZtelrVAOD5EcmCQ/giphy.gif');
+             background-image:url('');
+
             background-size:100%;
             background-repeat: no-repeat;
             background-attachment: fixed;
