@@ -1,7 +1,9 @@
 var React = require('react');
 var Router = require('react-router');
-import { Button } from 'react-bootstrap';
 var Main = require('./Main.js');
+var navPlain = require('./navPlain.js');
+
+import { Button } from 'react-bootstrap';
 import { hashHistory } from 'react-router';
 
 

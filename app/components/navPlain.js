@@ -1,0 +1,31 @@
+var React = require('react');
+var Router = require('react-router');
+
+var navPlain = React.createClass({
+  render: function(){
+    return(
+<div className="row">
+      <nav className="bg-info navbar-dark theNavBar">
+        <div className="container-fluid">
+          {/* Brand and toggle get grouped for better mobile display */}
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="/bs-example-navbar-collapse-1" aria-expanded="false">
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+            </button>
+            <a className="navbar-brand" href="/#"><img src={'https://s10.postimg.org/dfh868909/Questive_Logo.png'} height='50' width='150' className="logoArea"/></a>
+
+          </div>
+          {/* Collect the nav links, forms, and other content for toggling */}
+        </div>{/* /.container-fluid */}
+      </nav>
+          {/*this.props.children*/}
+      
+    </div>
+    )
+  }
+});
+
+module.exports = navPlain;
