@@ -36,10 +36,13 @@ var Leaderboards = React.createClass({
   },
   render: function () {
     return (
+       <div className="mainDiv">
+        <Main />
       <div className="container">
         {/* <SearchBox search = {this.search}/>*/}
         <Results searchResults = {this.state.searchResults}/>
       </div>
+    </div>
     );
   }
 });
@@ -56,8 +59,6 @@ var SearchBox = React.createClass({
   },
   render: function () {
     return (
-      <div className="mainDiv">
-        <Main />
         <div className='leaderboard'>
         <label>Sort By:</label>
         <select ref="category">
@@ -66,7 +67,6 @@ var SearchBox = React.createClass({
         </select>
          <Button bsSize="xsmall" input type="submit" onClick = {this.createAjax}>Sort</Button>
         </div>
-      </div>
     );
   }
 });

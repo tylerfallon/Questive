@@ -2,6 +2,7 @@
 var React = require('react');
 var Router = require('react-router');
 var Main = require('../components/Main.js');
+var Nav = require('../components/nav.js');
 var Home = require('../components/home.js')
 var Profile = require('../components/profile.js')
 var Leaderboards = require('../components/leaderboards.js')

@@ -1,5 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
+body {
+    background-image:url('');
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    height:100%;
+    width:100%;
+}
+
 a {
     color: white;
 }
@@ -28,6 +37,8 @@ a:active {
     font-weight: bold;
     color: white;
 }
+
+
 .navbar {
 
             padding: 0px;
@@ -48,6 +59,7 @@ a:active {
             -webkit-perspective-origin-x: 100%;
             perspective-origin-x: 100%;
             margin-bottom: 0px;
+
         }
 
         .parallax__group {
@@ -79,6 +91,12 @@ a:active {
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             z-index: 4;
+             background-image:url('https://media.giphy.com/media/3o6ZtelrVAOD5EcmCQ/giphy.gif');
+            background-size:100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height:100%;
+           width:100%;
         }
 
         .parallax__layer--back {
@@ -277,7 +295,23 @@ a:active {
 
         @media screen and (max-width: 600px) {
 
-            
+            .parallax__layer--base {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            z-index: 4;
+             background-image:url('');
+
+            background-size:100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height:100%;
+           width:100%;
+        }
+
+        .placeHold {
+                height: 67px;
+               /* padding-bottom: 10px;*/
+            }
 
             .navbar {
 
@@ -286,7 +320,7 @@ a:active {
             }
 
             .logoArea {
-                margin-top: -20px;
+                margin-top: -5px;
                 
             }
 
@@ -411,6 +445,12 @@ span.tags
     background-color: rgb(93,188,210);
 }
 
+.placeHold {
+
+    height: 82px;
+   /* padding-bottom: 10px;*/
+}
+
 .profile-box {
     margin-top: 10px;
 }
@@ -438,7 +478,11 @@ span.tags
 }
 
 
+.topRow {
+    background-color: rgba(93,188,210);
+    padding: 10px;
 
+}
 
 
 /*Login Form*/
