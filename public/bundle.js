@@ -27168,7 +27168,7 @@
 	            React.createElement(
 	              'a',
 	              { className: 'navbar-brand', href: '/#' },
-	              React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
+	              React.createElement('img', { src: 'https://s12.postimg.org/t0v1v6l1p/Questive_Newer.png', height: '50', width: '150', className: 'logoArea' })
 	            )
 	          ),
 	          React.createElement(
@@ -27267,7 +27267,7 @@
 	            React.createElement(
 	              'a',
 	              { className: 'navbar-brand', href: '/#' },
-	              React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
+	              React.createElement('img', { src: 'https://s12.postimg.org/t0v1v6l1p/Questive_Newer.png', height: '50', width: '150', className: 'logoArea' })
 	            )
 	          ),
 	          React.createElement('div', { className: 'placeHold collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' })
@@ -27348,7 +27348,7 @@
 	                  React.createElement(
 	                    'a',
 	                    { href: '#' },
-	                    React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '100', width: '250', className: 'logoArea wow lightSpeedIn' })
+	                    React.createElement('img', { src: 'https://s12.postimg.org/t0v1v6l1p/Questive_Newer.png', height: '110', width: '300', className: 'logoArea wow lightSpeedIn' })
 	                  )
 	                )
 	              ),

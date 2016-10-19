@@ -15,7 +15,7 @@ var Main = React.createClass({
               <span className="icon-bar" />
               <span className="icon-bar" />
             </button>
-            <a className="navbar-brand" href="/#"><img src={'https://s10.postimg.org/dfh868909/Questive_Logo.png'} height='50' width='150' className="logoArea"/></a>
+            <a className="navbar-brand" href="/#"><img src={'https://s12.postimg.org/t0v1v6l1p/Questive_Newer.png'} height='50' width='150' className="logoArea"/></a>
 
           </div>
           {/* Collect the nav links, forms, and other content for toggling */}

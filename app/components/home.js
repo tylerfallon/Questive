@@ -19,7 +19,7 @@ var Home = React.createClass({
               <center><h3 className="tagline">Discover. Connect. Adventure. <br /> <br />
               <center><a href="#/register" type="button" id="getStarted" className="btn btn-danger center getStarted"><h4>Get Started</h4></a></center><br /></h3></center>         
                <br /><br /> <br />
-             <center><a href="#"><img src={'https://s10.postimg.org/dfh868909/Questive_Logo.png'} height='100' width='250' className="logoArea wow lightSpeedIn"/></a></center>
+             <center><a href="#"><img src={'https://s12.postimg.org/t0v1v6l1p/Questive_Newer.png'} height='110' width='300' className="logoArea wow lightSpeedIn"/></a></center>
             </div>
             <a name="about" />
             <div className="parallax__layer parallax__layer--back black">
