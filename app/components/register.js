@@ -60,29 +60,31 @@ var Register = React.createClass({
 		return(
       <div className="mainDiv">
         <Nav />
+
       <div className="container">
-      <div className="container">
+        <div className='boxAroundLogin'>
         <form className="form-signin" onSubmit={this.onLogin}>
-          <h2 className="form-signin-heading">Please sign in</h2>
+          <center><h3 className="form-signin-heading">Please sign in</h3>
           <label htmlFor="username" className="sr-only">Username</label>
           <input type="text" id="usernameLogin" name="username" className="form-control" placeholder="Username" required autofocus />
           <label htmlFor="inputPassword" className="sr-only">Password</label>
           <input type="password" id="passwordLogin" name="password" className="form-control" placeholder="Password" required />
-          <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <button className="btn btn-md btn-primary btn-block" type="submit">Sign in</button></center>
         </form>
-    
+  <div id='regForm'>
     <Panel collapsible defaultExpanded={false} className="text-center"  header='New User?' >
       <form className="form-signin" onSubmit={this.onRegister}>
-          <h2 className="form-signin-heading">Register</h2>
+          <center><h3 className="form-signin-heading">Register</h3>
           <label htmlFor="username" className="sr-only">Username</label>
           <input type="username" id="usernameRegister" name="username" className="form-control" placeholder="Username" required autofocus />
           <label htmlFor="inputEmail" className="sr-only">Email address</label>
           <input type="email" id="emailRegister" name="email"  className="form-control" placeholder="Email address" required autofocus />
           <label htmlFor="inputPassword" className="sr-only">Password</label>
           <input type="password" id="passwordRegister" name="password" className="form-control" placeholder="Password" required />
-          <button className="btn btn-lg btn-primary btn-block" type="submit">Register   </button>
+          <button className="btn btn-lg btn-primary btn-block" type="submit">Register   </button></center>
       </form>
      </Panel>
+    </div>
     </div>
   </div>
 </div>
