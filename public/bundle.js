@@ -46296,8 +46296,13 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'container' },
-	      React.createElement(Results, { searchResults: this.state.searchResults })
+	      { className: 'mainDiv' },
+	      React.createElement(Main, null),
+	      React.createElement(
+	        'div',
+	        { className: 'container' },
+	        React.createElement(Results, { searchResults: this.state.searchResults })
+	      )
 	    );
 	  }
 	});
@@ -46317,35 +46322,30 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'mainDiv' },
-	      React.createElement(Main, null),
+	      { className: 'leaderboard' },
 	      React.createElement(
-	        'div',
-	        { className: 'leaderboard' },
+	        'label',
+	        null,
+	        'Sort By:'
+	      ),
+	      React.createElement(
+	        'select',
+	        { ref: 'category' },
 	        React.createElement(
-	          'label',
-	          null,
-	          'Sort By:'
+	          'option',
+	          { value: 'alltime' },
+	          'All'
 	        ),
 	        React.createElement(
-	          'select',
-	          { ref: 'category' },
-	          React.createElement(
-	            'option',
-	            { value: 'alltime' },
-	            'All'
-	          ),
-	          React.createElement(
-	            'option',
-	            { value: 'recent' },
-	            'Recent'
-	          )
-	        ),
-	        React.createElement(
-	          _reactBootstrap.Button,
-	          { bsSize: 'xsmall', input: true, type: 'submit', onClick: this.createAjax },
-	          'Sort'
+	          'option',
+	          { value: 'recent' },
+	          'Recent'
 	        )
+	      ),
+	      React.createElement(
+	        _reactBootstrap.Button,
+	        { bsSize: 'xsmall', input: true, type: 'submit', onClick: this.createAjax },
+	        'Sort'
 	      )
 	    );
 	  }
