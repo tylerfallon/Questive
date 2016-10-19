@@ -1,0 +1,1 @@
+{"head":"<title>Questive</title>\n  <link rel='stylesheet' type='type/css'href='./assets/css/style.css' />","body":"","js":"\nTemplate.body.addContent((function() {\n  var view = this;\n  return HTML.Raw('<div id=\"app\"></div>');\n}));\nMeteor.startup(Template.body.renderToDocument);\n","bodyAttrs":{}}
