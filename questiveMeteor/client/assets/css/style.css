@@ -11,10 +11,9 @@ a:hover {
 
 .navbar {
 
-            padding: 10px;
-            margin-bottom: 0px;
+            padding: 0px;
+            margin-bottom: -10px;
             border-radius: 0px;
-            background-color: yellow;
             
         }
 
@@ -80,20 +79,6 @@ a:hover {
         /* demo styles
   --------------------------------------------- */
 
-        body,
-        html {
-            
-        }
-
-        body {
-            font: 100% / 1.5 Arial;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
         .parallax {
             font-size: 200%;
         }
@@ -127,11 +112,11 @@ a:hover {
         /*landing*/
         #group2 {
             z-index: 3;
-            background: rgb(52,152,219);
+            background: rgb(93,188,210);
         }
 
         #group2 .parallax__layer--back {
-            background: rgb(52,152,219);
+            background: rgb(93,188,210);
         }
         /*about*/
         #group3 {
@@ -404,4 +389,3 @@ span.tags
     z-index: 10;
     }
 
-        

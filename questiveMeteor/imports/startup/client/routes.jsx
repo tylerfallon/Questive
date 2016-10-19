@@ -6,6 +6,7 @@ import Leaderboards from '../../ui/leaderboards.js';
 import Main from '../../ui/Main.js';
 import Profile from '../../ui/profile.js';
 import Join from '../../ui/join.js';
+import realHome from '../../ui/realHome.js'
 
 
 // import { One } from '../../ui/pages/one.jsx';
@@ -16,6 +17,7 @@ import Join from '../../ui/join.js';
 const routes = (
     <Router history={ browserHistory }>
       	<Route path="/" component={Main}>
+      		<IndexRoute component={realHome}/>
       		<Route path="Leaderboards" component={Leaderboards}/>
       		<Route path="Create" component={Create}/>
       		<Route path="Profile" component={Profile}/>
