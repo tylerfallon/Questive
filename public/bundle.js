@@ -27113,17 +27113,18 @@
 	var Register = __webpack_require__(516);
 	var Route = Router.Route;
 	var IndexRoute = Router.IndexRoute;
+	var hashHistory = __webpack_require__(172).hashHistory;
 
 	module.exports = React.createElement(
-		Route,
-		{ path: '/', component: Main },
-		React.createElement(Route, { path: 'leaderboards', component: Leaderboards }),
-		React.createElement(Route, { path: 'profile', component: Profile }),
-		React.createElement(Route, { path: 'home', component: Home }),
-		React.createElement(Route, { path: 'join', component: Join }),
-		React.createElement(Route, { path: 'create', component: Create }),
-		React.createElement(Route, { path: 'register', component: Register }),
-		React.createElement(IndexRoute, { component: Home })
+	   Router,
+	   { history: hashHistory },
+	   React.createElement(Route, { path: '/', component: Home }),
+	   React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
+	   React.createElement(Route, { path: 'Profile', component: Profile }),
+	   React.createElement(Route, { path: 'Join', component: Join }),
+	   React.createElement(Route, { path: 'Create', component: Create }),
+	   React.createElement(Route, { path: 'Register', component: Register }),
+	   React.createElement(IndexRoute, { component: Home })
 	);
 
 /***/ },
@@ -27273,7 +27274,7 @@
 	                      null,
 	                      React.createElement(
 	                        'a',
-	                        { href: '#/profile', type: 'button', id: 'getStarted', className: 'btn btn-danger center getStarted' },
+	                        { href: '#/register', type: 'button', id: 'getStarted', className: 'btn btn-danger center getStarted' },
 	                        React.createElement(
 	                          'h4',
 	                          null,
