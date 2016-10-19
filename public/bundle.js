@@ -46403,6 +46403,8 @@
 
 	// Include React and React-Router dependencies
 	var React = __webpack_require__(1);
+	var Router = __webpack_require__(172);
+	var ReactDOM = __webpack_require__(34);
 
 
 	// Query Component Declaration
@@ -46447,64 +46449,332 @@
 					{ className: 'main-container' },
 					React.createElement(
 						'div',
-						{ className: 'row' },
+						{ className: 'container' },
 						React.createElement(
 							'div',
-							{ className: 'col-lg-12' },
+							{ className: 'row' },
+							React.createElement(
+								'left',
+								null,
+								React.createElement(
+									_reactBootstrap.PageHeader,
+									null,
+									'Join A Contest'
+								)
+							),
+							React.createElement('div', null),
+							React.createElement(
+								_reactBootstrap.ControlLabel,
+								null,
+								React.createElement(
+									'h2',
+									null,
+									React.createElement(
+										'strong',
+										null,
+										'Active Contests'
+									)
+								)
+							),
 							React.createElement(
 								'div',
-								{ className: 'navbar navbar-light bg-default' },
+								{ id: 'placeholder' },
 								React.createElement(
-									'div',
-									{ className: 'panel-heading' },
+									_reactBootstrap.Panel,
+									{ collapsible: true, defaultExpanded: false, className: 'text-center', header: 'Rutgers Wicked Homecoming Quest' },
 									React.createElement(
-										'h1',
-										{ className: 'panel-title' },
+										_reactBootstrap.ListGroup,
+										{ fill: true },
 										React.createElement(
-											'strong',
+											_reactBootstrap.ListGroupItem,
 											null,
-											React.createElement('i', { className: 'fa fa-newspaper-o', 'aria-hidden': 'true' }),
-											'  Search for a Contest'
-										)
-									)
-								),
-								React.createElement(
-									'div',
-									{ className: 'panel-body' },
-									React.createElement(
-										'form',
-										null,
-										React.createElement(
-											'div',
-											{ className: 'form-group' },
 											React.createElement(
-												'h4',
-												{ className: '' },
+												'h5',
+												null,
 												React.createElement(
 													'strong',
 													null,
-													'Topic'
-												)
+													' Task 1:'
+												),
+												' Take a picture of the first player to ever score a touchdown at Rutgers'
 											),
-											React.createElement('input', { type: 'text', value: this.state.value, className: 'form-control ', id: 'search', onChange: this.handleChange, required: true })
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													'Location:'
+												),
+												' Rutgers New Brunswick '
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													'Additional Info:'
+												),
+												' You can find this player at the place where this all started'
+											)
 										),
 										React.createElement(
-											'div',
-											{ className: 'pull-left' },
+											_reactBootstrap.ListGroupItem,
+											null,
 											React.createElement(
-												'button',
-												{ type: 'button', className: 'btn btn-danger', onClick: this.handleSubmit },
+												'h5',
+												null,
 												React.createElement(
-													'h4',
+													'strong',
 													null,
-													'Submit'
-												)
+													' Task 2:'
+												),
+												' Finish 3 Fatsandwiches at the original Grease Truck'
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Location:'
+												),
+												' Rutgers New Brunswick College Ave'
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Additional Info:'
+												),
+												' The FAT CAT & FAT DAD are my personal Favorites'
+											)
+										),
+										React.createElement(
+											_reactBootstrap.ListGroupItem,
+											null,
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Task 3:'
+												),
+												'Take the rutgers challenge  '
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Location:'
+												),
+												' Rutgers New Brunswick College Ave'
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Additional Info:'
+												),
+												' The FAT CAT & FAT DAD are my personal Favorites'
+											)
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ id: 'placeholder' },
+								React.createElement(
+									_reactBootstrap.Panel,
+									{ collapsible: true, defaultExpanded: false, className: 'text-center', header: 'A Wacky Halloween on Easton' },
+									React.createElement(
+										_reactBootstrap.ListGroup,
+										{ fill: true },
+										React.createElement(
+											_reactBootstrap.ListGroupItem,
+											null,
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Task 1:'
+												),
+												' Take a picture with a the random clown'
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Location:'
+												),
+												'Easton Ave.  '
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Additional Info:'
+												),
+												' Dont get to close to the clowns. Make sure to have your pepper spray'
+											)
+										),
+										React.createElement(
+											_reactBootstrap.ListGroupItem,
+											null,
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Task 2:'
+												),
+												' Challenge the Wizard King to a game of darts '
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Location:'
+												),
+												' Easton Ave'
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Additional Info:'
+												),
+												' Make sure to not anger the wizard or you could be tasked with completing an additional quest '
+											)
+										),
+										React.createElement(
+											_reactBootstrap.ListGroupItem,
+											null,
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Task 3:'
+												),
+												' Find the golden Snitch '
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Location:'
+												),
+												' Golden Rail bar'
+											),
+											React.createElement(
+												'h5',
+												null,
+												React.createElement(
+													'strong',
+													null,
+													' Additional Info:'
+												),
+												' First one to find the snitch wins the match'
+											)
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ id: 'placeholder' },
+								React.createElement(
+									_reactBootstrap.Panel,
+									{ collapsible: true, defaultExpanded: false, className: 'text-center', header: 'A New Students First Day!' },
+									React.createElement(
+										_reactBootstrap.ListGroup,
+										{ fill: true },
+										React.createElement(
+											_reactBootstrap.ListGroupItem,
+											null,
+											React.createElement(
+												'h5',
+												null,
+												' Task 4: Eat in every on-campus cafeteria '
+											),
+											React.createElement(
+												'h5',
+												null,
+												' Location: Rutgers-New Brunswick: every campus'
+											),
+											React.createElement(
+												'h5',
+												null,
+												' Additional Info: Don\'t over eat!'
+											)
+										),
+										React.createElement(
+											_reactBootstrap.ListGroupItem,
+											null,
+											React.createElement(
+												'h5',
+												null,
+												' Task 5: Check-in at every park in New Brunswick '
+											),
+											React.createElement(
+												'h5',
+												null,
+												' Location:New Brunswick, NJ'
+											),
+											React.createElement(
+												'h5',
+												null,
+												' Additional Info: A lot of the parks are along the Raritan. Take some great pics!'
+											)
+										),
+										React.createElement(
+											_reactBootstrap.ListGroupItem,
+											null,
+											React.createElement(
+												'h5',
+												null,
+												' Task 6: Take a selfie from the top of Plaza Square Apartments '
+											),
+											React.createElement(
+												'h5',
+												null,
+												' Location:1 Richmond Street, New Brunswick, NJ'
+											),
+											React.createElement(
+												'h5',
+												null,
+												' Additional Info: The custodians rarely lock the roof access doors. Lots of interesting scenes from up there!'
 											)
 										)
 									)
 								)
 							)
-						)
+						),
+						' '
 					),
 					React.createElement(
 						'center',
@@ -46571,6 +46841,38 @@
 
 	// Export the module back to the route
 	module.exports = Join;
+
+	// Tylers origin code we would like to work in 
+
+	// <div className="row">
+	// 	<div className="col-lg-12">
+
+	// 		<div className="navbar navbar-light bg-default">
+	// 			<div className="panel-heading">
+	// 				<h1 className="panel-title"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i>  Search for a Contest</strong></h1>
+	// 			</div>
+	// 			<div className="panel-body">
+
+	// 				{/*Note how we associate the text-box inputs with the state values*/}
+	// 				<form>
+	// 					<div className="form-group">
+	// 						<h4 className=""><strong>Topic</strong></h4>
+	// 						<input type="text" value={this.state.value} className="form-control " id="search" onChange= {this.handleChange} required/>
+
+
+	// 					</div>
+
+
+	// 					<div className="pull-left">
+	// 						<button type="button" className="btn btn-danger" onClick={this.handleSubmit}><h4>Submit</h4></button>
+	// 					</div>
+	// 				</form>
+
+	// 			</div>
+	// 		</div>
+
+	// 	</div>
+	// </div>
 
 /***/ },
 /* 491 */
