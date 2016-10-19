@@ -30,7 +30,7 @@ var questors =[
 	new Questors({
 		username: "Tyler Fallon", 
 		points: 560, 
-		totalMiles: 56.3
+		totalMiles: 56.3,
 	})
 
 ];

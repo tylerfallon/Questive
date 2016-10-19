@@ -27115,21 +27115,12 @@
 
 	module.exports = React.createElement(
 		Route,
-<<<<<<< HEAD
-		{ path: '/', component: Home },
-		React.createElement(Route, { path: 'Main', component: Main }),
-		React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
-		React.createElement(Route, { path: 'Profile', component: Profile }),
-		React.createElement(Route, { path: 'Join', component: Join }),
-		React.createElement(Route, { path: 'Create', component: Create }),
-=======
 		{ path: '/', component: Main },
 		React.createElement(Route, { path: 'leaderboards', component: Leaderboards }),
 		React.createElement(Route, { path: 'profile', component: Profile }),
 		React.createElement(Route, { path: 'home', component: Home }),
 		React.createElement(Route, { path: 'join', component: Join }),
 		React.createElement(Route, { path: 'create', component: Create }),
->>>>>>> 6de979c015b1786b4ab66267b666adf3713d9b82
 		React.createElement(IndexRoute, { component: Home })
 	);
 
@@ -27417,6 +27408,7 @@
 	var Router = __webpack_require__(172);
 
 	var Main = __webpack_require__(236);
+
 	var Profile = React.createClass({
 	  displayName: 'Profile',
 
@@ -47031,10 +47023,6 @@
 	var Router = __webpack_require__(172);
 	var ReactDOM = __webpack_require__(34);
 
-<<<<<<< HEAD
-	var subTasks = __webpack_require__(494);
-=======
->>>>>>> 6de979c015b1786b4ab66267b666adf3713d9b82
 
 	// add helper
 	var helpers = __webpack_require__(495);
