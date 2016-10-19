@@ -1,5 +1,7 @@
 var React = require('react');
 var Router = require('react-router');
+var Main = require('./Main');
+
 import { Button } from 'react-bootstrap';
 
 
@@ -54,7 +56,8 @@ var SearchBox = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div className="mainDiv">
+        <Main />
         <div className='leaderboard'>
         <label>Sort By:</label>
         <select ref="category">

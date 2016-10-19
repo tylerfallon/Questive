@@ -1,7 +1,8 @@
 var React = require('react');
 var Router = require('react-router');
+var Main = require('./Main');
+
 import { Button } from 'react-bootstrap';
-var Main = require('./Main.js');
 import { hashHistory } from 'react-router';
 
 var Profile = React.createClass({
@@ -42,6 +43,8 @@ var Profile = React.createClass({
   },    
 	render: function(){
 		return(
+      <div className="mainDiv">
+        <Main />
 			<div className="main-container"> 
       <div className="container">
         <div className="row">
@@ -80,6 +83,7 @@ var Profile = React.createClass({
         </div>
       </div>
     </div>
+  </div>
 		)
 	}
 });

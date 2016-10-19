@@ -1,7 +1,9 @@
 // Include React and React-Router dependencies
 var React = require('react');
 var Router = require('react-router');
-var ReactDOM = require('react-dom')
+var ReactDOM = require('react-dom');
+var Main = require('./Main');
+
 import { PageHeader } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Checkbox } from 'react-bootstrap';
@@ -49,6 +51,8 @@ var Join = React.createClass({
 	render: function(){
 
 		return(
+      <div className="mainDiv">
+        <Main />
 			<div className="container">
 			<div className ="main-container">
 				<div className ="container">
@@ -153,6 +157,7 @@ var Join = React.createClass({
 
 			</div>
 		</div>
+  </div>
 
 
 
