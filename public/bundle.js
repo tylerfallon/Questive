@@ -27110,26 +27110,19 @@
 	var Leaderboards = __webpack_require__(491);
 	var Join = __webpack_require__(492);
 	var Create = __webpack_require__(493);
+	var Register = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../components/register.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var Route = Router.Route;
 	var IndexRoute = Router.IndexRoute;
 
 	module.exports = React.createElement(
 		Route,
-<<<<<<< HEAD
-		{ path: '/', component: Home },
-		React.createElement(Route, { path: 'Main', component: Main }),
-		React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
-		React.createElement(Route, { path: 'Profile', component: Profile }),
-		React.createElement(Route, { path: 'Join', component: Join }),
-		React.createElement(Route, { path: 'Create', component: Create }),
-=======
 		{ path: '/', component: Main },
 		React.createElement(Route, { path: 'leaderboards', component: Leaderboards }),
 		React.createElement(Route, { path: 'profile', component: Profile }),
 		React.createElement(Route, { path: 'home', component: Home }),
 		React.createElement(Route, { path: 'join', component: Join }),
 		React.createElement(Route, { path: 'create', component: Create }),
->>>>>>> 6de979c015b1786b4ab66267b666adf3713d9b82
+		React.createElement(Route, { path: 'register', component: Register }),
 		React.createElement(IndexRoute, { component: Home })
 	);
 
@@ -27413,13 +27406,50 @@
 
 	var _reactBootstrap = __webpack_require__(239);
 
+	var _reactRouter = __webpack_require__(172);
+
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 
 	var Main = __webpack_require__(236);
+
+
 	var Profile = React.createClass({
 	  displayName: 'Profile',
 
+	  getInitialState: function getInitialState() {
+	    return {
+	      user: {
+	        username: '',
+	        email: ''
+	      }
+	    };
+	  },
+	  getUser: function getUser() {
+	    $.ajax({
+	      type: "GET",
+	      dataType: 'json',
+	      url: '/user',
+	      error: function error() {
+	        _reactRouter.hashHistory.push('register');
+	      },
+	      success: function (jsonData) {
+	        console.log('user', jsonData);
+	        if (!jsonData) {
+	          debugger;
+	          _reactRouter.hashHistory.push('register');
+	        } else {
+	          this.setState({
+	            user: jsonData
+	          });
+	        }
+	      }.bind(this)
+	    });
+	  },
+	  componentDidMount: function componentDidMount() {
+	    debugger;
+	    this.getUser();
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -27448,7 +27478,7 @@
 	                    React.createElement(
 	                      'p',
 	                      { className: 'strong text-center' },
-	                      'Tyler Fallon'
+	                      this.state.user.username
 	                    ),
 	                    React.createElement('img', { src: 'https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg', className: 'text-center img-circle imageScale' })
 	                  )
@@ -46714,7 +46744,7 @@
 
 	var _reactBootstrap = __webpack_require__(239);
 
-	var _subTasks = __webpack_require__(492);
+	var _subTasks = __webpack_require__(494);
 
 	var _subTasks2 = _interopRequireDefault(_subTasks);
 
@@ -46724,10 +46754,6 @@
 	var Router = __webpack_require__(172);
 	var ReactDOM = __webpack_require__(34);
 
-<<<<<<< HEAD
-	var subTasks = __webpack_require__(494);
-=======
->>>>>>> 6de979c015b1786b4ab66267b666adf3713d9b82
 
 	// add helper
 	var helpers = __webpack_require__(495);

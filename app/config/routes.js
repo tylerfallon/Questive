@@ -7,6 +7,7 @@ var Profile = require('../components/profile.js')
 var Leaderboards = require('../components/leaderboards.js')
 var Join = require('../components/join.js')
 var Create = require('../components/create.js')
+var Register = require('../components/register.js')
 var Route = Router.Route;
 var IndexRoute	= Router.IndexRoute;
 
@@ -19,6 +20,7 @@ module.exports = (
 		<Route path='home' component={Home} />
 		<Route path='join' component={Join} />
 		<Route path='create' component={Create} />
+		<Route path='register' component={Register} />
 		<IndexRoute component={Home} />
 	</Route>
 );

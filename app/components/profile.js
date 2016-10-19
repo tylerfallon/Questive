@@ -2,8 +2,44 @@ var React = require('react');
 var Router = require('react-router');
 import { Button } from 'react-bootstrap';
 var Main = require('./Main.js');
+import { hashHistory } from 'react-router';
 
 var Profile = React.createClass({
+  getInitialState: function () {
+    return (
+      {
+        user: {
+          username: '',
+          email: ''
+        }
+      }
+    );
+  },  
+  getUser: function() {
+    $.ajax({
+      type: "GET",
+      dataType: 'json',
+      url: '/user',
+      error: function() {
+        hashHistory.push('register');
+      },
+      success: function (jsonData) {
+        console.log('user', jsonData);
+        if (!jsonData) {
+          debugger;
+          hashHistory.push('register');
+        } else {
+          this.setState({
+            user: jsonData
+          });          
+        }
+      }.bind(this)
+    });    
+  },
+  componentDidMount: function () {
+    debugger;
+    this.getUser();
+  },    
 	render: function(){
 		return(
 			<div className="main-container"> 
@@ -13,7 +49,7 @@ var Profile = React.createClass({
             <div className="profile-box well profile">
               <div className="col-sm-12">
                 <div className="col-xs-12 col-sm-5">
-                 <span className="headMain"><p className="strong text-center">Tyler Fallon</p>
+                 <span className="headMain"><p className="strong text-center">{this.state.user.username}</p>
                   <img src="https://t4.ftcdn.net/jpg/01/18/03/35/160_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg" className="text-center img-circle imageScale" /></span>                  
                   </div>
                   <div className="col-xs-12 col-sm-7 text-center">
