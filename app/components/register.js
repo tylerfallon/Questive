@@ -60,7 +60,7 @@ var Register = React.createClass({
 		return(
       <div className="mainDiv">
         <Nav />
-      <div className="container">
+      <div className="signContainer">
       <div className="container">
         <form className="form-signin" onSubmit={this.onLogin}>
           <h2 className="form-signin-heading">Please sign in</h2>
