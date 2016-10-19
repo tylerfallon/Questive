@@ -46,24 +46,36 @@
 
 	'use strict';
 
-	// Include the Main React Dependencies
-	var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(34);
+	var _react = __webpack_require__(1);
 
-	// Grab the proeprty associated with the Router
-	var Router = __webpack_require__(172).Router;
+	var _react2 = _interopRequireDefault(_react);
 
-	// Grabs the Routes
-	var routes = __webpack_require__(235);
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactRouter = __webpack_require__(172);
+
+	var _routes = __webpack_require__(235);
+
+	var _routes2 = _interopRequireDefault(_routes);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Renders the contents according to the route page. 
 	// Displays the contents in the div app of index.html
 	// Note how ReactDOM takes in two parameters (the contents and the location)
-	ReactDOM.render(React.createElement(
-		Router,
-		null,
-		routes
+
+
+	// Grab the proeprty associated with the Router
+	// Include the Main React Dependencies
+	_reactDom2.default.render(_react2.default.createElement(
+		_reactRouter.Router,
+		{ history: _reactRouter.hashHistory },
+		_routes2.default
 	), document.getElementById('app'));
+
+	// Grabs the Routes
 
 /***/ },
 /* 1 */
@@ -27103,12 +27115,21 @@
 
 	module.exports = React.createElement(
 		Route,
+<<<<<<< HEAD
 		{ path: '/', component: Home },
 		React.createElement(Route, { path: 'Main', component: Main }),
 		React.createElement(Route, { path: 'Leaderboards', component: Leaderboards }),
 		React.createElement(Route, { path: 'Profile', component: Profile }),
 		React.createElement(Route, { path: 'Join', component: Join }),
 		React.createElement(Route, { path: 'Create', component: Create }),
+=======
+		{ path: '/', component: Main },
+		React.createElement(Route, { path: 'leaderboards', component: Leaderboards }),
+		React.createElement(Route, { path: 'profile', component: Profile }),
+		React.createElement(Route, { path: 'home', component: Home }),
+		React.createElement(Route, { path: 'join', component: Join }),
+		React.createElement(Route, { path: 'create', component: Create }),
+>>>>>>> 6de979c015b1786b4ab66267b666adf3713d9b82
 		React.createElement(IndexRoute, { component: Home })
 	);
 
@@ -27139,7 +27160,7 @@
 	            { className: 'navbar-header' },
 	            React.createElement(
 	              'button',
-	              { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
+	              { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '/bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
 	              React.createElement(
 	                'span',
 	                { className: 'sr-only' },
@@ -27148,6 +27169,11 @@
 	              React.createElement('span', { className: 'icon-bar' }),
 	              React.createElement('span', { className: 'icon-bar' }),
 	              React.createElement('span', { className: 'icon-bar' })
+	            ),
+	            React.createElement(
+	              'a',
+	              { className: 'navbar-brand', href: '/#' },
+	              React.createElement('img', { src: 'https://s10.postimg.org/dfh868909/Questive_Logo.png', height: '50', width: '150', className: 'logoArea' })
 	            )
 	          ),
 	          React.createElement(
@@ -27161,7 +27187,7 @@
 	                null,
 	                React.createElement(
 	                  'a',
-	                  { href: '#/Create' },
+	                  { href: '/#create' },
 	                  React.createElement('img', { src: 'http://blog.roblox.com/wp-content/uploads/2014/04/Points-Icon-700px.png', height: '48', width: '48' }),
 	                  ' '
 	                )
@@ -27171,7 +27197,7 @@
 	                null,
 	                React.createElement(
 	                  'a',
-	                  { href: '#/join' },
+	                  { href: '/#join' },
 	                  React.createElement('img', { src: 'http://www.engage2excel.com/wp-content/uploads/2015/09/Contests-icon.png', height: '48', width: '48' }),
 	                  ' '
 	                )
@@ -27181,7 +27207,7 @@
 	                null,
 	                React.createElement(
 	                  'a',
-	                  { href: '#/Leaderboards' },
+	                  { href: '/#leaderboards' },
 	                  React.createElement('img', { src: 'http://www.freeiconspng.com/uploads/leaderboard-icon-3.png', height: '48', width: '48' }),
 	                  ' '
 	                )
@@ -27191,7 +27217,7 @@
 	                null,
 	                React.createElement(
 	                  'a',
-	                  { href: '#/profile' },
+	                  { href: '/#profile' },
 	                  React.createElement('img', { src: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg', height: '48', width: '48' }),
 	                  ' '
 	                )
@@ -46688,11 +46714,20 @@
 
 	var _reactBootstrap = __webpack_require__(239);
 
+	var _subTasks = __webpack_require__(492);
+
+	var _subTasks2 = _interopRequireDefault(_subTasks);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(172);
 	var ReactDOM = __webpack_require__(34);
 
+<<<<<<< HEAD
 	var subTasks = __webpack_require__(494);
+=======
+>>>>>>> 6de979c015b1786b4ab66267b666adf3713d9b82
 
 	// add helper
 	var helpers = __webpack_require__(495);
@@ -46824,80 +46859,74 @@
 	                null,
 	                'Add the instructions for your contest below! Click to Expand.'
 	              )
-	            ),
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            { id: 'placeholder' },
 	            React.createElement(
 	              'div',
-	              { id: 'placeholder' },
+	              { id: 'template' },
 	              React.createElement(
-	                'div',
-	                { id: 'template' },
+	                _reactBootstrap.Panel,
+	                { collapsible: true, defaultExpanded: true, header: 'Task' },
 	                React.createElement(
-	                  _reactBootstrap.Panel,
-	                  { collapsible: true, defaultExpanded: true, header: 'Task' },
+	                  'form',
+	                  { className: 'new task', onSubmit: this.handleRequest },
 	                  React.createElement(
-	                    'form',
-	                    { className: 'new task', onSubmit: this.handleRequest },
+	                    _reactBootstrap.ListGroup,
+	                    { fill: true },
 	                    React.createElement(
-	                      _reactBootstrap.ListGroup,
-	                      { fill: true },
-	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'text',
-	                          ref: 'taskText',
-	                          placeholder: 'Default Action'
-	                        })
-	                      ),
-	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'text',
-	                          ref: 'addressText',
-	                          placeholder: 'Default Address'
-	                        })
-	                      ),
-	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'text',
-	                          ref: 'descriptionText',
-	                          placeholder: 'Default Description'
-	                        })
-	                      ),
-	                      React.createElement(
-	                        _reactBootstrap.ListGroupItem,
-	                        null,
-	                        React.createElement(_reactBootstrap.FormControl, {
-	                          type: 'submit',
-	                          value: 'Submit'
-	                        })
-	                      )
+	                      _reactBootstrap.ListGroupItem,
+	                      null,
+	                      React.createElement(_reactBootstrap.FormControl, {
+	                        type: 'text',
+	                        ref: 'taskText',
+	                        placeholder: 'Default Action'
+	                      })
+	                    ),
+	                    React.createElement(
+	                      _reactBootstrap.ListGroupItem,
+	                      null,
+	                      React.createElement(_reactBootstrap.FormControl, {
+	                        type: 'text',
+	                        ref: 'addressText',
+	                        placeholder: 'Default Address'
+	                      })
+	                    ),
+	                    React.createElement(
+	                      _reactBootstrap.ListGroupItem,
+	                      null,
+	                      React.createElement(_reactBootstrap.FormControl, {
+	                        type: 'text',
+	                        ref: 'descriptionText',
+	                        placeholder: 'Default Description'
+	                      })
+	                    ),
+	                    React.createElement(
+	                      _reactBootstrap.ListGroupItem,
+	                      null,
+	                      React.createElement(_reactBootstrap.FormControl, {
+	                        type: 'submit',
+	                        value: 'Submit'
+	                      })
 	                    )
 	                  )
 	                )
 	              )
-	            ),
-	            this.renderTasks(),
-	            React.createElement('subTasks', null),
+	            )
+	          ),
+	          React.createElement(_subTasks2.default, { tasks: this.state.tasksArray }),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'div',
+	            { className: 'well' },
 	            React.createElement(
-	              _reactBootstrap.Pager,
-	              null,
-	              React.createElement(
-	                _reactBootstrap.Pager.Item,
-	                { onClick: this.Add, previous: true, href: '#' },
-	                'Add Additional Tasks \u2192'
-	              )
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	              'div',
-	              { className: 'well' },
+	              'a',
+	              { href: '#/join' },
 	              React.createElement(
 	                _reactBootstrap.Button,
-	                { bsSize: 'large', block: true, onClick: this.handleSubmitClick },
+	                { bsSize: 'large', block: true },
 	                'Submit Contest'
 	              )
 	            )
@@ -46916,6 +46945,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
 	var _reactBootstrap = __webpack_require__(239);
 
 	var React = __webpack_require__(1);
@@ -46923,19 +46956,47 @@
 	var ReactDOM = __webpack_require__(34);
 
 
+	// Rendering sub tasks 
 	var subTasks = React.createClass({
 		displayName: 'subTasks',
 
 		render: function render() {
+			console.log(this.props);
 			return React.createElement(
-				'h1',
+				_reactBootstrap.ListGroup,
 				null,
-				'"text"'
+				this.props.tasks.map(function (task, i) {
+					return React.createElement(
+						'div',
+						null,
+						React.createElement(
+							_reactBootstrap.ControlLabel,
+							null,
+							' Task ',
+							i + 1
+						),
+						React.createElement(
+							_reactBootstrap.ListGroupItem,
+							null,
+							task.title
+						),
+						React.createElement(
+							_reactBootstrap.ListGroupItem,
+							null,
+							task.location
+						),
+						React.createElement(
+							_reactBootstrap.ListGroupItem,
+							null,
+							task.additionalInfo
+						)
+					);
+				})
 			);
 		}
 	});
 
-	module.exports = subTasks;
+	exports.default = subTasks;
 
 /***/ },
 /* 495 */

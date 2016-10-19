@@ -14,7 +14,7 @@ import { ListGroup} from 'react-bootstrap';
 import { ListGroupItem } from 'react-bootstrap';
 import { Pager } from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
-var subTasks = require('./create_Subfolder/subTasks');
+import  SubTasks from './create_Subfolder/subTasks';
 
 // add helper
 var helpers = require('./utils/helpers.js');
@@ -118,6 +118,7 @@ var Create = React.createClass({
             <FormGroup>
               <ControlLabel>Add the instructions for your contest below! Click to Expand.</ControlLabel>
             </FormGroup>
+            </form>
 
 
             <div id="placeholder">
@@ -169,24 +170,19 @@ var Create = React.createClass({
           
             </div>{/* placeholder */}
 
-
-            {this.renderTasks()}
-
-            <subTasks />
+            <SubTasks tasks = {this.state.tasksArray}/>
 
 
           {/**/}
-            <Pager>
-            <Pager.Item onClick={this.Add} previous href="#">Add Additional Tasks &rarr;</Pager.Item>
-            </Pager>
+            
 
 
             <br />
 
             <div className="well">
-              <Button bsSize="large" block onClick={this.handleSubmitClick}>Submit Contest</Button>
+               <a href ="#/join"><Button bsSize="large" block >Submit Contest</Button></a>
               </div>
-            </form>
+            
           </div>
         </div>
       </div>

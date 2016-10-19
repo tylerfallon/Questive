@@ -14,10 +14,26 @@ import { ListGroup} from 'react-bootstrap';
 import { ListGroupItem } from 'react-bootstrap';
 import { Pager } from 'react-bootstrap';
 
+// Rendering sub tasks 
 var subTasks = React.createClass({
 	render:function(){
-		return(<h1>"text"</h1>);
+		console.log(this.props);
+		return(
+		<ListGroup>
+				{this.props.tasks.map((task,i) => {
+					return( 
+						<div>
+							<ControlLabel> Task {i+1}</ControlLabel>
+							<ListGroupItem>{task.title}</ListGroupItem>
+							<ListGroupItem>{task.location}</ListGroupItem>
+							<ListGroupItem>{task.additionalInfo}</ListGroupItem>
+						</div>
+					)	
+				})
+			}
+		</ListGroup>
+		)
 	}
 });
 
-module.exports = subTasks;
+export default  subTasks;
