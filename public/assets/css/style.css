@@ -28,6 +28,7 @@ a:active {
     font-weight: bold;
     color: white;
 }
+
 .navbar {
 
             padding: 0px;
@@ -277,7 +278,10 @@ a:active {
 
         @media screen and (max-width: 600px) {
 
-            
+            .placeHold {
+                height: 67px;
+               /* padding-bottom: 10px;*/
+            }
 
             .navbar {
 
@@ -286,7 +290,7 @@ a:active {
             }
 
             .logoArea {
-                margin-top: -20px;
+                margin-top: -5px;
                 
             }
 
@@ -411,6 +415,12 @@ span.tags
     background-color: rgb(93,188,210);
 }
 
+.placeHold {
+
+    height: 82px;
+   /* padding-bottom: 10px;*/
+}
+
 .profile-box {
     margin-top: 10px;
 }
@@ -438,7 +448,11 @@ span.tags
 }
 
 
+.topRow {
+    background-color: rgba(93,188,210);
+    padding: 10px;
 
+}
 
 
 /*Login Form*/
