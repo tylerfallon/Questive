@@ -2,9 +2,12 @@
 var React = require('react');
 var Router = require('react-router')
 
+
 var Home = React.createClass({
 
 	render: function(){
+
+
 
 		return(
 			/*We can only render a single div. So we need to group everything inside of this main-container one*/
@@ -14,10 +17,9 @@ var Home = React.createClass({
           <div id="group2" className="parallax__group">
             <div className="parallax__layer parallax__layer--base">
               <center><h3 className="tagline">Discover. Connect. Adventure. <br /> <br />
-              <center><button type="button" className="btn btn-danger center" onClick={this.handleSubmit}><h4>Get Started</h4></button></center><br /></h3></center>                
-
+              <center><a href="/Leaderboards"><button type="button" id="getStarted" className="btn btn-danger center getStarted"><h4>Get Started</h4></button></a></center><br /></h3></center>         
                <br /><br /> <br />
-             <center><h1 className='center'>Welcome to Questive.</h1></center>
+             <center><a href="#"><img src={'https://s10.postimg.org/dfh868909/Questive_Logo.png'} height='100' width='250' className="logoArea"/></a></center>
             </div>
             <a name="about" />
             <div className="parallax__layer parallax__layer--back black">

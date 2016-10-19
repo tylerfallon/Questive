@@ -277,6 +277,8 @@ a:active {
 
         @media screen and (max-width: 600px) {
 
+            
+
             .navbar {
 
                 text-align: left;
@@ -407,11 +409,6 @@ span.tags
 
 .theNavBar {
     background-color: rgb(93,188,210);
-}
-
-span {
-    padding: 5px;
-    margin: 5px;
 }
 
 .profile-box {
