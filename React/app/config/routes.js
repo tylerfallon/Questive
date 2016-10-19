@@ -14,11 +14,11 @@ var IndexRoute	= Router.IndexRoute;
 module.exports = (
 
 	<Route path='/' component={Main}>
-		<Route path='Leaderboards' component={Leaderboards} />
-		<Route path='Profile' component={Profile} />
-		<Route path='Home' component={Home} />
-		<Route path='Join' component={Join} />
-		<Route path='Create' component={Create} />
+		<Route path='leaderboards' component={Leaderboards} />
+		<Route path='profile' component={Profile} />
+		<Route path='home' component={Home} />
+		<Route path='join' component={Join} />
+		<Route path='create' component={Create} />
 		<IndexRoute component={Home} />
 	</Route>
 );
